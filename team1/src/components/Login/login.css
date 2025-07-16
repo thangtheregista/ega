@@ -1,4 +1,5 @@
 .login-element {
+    width: 100vw;
 }
 .login-element__wrapper {
     max-width: 1640px;
@@ -32,7 +33,8 @@
 .login .login__form {
     display: flex;
     flex-direction: column;
-    width: 520px;
+    max-width: 520px;
+    width: 100%;
     margin-top: 20px;
 }
 .login .login__form .login__label {
