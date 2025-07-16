@@ -3,7 +3,6 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
 import {useState} from "react";
 
-
 export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -107,7 +106,6 @@ export default function Login() {
                     </div>
                 </div>
             </div>
-
         </div>
     )
 }
