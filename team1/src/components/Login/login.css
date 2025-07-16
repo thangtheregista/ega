@@ -64,8 +64,9 @@
     background-color: #ED720E;
     border-radius: 4px;
     color: white;
-    font-size: 19px;
-    padding: 4px 15px 7px;
+    font-size: 18px;
+    padding: 10px 15px;
+    border: none;
 }
 .login .login__form .login__button:hover {
     border-color: transparent;

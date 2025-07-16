@@ -1,0 +1,109 @@
+.register-page-container {
+    width: 100vw;
+}
+.register-page-wrapper {
+    max-width: 1640px;
+    margin: 0 auto;
+    padding: 10px;
+}
+.register-breadcrumb {
+    font-size: 16px;
+}
+.register-page-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.register-page-form .register-title{
+    font-size: 25px;
+    font-weight: 400;
+    padding: 0;
+    margin: 8px;
+}
+.register-page-form .register-form-title {
+    font-size: 20px;
+    font-weight: 400;
+    padding: 0;
+    margin-top: 4rem;
+}
+.register-page-form .login-reminder {
+    margin: 0;
+    font-size: 18px;
+}
+.register-page-form .login-reminder .login-link {
+    color: #ED720E;
+    text-decoration: underline;
+    font-weight: 400;
+}
+.register-page-form .register-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 520px;
+    width: 100%;
+    margin-top: 0.5rem;
+}
+.register-page-form .register-form .register-label {
+    font-size: 14px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+.register-page-form .register-form .register-label span {
+    color: red;
+}
+.register-page-form .register-form .register-input {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 18px;
+    margin-bottom: 10px;
+    outline: none;
+}
+.register-page-form .register-form {
+    height: 100%;
+}
+.register-page-form .register-form .register-button {
+    font-size: 18px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #ED720E;
+    color: white;
+    margin-top: 1rem;
+}
+.register-page-form .register-form .register-button:hover {
+    border-color: transparent;
+    box-shadow: rgba(0, 0, 0, 0.64) 0px 3px 8px;
+}
+.register-page-form .register-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    flex-direction: column;
+}
+.register-page-form .register-social .register-social-text {
+    font-size: 16px;
+    color: gray;
+    font-weight: 500;
+}
+.register-page-form .register-social .register-social-buttons {
+    display: flex;
+    flex-direction: row;
+}
+.register-page-form .register-social .register-social-buttons {
+    display: flex;
+    gap: 8px;
+}
+.register-social-facebook {
+    background-color: #3B5998;
+    color: white;
+}
+.register-social-facebook:hover, .register-social-google:hover {
+    border-color: transparent;
+    box-shadow: rgba(0, 0, 0, 0.64) 0px 3px 8px;
+}
+.register-social-google {
+    background-color: #E14B33;
+    color: white;
+}
