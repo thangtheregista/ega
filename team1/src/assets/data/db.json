@@ -1,0 +1,28 @@
+{
+  "sofas": [
+    {
+      "id": 1,
+      "name": "Sofa Băng Phòng Khách Truyền Thống QP115",
+      "rating": 5,
+      "sale-price": 31200000,
+      "original-price": 62400000,
+      "sold": 74
+    },
+    {
+      "id": 2,
+      "name": "Sofa Băng Bọc Vải Phong Cách Scandinavian",
+      "rating": 4,
+      "sale-price": 33750000,
+      "original-price": 67500000,
+      "sold": 22
+    },
+    {
+      "id": 3,
+      "name": "Sofa Băng Bọc Vải Siêu Rộng Lewis Extra QP243",
+      "rating": 0,
+      "sale-price": 31200000,
+      "original-price": 62400000,
+      "sold": "max"
+    }
+  ]
+}
