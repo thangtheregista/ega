@@ -1,0 +1,134 @@
+.coupon-list {
+    max-width: 1640px;
+    width: 100%;
+    margin: 70px auto 0 ;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 16px;
+}
+.coupon-list .coupon {
+    display: flex;
+    flex-direction: row;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.coupon-list .coupon .coupon__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 8px solid #EC720E;
+    border-right: 2px dashed #ccc ;
+    border-radius: 10px 0 0 10px;
+    padding: 10px 10px
+}
+.coupon-list .coupon .coupon__details {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px 10px 10px 10px;
+
+}
+.coupon__header {
+    display: flex;
+    justify-content: space-between;
+}
+.coupon-list .coupon .coupon__details .coupon__title {
+    font-size: 14px;
+    margin: 0 0 3px;
+}
+.coupon-list .coupon .coupon__details .coupon__desc {
+    font-size: 13px;
+    padding: 0 0 7px;
+    margin: 0;
+}
+.coupon-list .coupon .coupon__details .coupon__discount {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.coupon-list .coupon .coupon__details .coupon__code {
+    font-size: 13px;
+    margin: 0;
+}
+.coupon-list .coupon .coupon__details .coupon__expiry {
+    font-size: 13px;
+    margin: 0;
+}
+.coupon__info-wrapper {
+    position: relative;
+}
+.coupon__information-circle {
+    font-size: 30px;
+    color: #EC720E;
+}
+.coupon__information-circle:hover + .coupon__info-box {
+    display: block;
+}
+.coupon__info-box {
+    display: none;
+    position: absolute;
+    top: -400%;
+    right: 100%;
+    background: #fff;
+    border: 1px solid #ddd;
+    z-index: 10;
+    min-width: 160px;
+    font-size: 14px;
+}
+
+.coupon__info-box {
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    background: #fff;
+}
+
+
+.coupon__info-box-header {
+    background: #EC720E;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.coupon__info-box-content {
+    padding: 15px;
+}
+
+.coupon__row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 0.95em;
+}
+
+.coupon__label {
+    width: 40px;
+    font-weight: bold;
+}
+
+.coupon__code {
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.coupon__copy {
+    margin-left: 5px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.coupon__conditions {
+    margin: 0;
+    padding-left: 20px;
+    font-size: 0.9em;
+}
+
+.coupon__conditions li {
+    margin-bottom: 5px;
+}
