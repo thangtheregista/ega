@@ -6,7 +6,7 @@ function HappySummer() {
     const [sofas, setSofas] = React.useState([]);
     const fetchSofas = async () => {
         try {
-            const reponse = await axios.get("http://localhost:3001/sofas")
+            const reponse = await axios.get("https://6879bbed63f24f1fdca2bb76.mockapi.io/api/v1/ega-furniture/sofas")
             setSofas(reponse.data);
         } catch (error) {
             console.log(error);
