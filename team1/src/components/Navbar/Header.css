@@ -1,0 +1,73 @@
+/* Top bar */
+.top-bar {
+  background-color: #B3540E; /* Màu cam */
+  color: white;
+  text-align: right;
+  padding: 5px 30px;
+  font-size: 14px;
+}
+
+/* Main header */
+.main-header {
+  background-color: #1A1A1A; /* Màu đen */
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-icon {
+  font-size: 24px;
+  margin-right: 5px;
+  color: #B3540E;
+}
+
+.logo-text {
+  color: white;
+  font-weight: bold;
+}
+
+.logo-bold {
+  color: #B3540E;
+}
+
+/* Nav menu */
+.nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+/* Icons */
+.icons {
+  display: flex;
+  align-items: center;
+}
+
+.icons span {
+  margin-left: 15px;
+  position: relative;
+  cursor: pointer;
+}
+
+.cart-count {
+  background: #B3540E;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+  position: absolute;
+  top: -8px;
+  right: -10px;
+}
