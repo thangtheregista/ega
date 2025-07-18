@@ -6,7 +6,7 @@ import {useState} from "react";
 export default function Carousels() {
     const [index, setIndex] = useState(0);
 
-    const handleSelect = (selectedIndex, e) => {
+    const handleSelect = (selectedIndex) => {
         console.log('selected index: ', selectedIndex)
         setIndex(selectedIndex);
     };

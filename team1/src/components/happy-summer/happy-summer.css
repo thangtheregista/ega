@@ -1,0 +1,83 @@
+.happy-summer-container {
+    margin: 5rem 10rem;
+}
+.hs-item {
+    max-width: 382px;
+    height: 500px;
+    padding: 1rem;
+}
+.hs-item img {
+    max-width: 382px;
+    height: 286px;
+}
+.hs-item h5:hover {
+    cursor: pointer;
+    color: #ec720e;
+}
+.hs-body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0;
+}
+.hs-img {
+    position: relative;
+}
+.hs-mark {
+    display: flex;
+    position: absolute;
+    top: 3rem;
+    left: 1rem;
+    width: 71px;
+    height: 27px;
+    background-color: #f0f0f0;
+    padding: 0.5rem;
+    font-size: 13px;
+    font-weight: bold;
+    color: #333333;
+    border-radius: 3px;
+    text-align: center;
+    align-items: center;
+}
+.hs-note {
+    position: absolute;
+    bottom: 0;
+    color: #969696;
+}
+.hs-header {
+    position: relative;
+}
+.hs-header h2:hover {
+    color: #ec720e;
+    cursor: pointer;
+}
+.sale-icon {
+    position: absolute;
+    top: 0;
+    margin-left: 0.5rem;
+    width: 35px;
+    height: 35px;
+}
+.sale-num {
+    background-color: red;
+    color: white;
+    border-radius: 15px;
+    width: 50px;
+    height: 25px;
+    text-align: center;
+}
+.original-price {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+.hs-sold {
+    color: #e9330d;
+    font-weight: bold;
+    font-style: italic;
+}
+.custom-progress .progress-bar {
+    background: linear-gradient(to right, #fbd72b, #f9484a) !important;
+}
