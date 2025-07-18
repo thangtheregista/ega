@@ -5,7 +5,7 @@
     min-height: 100vh;
     background-color: #FFFFFF;
     box-sizing: border-box;
-    grid-template-columns: minmax(0px,140px) repeat(8, 205px) minmax(0px, 140px);
+    grid-template-columns: minmax(0px,140px) repeat(8, 1fr) minmax(0px, 140px);
     grid-template-rows: 65px auto 575px;
 }
 nav {
