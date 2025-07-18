@@ -10,7 +10,7 @@ export default function Header() {
     return (
         <div>
             <div className="top-bar">
-                FREESHIP VỚI ĐƠN HÀNG TỪ 500K
+                FREESHIP VỚI ĐƠN HÀNG TỪ 5000K
             </div>
             <div className="main-header">
                 <button className="offcanvas-toggle" onClick={handleShow}>
