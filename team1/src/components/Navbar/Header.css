@@ -1,15 +1,15 @@
 /* Top bar */
 .top-bar {
-  background-color: #B3540E; /* Màu cam */
+    background-color: #EC720E; /* Màu cam */
   color: white;
-  text-align: right;
+  text-align: center;
   padding: 5px 30px;
   font-size: 14px;
 }
 
 /* Main header */
 .main-header {
-  background-color: #1A1A1A; /* Màu đen */
+  background-color: white; /* Màu đen */
   color: white;
   display: flex;
   justify-content: space-between;
@@ -28,7 +28,11 @@
   margin-right: 5px;
   color: #B3540E;
 }
-
+.logo-icon img {
+  max-width: 145px;
+  width: 100%;
+  height: auto
+}
 .logo-text {
   color: white;
   font-weight: bold;
@@ -37,12 +41,14 @@
 .logo-bold {
   color: #B3540E;
 }
-
+.nav {
+  border: none;
+}
 /* Nav menu */
 .nav a {
   margin: 0 10px;
   text-decoration: none;
-  color: white;
+  color: black;
   font-weight: 500;
 }
 
@@ -58,16 +64,41 @@
 
 .icons span {
   margin-left: 15px;
+  cursor: pointer;
+  color: black;
+}
+.icons .cart {
+  margin-left: 15px;
   position: relative;
   cursor: pointer;
+  color: black;
 }
-
 .cart-count {
-  background: #B3540E;
+  background: #EC720E;
   border-radius: 50%;
   padding: 2px 6px;
   font-size: 12px;
   position: absolute;
   top: -8px;
   right: -10px;
+  color: white !important;
+}
+
+.offcanvas-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  margin-right: 16px;
+}
+
+@media (max-width: 900px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .offcanvas-toggle {
+    display: block;
+  }
 }
