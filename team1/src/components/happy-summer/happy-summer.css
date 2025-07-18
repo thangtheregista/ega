@@ -1,9 +1,9 @@
 .happy-summer-container {
-    margin: 5rem 10rem;
+    margin: 2rem 4rem;
 }
 .hs-item {
     max-width: 382px;
-    height: 500px;
+    height: 550px;
     padding: 1rem;
 }
 .hs-item img {
@@ -157,4 +157,19 @@
         height: 32px;
         font-size: 0.8rem;
     }
+}
+.hs-smallPics {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+.hs-smallPics img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #c8c8c8;
+}
+.hs-smallPics img:hover {
+    border: 1px solid black;
+    cursor: pointer;
 }

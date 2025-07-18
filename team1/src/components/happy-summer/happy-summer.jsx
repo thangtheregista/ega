@@ -2,6 +2,7 @@ import "./happy-summer.css"
 import React, {useEffect} from "react";
 import axios from "axios";
 import {ProgressBar} from "react-bootstrap";
+import HoverImage from "../HoverImage/hoverImage.jsx";
 function HappySummer() {
     const [sofas, setSofas] = React.useState([]);
     const fetchSofas = async () => {
@@ -25,7 +26,7 @@ function HappySummer() {
                     {sofas.map((sofa) => (
                         <div className="hs-item" key={sofa.id}>
                             <div className="hs-img">
-                                <img src={sofa.pic} alt={sofa.name} />
+                                <HoverImage pic={sofa.pic} pic2={sofa.pic2} picName={sofa.name} />
                                 {sofa.mark && (
                                     <div className="hs-mark">{sofa.mark}</div>
                                 )}
@@ -38,6 +39,11 @@ function HappySummer() {
                             <strong style={{color: "red"}}>{sofa.salePrice}</strong>
                             <div className="original-price">
                             <p style={{color: "#969696", textDecoration: "line-through"}}>{sofa.originalPrice}</p> <div className="sale-num">-50%</div>
+                            </div>
+                            <div className="hs-smallPics">
+                                <img src={sofa.small1} alt="Small1"/>
+                                <img src={sofa.small2} alt="Small2"/>
+                                <img src={sofa.small3} alt="Small3"/>
                             </div>
                             <p className="hs-sold">{sofa.sold}</p>
                             <ProgressBar style={{height: "7px", borderRadius: "50px"}}>
