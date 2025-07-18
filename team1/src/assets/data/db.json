@@ -1,0 +1,86 @@
+{
+  "sofas": [
+    {
+      "id": 1,
+      "pic": "https://bizweb.dktcdn.net/thumb/1024x1024/100/491/756/products/budwingmelaniecanape3placescam-bb7314d0-c0c8-466d-b44e-cc0f21ab8584.jpg?v=1721288342243",
+      "name": "Sofa Băng Phòng Khách Truyền Thống QP115",
+      "rating": "⭐⭐⭐⭐⭐",
+      "salePrice": "31.200.000₫",
+      "originalPrice": "62.400.000₫",
+      "sold": "Đã bán 74 sản phẩm",
+      "note": "EGA FURNITURE",
+      "mark": "Bán chạy",
+      "progress": 74
+    },
+    {
+      "id": 2,
+      "pic": "https://bizweb.dktcdn.net/thumb/1024x1024/100/491/756/products/hf10b490dfe5b41dcbb03f1d15fba9.jpg?v=1721288309203",
+      "name": "Sofa Băng Bọc Vải Phong Cách Scandinavian",
+      "rating": "⭐⭐⭐⭐",
+      "salePrice": "33.750.000₫",
+      "originalPrice": "67.500.000₫",
+      "sold": "Đã bán 22 sản phẩm",
+      "progress": 22
+    },
+    {
+      "id": 3,
+      "pic": "https://bizweb.dktcdn.net/thumb/1024x1024/100/491/756/products/951461666x12498f8ed8a701284740.jpg?v=1721288302580",
+      "name": "Sofa Băng Bọc Vải Siêu Rộng Lewis Extra QP243",
+      "rating": "⭐⭐⭐",
+      "salePrice": "31.200.000₫",
+      "originalPrice": "62.400.000₫",
+      "sold": "🔥 Sắp cháy hàng",
+      "progress": 90
+    },
+    {
+      "id": 4,
+      "pic": "https://bizweb.dktcdn.net/thumb/1024x1024/100/491/756/products/budwingmelaniecanape3placesgri.jpg?v=1721288299183",
+      "name": "Sofa Băng Phòng Khách Truyền Thống QP113",
+      "rating": "⭐⭐⭐⭐",
+      "salePrice": "31.200.000₫",
+      "originalPrice": "62.400.000₫",
+      "sold": "🔥 Sắp cháy hàng",
+      "progress": 90
+    },
+    {
+      "id": 5,
+      "pic": "https://bizweb.dktcdn.net/thumb/1024x1024/100/491/756/products/dlmagicvelvet2210p15533b980684.jpg?v=1721288305953",
+      "name": "Sofa Băng Bọc Vải Mid-Century",
+      "rating": "⭐⭐⭐⭐⭐",
+      "salePrice": "22.280.000₫",
+      "originalPrice": "44.560.000₫",
+      "sold": "Đã bán 29 sản phẩm",
+      "progress": 29
+    },
+    {
+      "id": 6,
+      "pic": "https://bizweb.dktcdn.net/thumb/1024x1024/100/491/756/products/3286s11800x180008b215702e5c4f8.jpg?v=1721288304360",
+      "name": "Sofa Băng Bọc Vải Michael QP201",
+      "rating": "⭐⭐",
+      "salePrice": "12.400.000₫",
+      "originalPrice": "24.800.000₫",
+      "sold": "🔥 Sắp cháy hàng",
+      "progress": 90
+    },
+    {
+      "id": 7,
+      "pic": "https://bizweb.dktcdn.net/thumb/1024x1024/100/491/756/products/ghesofatherain225noithatg1666x.jpg?v=1721288295347",
+      "name": "Ghế Sofa The Sky 222",
+      "rating": "⭐⭐⭐⭐",
+      "salePrice": "31.200.000₫",
+      "originalPrice": "62.400.000₫",
+      "sold": "Đã bán 82 sản phẩm",
+      "progress": 82
+    },
+    {
+      "id": 8,
+      "pic": "https://bizweb.dktcdn.net/thumb/1024x1024/100/491/756/products/bm001111666x1250297ca871e1b14c.jpg?v=1721288292833",
+      "name": "Bộ Sofa Da 3 Băng Góc Phải QP220",
+      "rating": "⭐⭐⭐⭐⭐",
+      "salePrice": "14.250.000₫",
+      "originalPrice": "28.500.000₫",
+      "sold": "🔥 Sắp cháy hàng",
+      "progress": 90
+    }
+  ]
+}

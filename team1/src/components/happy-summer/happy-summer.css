@@ -1,0 +1,160 @@
+.happy-summer-container {
+    margin: 5rem 10rem;
+}
+.hs-item {
+    max-width: 382px;
+    height: 500px;
+    padding: 1rem;
+}
+.hs-item img {
+    width: 382px;
+    height: 286px;
+}
+.hs-item h5:hover {
+    cursor: pointer;
+    color: #ec720e;
+}
+.hs-body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0;
+}
+.hs-img {
+    position: relative;
+}
+.hs-img img:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.hs-mark {
+    display: flex;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 71px;
+    height: 27px;
+    background-color: #f0f0f0;
+    padding: 0.5rem;
+    font-size: 13px;
+    font-weight: bold;
+    color: #333333;
+    border-radius: 3px;
+    text-align: center;
+    align-items: center;
+}
+.hs-note {
+    position: absolute;
+    bottom: 0;
+    color: #969696;
+}
+.hs-header {
+    position: relative;
+}
+.hs-header h2:hover {
+    color: #ec720e;
+    cursor: pointer;
+}
+.sale-icon {
+    position: absolute;
+    top: 0;
+    margin-left: 0.5rem;
+    width: 35px;
+    height: 35px;
+}
+.sale-num {
+    background-color: red;
+    color: white;
+    border-radius: 15px;
+    width: 50px;
+    height: 25px;
+    text-align: center;
+}
+.original-price {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+.hs-sold {
+    color: #e9330d;
+    font-weight: bold;
+    font-style: italic;
+}
+.happy-summer-container .hs-btn {
+    margin: 0 auto;
+    width: 146px;
+    height: 41px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #ec720e;
+    color: #ec720e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+.happy-summer-container .hs-btn:hover {
+    background-color: #ec720e;
+    color: white;
+}
+@media (max-width: 1366px) {
+    .happy-summer-container {
+        margin: 3rem 2rem;
+    }
+    .hs-item {
+        max-width: 320px;
+        height: 420px;
+        padding: 0.8rem;
+    }
+    .hs-item img {
+        width: 320px;
+        height: 220px;
+    }
+}
+
+@media (max-width: 768px) {
+    .happy-summer-container {
+        margin: 2rem 0.5rem;
+    }
+    .hs-body {
+        flex-direction: column;
+        align-items: center;
+    }
+    .hs-item {
+        max-width: 95vw;
+        width: 100%;
+        height: auto;
+        margin-bottom: 1.5rem;
+        padding: 0.5rem;
+    }
+    .hs-item img {
+        width: 100%;
+        height: 180px;
+    }
+    .hs-header h2 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .happy-summer-container {
+        margin: 1rem 0.2rem;
+    }
+    .hs-item {
+        max-width: 98vw;
+        padding: 0.2rem;
+    }
+    .hs-item img {
+        height: 120px;
+    }
+    .hs-header h2 {
+        font-size: 1rem;
+    }
+    .happy-summer-container .hs-btn {
+        width: 100px;
+        height: 32px;
+        font-size: 0.8rem;
+    }
+}
