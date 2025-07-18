@@ -40,15 +40,17 @@ function HappySummer() {
                             <p style={{color: "#969696", textDecoration: "line-through"}}>{sofa.originalPrice}</p> <div className="sale-num">-50%</div>
                             </div>
                             <p className="hs-sold">{sofa.sold}</p>
-                            <ProgressBar
-                                now={sofa.progress}
-                                style={{
-                                    height: '7px',
-                                    borderRadius: '50px',
-                                    background: 'transparent'
-                                }}
-                                className="custom-progress"
-                            />
+                            <ProgressBar style={{height: "7px", borderRadius: "50px"}}>
+                                <div
+                                    className="progress-bar"
+                                    role="progressbar"
+                                    style={{
+                                        width: `${sofa.progress}%`,
+                                        background: "linear-gradient(to right, #f1c40f, #e67e22, #e74c3c)"
+                                    }}
+                                />
+                            </ProgressBar>
+
                         </div>
                     ))}
                 </div>
