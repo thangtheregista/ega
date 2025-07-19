@@ -1,9 +1,9 @@
 .happy-summer-container {
-    margin: 5rem 10rem;
+    margin: 2rem 4rem;
 }
 .hs-item {
     max-width: 382px;
-    height: 500px;
+    height: 550px;
     padding: 1rem;
 }
 .hs-item img {
@@ -52,6 +52,10 @@
 }
 .hs-header {
     position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 .hs-header h2:hover {
     color: #ec720e;
@@ -59,7 +63,7 @@
 }
 .sale-icon {
     position: absolute;
-    top: 0;
+    top: 1rem;
     margin-left: 0.5rem;
     width: 35px;
     height: 35px;
@@ -157,4 +161,19 @@
         height: 32px;
         font-size: 0.8rem;
     }
+}
+.hs-smallPics {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+.hs-smallPics img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #c8c8c8;
+}
+.small-pics:hover {
+    cursor: pointer;
+    transform: scale(1.05);
 }
