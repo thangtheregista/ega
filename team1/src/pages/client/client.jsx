@@ -5,9 +5,9 @@ import HappySummer from "../../components/happy-summer/happy-summer.jsx";
 import Carousels from "../../components/Carousel/Carousels.jsx";
 import ProductCategories from "../../components/ProductCategories/ProductCategories.jsx";
 import CouponList from "../../components/CouponList/CouponList.jsx";
-import { Navbar } from "react-bootstrap";
 import Header from "../../components/Navbar/Header.jsx";
 import Footer from './../../components/Navbar/Footer';
+import ModernFurniture from "../../components/modern-furniture/modern-furniture.jsx";
 function Client() {
     return (
         <>
@@ -20,6 +20,7 @@ function Client() {
                     <ProductCategories />
                     <CouponList />
                     <HappySummer />
+                    <ModernFurniture />
                 </main>
                 <footer>
                     <Footer />

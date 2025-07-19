@@ -55,7 +55,6 @@ function HappySummer() {
                                     const isSelected = selectedPic === img;
                                     return (
                                         <img
-                                            className="small-pics"
                                             key={img}
                                             src={img}
                                             alt={`Small${idx + 1}`}
@@ -76,7 +75,6 @@ function HappySummer() {
                                     }}
                                 />
                             </ProgressBar>
-
                         </div>
                     ))}
                 </div>
