@@ -52,6 +52,10 @@
 }
 .hs-header {
     position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 .hs-header h2:hover {
     color: #ec720e;
@@ -59,7 +63,7 @@
 }
 .sale-icon {
     position: absolute;
-    top: 0;
+    top: 1rem;
     margin-left: 0.5rem;
     width: 35px;
     height: 35px;
@@ -169,7 +173,7 @@
     border-radius: 50%;
     border: 1px solid #c8c8c8;
 }
-.hs-smallPics img:hover {
-    border: 1px solid black;
+.small-pics:hover {
     cursor: pointer;
+    transform: scale(1.05);
 }
