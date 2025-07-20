@@ -1,0 +1,78 @@
+.inspiration{
+    width: 100%;
+    max-width: 1640px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.inspiration__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.inspiration__card {
+    flex: 1 1 calc(25% - 20px);
+    background: #fff;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.inspiration__image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+}
+
+.inspiration__card-title {
+    font-size: 18px;
+    margin: 15px;
+}
+.inspiration__card-title a {
+    text-decoration: none;
+    color: black;
+}
+
+.inspiration__meta {
+    font-size: 14px;
+    color: #777;
+    margin: 0 15px 10px 15px;
+    display: flex;
+    gap: 15px;
+}
+
+.inspiration__desc {
+    font-size: 14px;
+    margin: 0 15px 15px 15px;
+    flex-grow: 1;
+}
+
+.inspiration__read-more {
+    font-size: 14px;
+    color: #000;
+    text-decoration: underline;
+    font-weight: bold;
+    margin: 0 15px 15px 15px;
+}
+.inspiration__read-more:hover {
+    color: #EC720E;
+
+}
+.inspiration__card:hover .inspiration__card-title a{
+    color: #EC720E;
+}
+@media (max-width: 1024px) {
+    .inspiration__card {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 600px) {
+    .inspiration__card {
+        flex: 1 1 100%;
+    }
+}
