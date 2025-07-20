@@ -8,6 +8,8 @@ import CouponList from "../../components/CouponList/CouponList.jsx";
 import Header from "../../components/Navbar/Header.jsx";
 import Footer from './../../components/Navbar/Footer';
 import ModernFurniture from "../../components/modern-furniture/modern-furniture.jsx";
+import InspirationCorner from "../../components/InspirationCorner/InspirationCorner.jsx";
+import Policies from "../../components/Policies/Policies.jsx";
 function Client() {
     return (
         <>
@@ -21,6 +23,8 @@ function Client() {
                     <CouponList />
                     <HappySummer />
                     <ModernFurniture />
+                    <InspirationCorner/>
+                    <Policies/>
                 </main>
                 <footer>
                     <Footer />
