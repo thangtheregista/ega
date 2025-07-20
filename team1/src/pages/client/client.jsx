@@ -11,6 +11,9 @@ import ModernFurniture from "../../components/modern-furniture/modern-furniture.
 import InspirationCorner from "../../components/InspirationCorner/InspirationCorner.jsx";
 import Policies from "../../components/Policies/Policies.jsx";
 import KitchenFurniture from "../../components/kitchen-furniture/kitchen-furniture.jsx";
+import CertificationSection from "../../components/certificate/CertificationSection.jsx";
+import HappyBedroomSection from "../../components/happyBedroom/HappyBedroomSection.jsx";
+import InteriorCollectionSection from "../../components/collection/InteriorCollectionSection.jsx";
 function Client() {
     return (
         <>
@@ -23,6 +26,9 @@ function Client() {
                     <ProductCategories />
                     <CouponList />
                     <HappySummer />
+                    <CertificationSection />
+                    <HappyBedroomSection />
+                    <InteriorCollectionSection />
                     <ModernFurniture />
                     <KitchenFurniture />
                     <InspirationCorner/>
