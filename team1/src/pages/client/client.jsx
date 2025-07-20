@@ -10,6 +10,7 @@ import Footer from './../../components/Navbar/Footer';
 import ModernFurniture from "../../components/modern-furniture/modern-furniture.jsx";
 import InspirationCorner from "../../components/InspirationCorner/InspirationCorner.jsx";
 import Policies from "../../components/Policies/Policies.jsx";
+import KitchenFurniture from "../../components/kitchen-furniture/kitchen-furniture.jsx";
 function Client() {
     return (
         <>
@@ -23,6 +24,7 @@ function Client() {
                     <CouponList />
                     <HappySummer />
                     <ModernFurniture />
+                    <KitchenFurniture />
                     <InspirationCorner/>
                     <Policies/>
                 </main>
