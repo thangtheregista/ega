@@ -11,7 +11,8 @@
       "salePrice": "3.250.000₫",
       "originalPrice": "5.690.000₫",
       "salePercent": "-43%",
-      "id": "1"
+      "category": "kitchen",
+      "id": "17"
     },
     {
       "pic": "https://bizweb.dktcdn.net/thumb/1024x1024/100/491/756/products/rectangle4a316c107f7ee49a8a645.jpg?v=1721288311300",
@@ -24,7 +25,8 @@
       "salePrice": "3.900.000₫",
       "originalPrice": "5.290.000₫",
       "salePercent": "-26%",
-      "id": "2"
+      "category": "kitchen",
+      "id": "18"
     },
     {
       "pic": "https://bizweb.dktcdn.net/thumb/1024x1024/100/491/756/products/frame2a419e92b8cab4a2386c4d456.jpg?v=1721288316737",
@@ -37,7 +39,8 @@
       "salePrice": "7.290.000₫",
       "originalPrice": "8.300.000₫",
       "salePercent": "-13%",
-      "id": "3"
+      "category": "kitchen",
+      "id": "19"
     },
     {
       "pic": "https://bizweb.dktcdn.net/thumb/1024x1024/100/491/756/products/frame2bf1e2993d07c45b4a271eae5.jpg?v=1721288314627",
@@ -50,7 +53,8 @@
       "salePrice": "6.540.000₫",
       "originalPrice": "7.929.000₫",
       "salePercent": "-18%",
-      "id": "4"
+      "category": "kitchen",
+      "id": "20"
     },
     {
       "pic": "https://bizweb.dktcdn.net/thumb/1024x1024/100/491/756/products/frame524bae178285a4128984b3678.jpg?v=1721288329970",
@@ -63,7 +67,8 @@
       "salePrice": "6.187.500₫",
       "originalPrice": "8.250.000₫",
       "salePercent": "-25%",
-      "id": "5"
+      "category": "kitchen",
+      "id": "21"
     },
     {
       "pic": "https://bizweb.dktcdn.net/thumb/1024x1024/100/491/756/products/frame5afde6a6e40de4345b66eb5b4.jpg?v=1721288326223",
@@ -76,7 +81,8 @@
       "salePrice": "11.250.000₫",
       "originalPrice": "13.500.000₫",
       "salePercent": "-17%",
-      "id": "6"
+      "category": "kitchen",
+      "id": "22"
     },
     {
       "pic": "https://bizweb.dktcdn.net/thumb/1024x1024/100/491/756/products/frame259e4e0e948ba4862862c72c4.jpg?v=1721288322357",
@@ -89,7 +95,8 @@
       "salePrice": "10.250.000₫",
       "originalPrice": "16.500.000₫",
       "salePercent": "-38%",
-      "id": "7"
+      "category": "kitchen",
+      "id": "23"
     },
     {
       "pic": "https://bizweb.dktcdn.net/thumb/1024x1024/100/491/756/products/2483365f858984211d44bbab1de0b7.jpg?v=1721288338917",
@@ -102,7 +109,8 @@
       "salePrice": "12.250.000₫",
       "originalPrice": "16.500.000₫",
       "salePercent": "-26%",
-      "id": "8"
+      "category": "kitchen",
+      "id": "24"
     }
   ]
 }
