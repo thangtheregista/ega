@@ -37,7 +37,6 @@ function Client() {
                     <KitchenFurniture />
                     <InspirationCorner/>
                     <Policies/>
-
                 </main>
                 <footer>
                     <Footer />

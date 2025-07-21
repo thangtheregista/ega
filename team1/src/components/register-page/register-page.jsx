@@ -2,7 +2,7 @@ import React from "react";
 import "./register-page.css"
 import {FaFacebookF, FaGoogle} from "react-icons/fa";
 
-function RegisterPage() {
+function Register() {
     return (
         <>
             <div className="register-page-container">
@@ -50,4 +50,4 @@ function RegisterPage() {
     )
 }
 
-export default RegisterPage;
+export default Register;

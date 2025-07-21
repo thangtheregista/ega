@@ -1,23 +1,30 @@
-/* Top bar */
 .top-bar {
-    background-color: #EC720E; /* Màu cam */
+  background-color: #EC720E;
   color: white;
   text-align: center;
   padding: 5px 30px;
   font-size: 14px;
 }
 
-/* Main header */
 .main-header {
-  background-color: white; /* Màu đen */
+  background-color: white;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 30px;
+  position: fixed;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+}
+.main-header.scrolled {
+  top: 0;
+  transition: top 0.2s;
 }
 
-/* Logo */
 .logo {
   display: flex;
   align-items: center;
@@ -44,7 +51,6 @@
 .nav {
   border: none;
 }
-/* Nav menu */
 .nav a {
   margin: 0 10px;
   text-decoration: none;
@@ -56,7 +62,6 @@
   text-decoration: underline;
 }
 
-/* Icons */
 .icons {
   display: flex;
   align-items: center;
