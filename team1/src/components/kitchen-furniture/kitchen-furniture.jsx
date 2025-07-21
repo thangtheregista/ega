@@ -6,7 +6,7 @@ function KitchenFurniture() {
     const [kitchenFurnitures, setKitchenFurnitures] = React.useState([]);
     const fetchKitchenFurnitures = async () => {
         try {
-            const response = await axios.get("http://localhost:3001/kitchen");
+            const response = await axios.get("https://6879bbed63f24f1fdca2bb76.mockapi.io/api/v1/ega-furniture/products?category=kitchen");
             setKitchenFurnitures(response.data);
         } catch (error) {
             console.error("Error fetching kitchen furniture data:", error);
@@ -25,7 +25,7 @@ function KitchenFurniture() {
     return (
         <>
             <div className="kitchen-furniture-container">
-                <h4 style={{color: "#ec720e"}}>Ưu đãi</h4>
+                <h4 style={{color: "#ec720e"}}>ƯU ĐÃI</h4>
                 <div className="kf-header">
                     <h2>NỘI THẤT PHÒNG BẾP</h2>
                     <a href="#watch-kf">Xem tất cả</a>

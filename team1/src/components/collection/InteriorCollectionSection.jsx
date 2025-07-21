@@ -1,13 +1,14 @@
 import React from 'react';
+import "./InteriorCollectionSection.css"
 
 const ProductLookbook = () => {
   return (
       <section
           className="section_lookbook"
-          style={{ marginBottom: '2rem', marginTop: '6rem' }}
+          style={{ marginBottom: '2rem', marginTop: '3rem' }}
       >
-        <div className="container px-4">
-          <div className="mx-auto" style={{ maxWidth: '1200px' }}>
+        <div className="container px-4" style={{maxWidth: "1250px"}}>
+          <div className="mx-auto" style={{ maxWidth: '1250px' }}>
             <div className="heading-bar text-center" style={{ marginBottom: '4rem' }}>
               <h2 className="heading-bar__title fw-bold" style={{ fontSize: '28px' }}>
                 BST NỘI THẤT DÀNH CHO BẠN
@@ -44,7 +45,7 @@ const ProductLookbook = () => {
                           className="img-fluid"
                           loading="lazy"
                           width="100%"
-                          style={{ maxWidth: '360px', height: 'auto' }}
+                          style={{ maxWidth: '450px', height: 'auto' }}
                           src={item.image}
                           alt={item.title}
                       />
@@ -70,7 +71,6 @@ const ProductLookbook = () => {
           </div>
         </div>
 
-        {/* Hover style */}
         <style>
           {`
                     .lookbook-link:hover {
