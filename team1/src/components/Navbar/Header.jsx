@@ -1,11 +1,9 @@
 import React, {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./Header.css";
-import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
-import Tooltip from 'react-bootstrap/Tooltip';
-
+import Dropdown from 'react-bootstrap/Dropdown';
+import { Link } from 'react-router-dom';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import {Popover} from "react-bootstrap";
 
 export default function Header() {
     const [show, setShow] = useState(false);
@@ -30,10 +28,11 @@ export default function Header() {
                     &#9776;
                 </button>
                 <div className="logo">
-                <span className="logo-icon"><img
+                <Link to="/"><span className="logo-icon"><img
                     src="https://bizweb.dktcdn.net/100/491/756/themes/956460/assets/logo.png?1746582633520"
-                    alt=""/></span>
-
+                    alt=""/>
+                </span>
+                </Link>
                 </div>
 
                 <nav className="nav desktop-nav">
@@ -47,21 +46,15 @@ export default function Header() {
                 <div className="icons">
                     <span className="flag">🇻🇳</span>
                     <span className="search">🔍</span>
-                    <OverlayTrigger
-                        trigger={['hover', 'focus']}
-                        placement="bottom"
-                        rootClose={false}
-                        overlay={
-                            <Popover id="popover-access">
-                                <Popover.Body>
-                                    <a href="">Đăng nhập</a> <br/>
-                                    <a href="">Đăng ký</a>
-                                </Popover.Body>
-                            </Popover>
-                        }
-                    >
-                        <span className="user">👤</span>
-                    </OverlayTrigger>
+                    <Dropdown align="end">
+                        <Dropdown.Toggle as="span" className="user" style={{ cursor: 'pointer' }}>
+                            👤
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu>
+                            <Dropdown.Item as={Link} to="/login">Đăng nhập</Dropdown.Item>
+                            <Dropdown.Item as={Link} to="/register">Đăng ký</Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
                     <span className="cart">🛒<span className="cart-count">0</span>
                     </span>
                 </div>

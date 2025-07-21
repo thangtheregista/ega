@@ -1,5 +1,6 @@
 .register-page-container {
     width: 100vw;
+    margin: 5.5rem 0 2rem 0;
 }
 .register-page-wrapper {
     max-width: 1640px;
