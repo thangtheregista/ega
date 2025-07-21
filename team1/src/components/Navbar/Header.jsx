@@ -1,18 +1,31 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./Header.css";
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
 
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import {Popover} from "react-bootstrap";
+
 export default function Header() {
     const [show, setShow] = useState(false);
-
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 0);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
     return (
         <div>
             <div className="top-bar">
                 FREESHIP VỚI ĐƠN HÀNG TỪ 5000K
             </div>
-            <div className="main-header">
+            <div className={`main-header${scrolled ? ' scrolled' : ''}`}>
                 <button className="offcanvas-toggle" onClick={handleShow}>
                     &#9776;
                 </button>
@@ -34,9 +47,22 @@ export default function Header() {
                 <div className="icons">
                     <span className="flag">🇻🇳</span>
                     <span className="search">🔍</span>
-                    <span className="user">👤</span>
-                    <span className="cart">
-            🛒           <span className="cart-count">0</span>
+                    <OverlayTrigger
+                        trigger={['hover', 'focus']}
+                        placement="bottom"
+                        rootClose={false}
+                        overlay={
+                            <Popover id="popover-access">
+                                <Popover.Body>
+                                    <a href="">Đăng nhập</a> <br/>
+                                    <a href="">Đăng ký</a>
+                                </Popover.Body>
+                            </Popover>
+                        }
+                    >
+                        <span className="user">👤</span>
+                    </OverlayTrigger>
+                    <span className="cart">🛒<span className="cart-count">0</span>
                     </span>
                 </div>
             </div>
