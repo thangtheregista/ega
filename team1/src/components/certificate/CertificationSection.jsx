@@ -22,10 +22,11 @@ export default function CertificationSection() {
 
   return (
       <div style={styles.wrapper}>
-        <h4
+        <h4 className="text-center"
             style={styles.sectionTitle}
             onMouseEnter={(e) => e.target.style.color = "#f97b22"}
             onMouseLeave={(e) => e.target.style.color = "#000"}
+            onMouseOver={(e) => e.target.style.cursor = "pointer"}
         >
           CHỨNG NHẬN CỦA CHÚNG TÔI
         </h4>

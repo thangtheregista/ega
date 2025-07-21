@@ -6,7 +6,7 @@ function ModernFurniture() {
     const [furnitures, setFurnitures] = React.useState([]);
     const fetchFurnitures = async () => {
         try {
-            const response = await axios.get("https://6879bbed63f24f1fdca2bb76.mockapi.io/api/v1/ega-furniture/furnitures");
+            const response = await axios.get("https://6879bbed63f24f1fdca2bb76.mockapi.io/api/v1/ega-furniture/products?category=furnitures");
             setFurnitures(response.data);
         } catch (error) {
             console.error("Error fetching furniture data:", error);
