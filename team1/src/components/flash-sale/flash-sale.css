@@ -1,0 +1,18 @@
+.flash-sale-container {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 5rem 4rem;
+    background-color: #FCF4EB;
+}
+.fs-banner img {
+    width: 1300px;
+    height: 207px;
+    margin: 0 auto;
+}
+.fs-allProducts {
+    width: 1320px;
+    height: 1347.06px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    margin: 4rem auto;
+}

@@ -1,7 +1,7 @@
 .coupon-list {
     max-width: 1640px;
     width: 100%;
-    margin: 70px auto 0 ;
+    margin: 3rem auto 0 ;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -12,6 +12,9 @@
     display: flex;
     flex-direction: row;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: #FFFFFF;
+    width: 302.498px;
+    height: 121.977px;
 }
 .coupon-list .coupon .coupon__icon {
     display: flex;
@@ -69,8 +72,8 @@
 .coupon__info-box {
     display: none;
     position: absolute;
-    top: -400%;
-    right: 100%;
+    top: -320%;
+    right: -30%;
     background: #fff;
     border: 1px solid #ddd;
     z-index: 10;
