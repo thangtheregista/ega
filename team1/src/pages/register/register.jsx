@@ -3,13 +3,16 @@ import useDocumentTitle from "../../components/useDocumentTitle/useDocumentTitle
 import Header from "../../components/Navbar/Header.jsx";
 import Register from "../../components/register-page/register-page.jsx";
 import Footer from "../../components/Navbar/Footer.jsx";
+import ShopLayout from "../../layouts/shop/ShopLayout.jsx";
 function RegisterPage() {
     useDocumentTitle("Đăng ký tài khoản")
     return (
         <>
-            <Header />
-            <Register />
-            <Footer />
+            <ShopLayout>
+                <nav><Header /></nav>
+                <main><Register /></main>
+                <footer><Footer /></footer>
+            </ShopLayout>
         </>
     )
 }

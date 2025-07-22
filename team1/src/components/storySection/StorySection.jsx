@@ -58,7 +58,7 @@ const StorySection = () => {
     font-weight: 500;
     font-size: 16px;
     color: #000;
-    text-decoration: underline; /* gạch chân luôn luôn */
+    text-decoration: underline;
     transition: color 0.3s ease;
 }
 

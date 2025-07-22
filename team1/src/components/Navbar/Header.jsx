@@ -51,8 +51,8 @@ export default function Header() {
                             👤
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
-                            <Dropdown.Item as={Link} to="/login">Đăng nhập</Dropdown.Item>
-                            <Dropdown.Item as={Link} to="/register">Đăng ký</Dropdown.Item>
+                            <Dropdown.Item as={Link} to="/ega/login">Đăng nhập</Dropdown.Item>
+                            <Dropdown.Item as={Link} to="/ega/register">Đăng ký</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                     <span className="cart">

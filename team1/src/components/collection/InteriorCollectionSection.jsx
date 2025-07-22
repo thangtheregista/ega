@@ -7,8 +7,8 @@ const ProductLookbook = () => {
           className="section_lookbook"
           style={{ marginBottom: '2rem', marginTop: '3rem' }}
       >
-        <div className="container px-4" style={{maxWidth: "1250px"}}>
-          <div className="mx-auto" style={{ maxWidth: '1250px' }}>
+        <div className="container px-4" style={{maxWidth: "1325px"}}>
+          <div className="mx-auto" style={{ maxWidth: '1325px' }}>
             <div className="heading-bar text-center" style={{ marginBottom: '4rem' }}>
               <h2 className="heading-bar__title fw-bold" style={{ fontSize: '28px' }}>
                 BST NỘI THẤT DÀNH CHO BẠN

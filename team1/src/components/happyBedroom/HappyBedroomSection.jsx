@@ -6,7 +6,7 @@ const HappyBedroomSection = () => {
             <div className="container px-4">
                 <div
                     className="mx-auto"
-                    style={{maxWidth: '1250px', backgroundColor: '#ffebd4'}}
+                    style={{maxWidth: '1336px', backgroundColor: '#ffebd4'}}
                 >
                     <img
                         src="https://bizweb.dktcdn.net/100/491/756/themes/956460/assets/lookbook_oneproduct_img.jpg?1746582633520"
@@ -18,7 +18,7 @@ const HappyBedroomSection = () => {
                         }}
                     />
 
-                    <div className="py-5 px-4">
+                    <div className="py-4 px-4">
                         <h2 className="fw-bold mb-3" style={{fontSize: '28px'}}
                             onMouseOver={(e) => e.target.style.cursor = 'pointer'}
                             onMouseEnter={(e) => e.target.style.color = "#f97b22"}

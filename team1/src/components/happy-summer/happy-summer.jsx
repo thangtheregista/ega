@@ -4,6 +4,7 @@ import axios from "axios";
 import {ProgressBar} from "react-bootstrap";
 import HoverImage from "../HoverImage/hoverImage.jsx";
 import CountDownTimer from "../CountdownTimer/countdown-timer.jsx";
+import {useNavigate} from "react-router-dom";
 function HappySummer() {
     const [sofas, setSofas] = React.useState([]);
     const fetchSofas = async () => {
@@ -24,6 +25,7 @@ function HappySummer() {
             [sofaId]: picUrl
         }));
     };
+    const navigate = useNavigate();
     return (
         <>
             <div className="happy-summer-container">
@@ -78,7 +80,7 @@ function HappySummer() {
                         </div>
                     ))}
                 </div>
-                <button className="hs-btn">Xem tất cả</button>
+                <button className="hs-btn" onClick={() => navigate("/ega/flashsale")}>Xem tất cả</button>
             </div>
         </>
     )
