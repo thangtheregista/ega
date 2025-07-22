@@ -3,6 +3,7 @@ import "./flash-sale.css"
 import FlashSaleCountdown from "../flash-sale-countdown/flash-sale-countdown.jsx";
 import CouponList from "../CouponList/CouponList.jsx";
 import FlashSaleProducts from "../flash-sale-products/flash-sale-products.jsx";
+import FlashSaleWatched from "../flash-sale-watched/flash-sale-watched.jsx";
 function FlashSale() {
     return (
         <>
@@ -14,6 +15,9 @@ function FlashSale() {
                 <CouponList />
                 <div className="fs-allProducts">
                     <FlashSaleProducts />
+                </div>
+                <div className="fs-watched">
+                    <FlashSaleWatched />
                 </div>
             </div>
         </>
