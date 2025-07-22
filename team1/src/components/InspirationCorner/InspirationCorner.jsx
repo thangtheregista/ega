@@ -22,7 +22,7 @@ export default function InspirationCorner() {
                     </div>
                     <p className="inspiration__desc">Trang trí cầu thang là một phần quan trọng trong nội thất của một
                         ngôi nhà của bạn...</p>
-                    <a href="#" className="inspiration__read-more">Đọc tiếp</a>
+                    <a href="#" className="inspiration__read-more">Đọc tiếp...</a>
                 </article>
                 <article className="inspiration__card">
                     <a href="#">
@@ -35,7 +35,7 @@ export default function InspirationCorner() {
                         <span>⏱️ 2 phút đọc</span>
                     </div>
                     <p className="inspiration__desc">Cuộc sống vợ chồng rất quan trọng về vấn đề hòa hợp...</p>
-                    <a href="#" className="inspiration__read-more">Đọc tiếp</a>
+                    <a href="#" className="inspiration__read-more">Đọc tiếp...</a>
                 </article>
                 <article className="inspiration__card">
                     <a href="#">
@@ -49,7 +49,7 @@ export default function InspirationCorner() {
                     </div>
                     <p className="inspiration__desc">Việc bố trí sofa đúng cách không chỉ mang lại vẻ đẹp cho căn
                         phòng...</p>
-                    <a href="#" className="inspiration__read-more">Đọc tiếp</a>
+                    <a href="#" className="inspiration__read-more">Đọc tiếp...</a>
                 </article>
 
                 <article className="inspiration__card">
@@ -63,7 +63,7 @@ export default function InspirationCorner() {
                         <span>⏱️ 3 phút đọc</span>
                     </div>
                     <p className="inspiration__desc">Bí quyết nào tăng tài lộc cho ngôi nhà với Sofa góc cổ điển...</p>
-                    <a href="#" className="inspiration__read-more">Đọc tiếp</a>
+                    <a href="#" className="inspiration__read-more">Đọc tiếp...</a>
                 </article>
             </div>
         </div>

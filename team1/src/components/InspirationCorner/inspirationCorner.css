@@ -53,13 +53,13 @@
 
 .inspiration__read-more {
     font-size: 14px;
-    color: #000;
+    color: #0000EE;
     text-decoration: underline;
     font-weight: bold;
     margin: 0 15px 15px 15px;
 }
 .inspiration__read-more:hover {
-    color: #EC720E;
+    /*color: #EC720E;*/
 
 }
 .inspiration__card:hover .inspiration__card-title a{
