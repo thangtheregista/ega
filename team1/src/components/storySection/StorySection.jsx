@@ -99,6 +99,7 @@ const styles = {
     imageWrapper: {
         flex: '0 0 auto',
         maxWidth: '544px',
+        width: '100%',
     },
     image: {
         width: '100%',

@@ -55,7 +55,9 @@ export default function Header() {
                             <Dropdown.Item as={Link} to="/register">Đăng ký</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
-                    <span className="cart">🛒<span className="cart-count">0</span>
+                    <span className="cart">
+                        🛒
+                        {/*<span className="cart-count">0</span>*/}
                     </span>
                 </div>
             </div>
