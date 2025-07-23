@@ -15,7 +15,6 @@ import CertificationSection from "../../components/certificate/CertificationSect
 import HappyBedroomSection from "../../components/happyBedroom/HappyBedroomSection.jsx";
 import InteriorCollectionSection from "../../components/collection/InteriorCollectionSection.jsx";
 import MostViewedVideos from "../../components/MostViewedVideos/Video.jsx";
-import FollowInstagram from "../../components/FollowInstagram/FollowInstagram.jsx";
 import CustomerReview from "../../components/CustomerReview/CustomerReview.jsx";
 function Client() {
     return (
@@ -36,9 +35,7 @@ function Client() {
                     <StorySection />
                     <NewSofaBanner />
                     <KitchenFurniture />
-                    <InspirationCorner/>
                     <MostViewedVideos/>
-                    <FollowInstagram/>
                     <CustomerReview/>
                     <Policies/>
                 </main>
