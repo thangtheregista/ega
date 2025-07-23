@@ -44,9 +44,10 @@
     flex-direction: row;
     gap: 0.5rem;
 }
-@media (max-width: 1215px) {
+@media (max-width: 1313px) {
     .flash-sale-watched-container {
         grid-template-columns: repeat(3, minmax(259.994px, 1fr));
+
     }
 }
 @media (max-width: 915px) {
