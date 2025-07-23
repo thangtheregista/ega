@@ -1,11 +1,13 @@
 .flash-sale-container {
     box-sizing: border-box;
     margin: 0;
-    padding: 5rem 4rem 2rem 4rem;
+    padding: 5rem 10px 2rem 10px;
     background-color: #FCF4EB;
 }
 .fs-banner img {
-    width: 1300px;
+    display: block;
+    max-width: 1430px;
+    width: 100%;
     height: 207px;
     margin: 0 auto;
 }
@@ -22,6 +24,28 @@
     background-color: #FFFFFF;
     margin: 1rem auto;
     border-radius: 10px;
+}
+@media (max-width: 1316px) {
+    .fs-banner img {
+        width: 100%;
+        height: auto;
+    }
+    .fs-allProducts {
+        width: 100%;
+        height: auto;
+    }
+    .fs-watched {
+        width: 100%;
+        height: auto;
+    }
+    .fs-item {
+        width: 100%;
+        height: auto;
+    }
+    .fs-item img {
+        width: 100%;
+        height: auto;
+    }
 }
 @media (max-width: 1215px) {
     .fs-banner img {
