@@ -6,6 +6,7 @@
     grid-template-columns: repeat(5, minmax(259.994px, 1fr));
     justify-content: center;
     margin: 0 auto;
+    justify-items: center;
 }
 .watched-item {
     width: 259.994px;

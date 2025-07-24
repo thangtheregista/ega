@@ -5,6 +5,7 @@ import {Route, Routes} from "react-router-dom";
 import LoginPage from "./pages/login/login.jsx";
 import RegisterPage from "./pages/register/register.jsx";
 import WatchAllProducts from "./pages/watch-all-products/watch-all-products.jsx";
+import Dashboard from "./pages/admin/Dashboard.jsx";
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
             <Route path="/ega/login" element={<LoginPage />}></Route>
             <Route path="/ega/register" element={<RegisterPage />}></Route>
             <Route path="/ega/flashsale" element={<WatchAllProducts />}></Route>
+            <Route path="ega/dashboard" element={<Dashboard/>}></Route>
         </Routes>
     </>
   )

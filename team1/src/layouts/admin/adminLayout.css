@@ -1,0 +1,17 @@
+.admin-layout {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+}
+header {
+    grid-column: 1/-1;
+    grid-row: 1/2;
+}
+aside {
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+main {
+    grid-column: 2/-1;
+    grid-row: 2/3
+}
