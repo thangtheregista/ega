@@ -14,8 +14,8 @@ import KitchenFurniture from "../../components/kitchen-furniture/kitchen-furnitu
 import CertificationSection from "../../components/certificate/CertificationSection.jsx";
 import HappyBedroomSection from "../../components/happyBedroom/HappyBedroomSection.jsx";
 import InteriorCollectionSection from "../../components/collection/InteriorCollectionSection.jsx";
-import NewSofaBanner from "../../components/sofaBanner/NewSofaBanner.jsx";
-import StorySection from "../../components/storySection/StorySection.jsx";
+import MostViewedVideos from "../../components/MostViewedVideos/Video.jsx";
+import CustomerReview from "../../components/CustomerReview/CustomerReview.jsx";
 function Client() {
     return (
         <>
@@ -35,7 +35,8 @@ function Client() {
                     <StorySection />
                     <NewSofaBanner />
                     <KitchenFurniture />
-                    <InspirationCorner/>
+                    <MostViewedVideos/>
+                    <CustomerReview/>
                     <Policies/>
                 </main>
                 <footer>
