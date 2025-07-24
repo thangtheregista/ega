@@ -36,7 +36,39 @@ export default function Header() {
                 </div>
 
                 <nav className="nav desktop-nav">
-                    <a href="#">Sản phẩm</a>
+                    <a href="#" className="nav-item">Sản phẩm</a>
+                    <div className="dropdown-menu">
+                        <div className="dropdown-column">
+                            <h6>Nội thất</h6>
+                            <a href="#">Sofa phòng khách</a>
+                            <a href="#">Bàn ăn</a>
+                            <a href="#">Ghế ăn</a>
+                            <a href="#">Tủ và giá đỡ</a>
+                            <a href="#">Nội thất sân vườn</a>
+                        </div>
+                        <div className="dropdown-column">
+                            <h6>Đèn trang trí</h6>
+                            <a href="#">Đèn ngoài trời</a>
+                            <a href="#">Đèn tường</a>
+                            <a href="#">Đèn bàn</a>
+                            <a href="#">Đèn trần</a>
+                            <a href="#">Phụ kiện chống sét</a>
+                        </div>
+                        <div className="dropdown-column">
+                            <h6>Vật dụng trong nhà</h6>
+                            <a href="#">Gương</a>
+                            <a href="#">Móc và giá treo áo</a>
+                            <a href="#">Phụ kiện nhà bếp</a>
+                            <a href="#">Chân nến và đèn lồng</a>
+                            <a href="#">Bình hoa</a>
+                        </div>
+                        <div className="dropdown-column">
+                            <h6>Bộ sưu tập</h6>
+                            <a href="#">MỚI! Nâng cao nỗi nhớ</a>
+                            <a href="#">BST Nỗi nhớ</a>
+                            <a href="#">BST Bước ngoặt</a>
+                        </div>
+                    </div>
                     <a href="#">Phòng</a>
                     <a href="#">Khuyến mãi</a>
                     <a href="#">Góc cảm hứng</a>
@@ -47,7 +79,7 @@ export default function Header() {
                     <span className="flag">🇻🇳</span>
                     <span className="search">🔍</span>
                     <Dropdown align="end">
-                        <Dropdown.Toggle as="span" className="user" style={{ cursor: 'pointer' }}>
+                        <Dropdown.Toggle as="span" className="user" style={{cursor: 'pointer'}}>
                             👤
                         </Dropdown.Toggle>
                         <Dropdown.Menu>

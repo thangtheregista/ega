@@ -59,7 +59,7 @@
 
 @media (max-width: 615px) {
     .flash-sale-watched-container {
-        grid-template-columns: repeat(1, minmax(259.994px, 1fr));
+        grid-template-columns: repeat(1, minmax(300px, 1fr));
     }
     .coupon__details {
         width: 100%;
