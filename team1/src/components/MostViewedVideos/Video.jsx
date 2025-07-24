@@ -15,7 +15,7 @@ const videos = [
 export default function MostViewedVideos() {
   return (
     <div className="most-viewed-container">
-      <h2 className="title">VIDEO ĐƯỢC XEM NHIỀU NHẤT</h2>
+      <h2 className="mv-title">VIDEO ĐƯỢC XEM NHIỀU NHẤT</h2>
       <div className="video-list">
         {videos.map((video) => (
           <div className="video-card" key={video.id}>
@@ -29,7 +29,6 @@ export default function MostViewedVideos() {
               <source src={video.src} type={video.type} />
               Trình duyệt của bạn không hỗ trợ video.
             </video>
-            <div className="play-icon">&#9658;</div>
           </div>
         ))}
       </div>

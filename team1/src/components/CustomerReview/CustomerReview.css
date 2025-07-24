@@ -3,16 +3,16 @@
   width: 100%;
   min-height: 600px;
   background-color: #fff;
-  padding: 0;
   overflow: hidden;
   align-items: stretch;
+  margin: 0 1rem;
 }
 
 .review-left {
   flex: 1;
   background: linear-gradient(to bottom right, #5c2d0c, #a85b1c);
   color: white;
-  padding: 60px 40px;
+  padding: 60px 0 60px 60px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -61,29 +61,8 @@
   font-size: 100px;
   opacity: 0.1;
   position: absolute;
-  left: 20px;
+  left: 55px;
   bottom: 130px;
-}
-
-.arrow-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: #eee;
-  border: none;
-  padding: 10px 14px;
-  font-size: 18px;
-  border-radius: 5px;
-  cursor: pointer;
-  z-index: 10;
-}
-
-.arrow-button.left {
-  left: -15px;
-}
-
-.arrow-button.right {
-  right: -15px;
 }
 
 .review-center {
@@ -99,7 +78,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 0;
 }
 
 .review-right {
@@ -132,10 +110,9 @@
   opacity: 0.05;
   position: absolute;
   top: 30px;
-  right: 30px;
+  right: 40px;
 }
 
-/* Responsive */
 @media (max-width: 1024px) {
   .review-section {
     flex-direction: column;
@@ -148,13 +125,6 @@
     text-align: center;
   }
 
-  .arrow-button.left,
-  .arrow-button.right {
-    position: static;
-    transform: none;
-    margin: 10px;
-  }
-
   .review-image {
     width: 100%;
     height: auto;
@@ -164,5 +134,52 @@
   .quote-icon,
   .quote-icon-right {
     display: none;
+  }
+}
+@media (max-width: 915px) {
+  .review-left {
+    padding: 40px 20px;
+  }
+
+  .review-heading {
+    font-size: 28px;
+  }
+
+  .review-author h3 {
+    font-size: 24px;
+  }
+
+  .review-text {
+    font-size: 16px;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .review-stars {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 768px) {
+  .review-left {
+    padding: 40px 20px;
+  }
+
+  .review-heading {
+    font-size: 24px;
+  }
+
+  .review-author h3 {
+    font-size: 22px;
+  }
+
+  .review-text {
+    font-size: 16px;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .review-stars {
+    font-size: 24px;
   }
 }

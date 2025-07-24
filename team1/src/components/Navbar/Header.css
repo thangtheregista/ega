@@ -109,12 +109,6 @@
     display: block;
   }
 }
-/*@media (max-width: 368px) {*/
-/*  .logo-icon img {*/
-/*    max-width: 50px;*/
-/*    width: 100%;*/
-/*  }*/
-/*}*/
 .nav-item {
   position: relative;
 }
