@@ -2,17 +2,19 @@ import "./login.css"
 import { FaFacebookF } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
 import {useState} from "react";
+import {useNavigate} from "react-router-dom";
 
 export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate()
     const handleLogin = (e) => {
         e.preventDefault();
         const user = users.find(user => user.username === email && user.password === password);
         if (user) {
             switch (user.role) {
                 case "admin":
-                    window.location.href = "/admin";
+                    navigate("/ega/dashboard")
                     break;
                 case "supplier":
                     window.location.href = "/supplier";
