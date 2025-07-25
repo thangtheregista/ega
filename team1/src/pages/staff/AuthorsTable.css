@@ -1,0 +1,98 @@
+.table-container {
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  font-family: Arial, sans-serif;
+  width: 100vw;
+  box-sizing: border-box;
+
+  
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+ 
+  border: 1px solid #ddd;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1000px;
+
+  
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+thead {
+  background-color: #f9f9f9;
+}
+
+th, td {
+  padding: 16px;
+  text-align: left;
+  vertical-align: middle;
+  border-bottom: 1px solid #eee;
+}
+
+.author-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.author-cell img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+
+  
+  border: 1px solid #ccc;
+}
+
+.name {
+  font-weight: bold;
+  color: #333;
+}
+
+.email {
+  font-size: 0.9em;
+  color: #777;
+}
+
+.role {
+  font-weight: bold;
+}
+
+.team {
+  font-size: 0.9em;
+  color: #777;
+}
+
+.status {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.status.online {
+  background-color: #ccffd6;
+  color: #00a33e;
+}
+
+.status.offline {
+  background-color: #e4e4e4;
+  color: #444;
+}
+
+.edit-btn {
+  background: none;
+  border: none;
+  color: #4a90e2;
+  cursor: pointer;
+  font-weight: bold;
+}

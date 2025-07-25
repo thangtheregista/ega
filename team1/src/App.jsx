@@ -9,7 +9,6 @@ import Dashboard from "./pages/admin/Dashboard.jsx";
 import ScrollToTop from "./components/scroll-to-top/scroll-to-top.jsx";
 
 function App() {
-
     return (
         <>
             <ScrollToTop/>
@@ -22,6 +21,7 @@ function App() {
             </Routes>
         </>
     )
+
 }
 
 export default App
