@@ -5,6 +5,8 @@ import BarChart from "../../components/admin-sale-barchart/BarChart.jsx";
 import DoughnutChart from "../../components/admin-traffic-source-doughnut/DoughnutChart.jsx";
 import LatestProducts from "../../components/admin-latest-products/LatestProducts.jsx";
 import LatestOrders from "../../components/admin-latest-orders/LatestOrders.jsx";
+import AuthorsTable from "../staff/AuthorsTableList.jsx";
+import TotalCustomersCard from "../TotalCustomersCard/TotalCustomersCard.jsx";
 
 export default function Dashboard() {
     return(
@@ -22,6 +24,8 @@ export default function Dashboard() {
                     <div className="one">3</div>
                     <div className="one">4</div>
                     <BarChart/>
+                    <AuthorsTable/>
+                    <TotalCustomersCard/>
                     <DoughnutChart/>
                     <LatestProducts/>
                     <LatestOrders/>

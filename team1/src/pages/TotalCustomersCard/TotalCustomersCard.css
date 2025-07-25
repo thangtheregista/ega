@@ -1,0 +1,67 @@
+.card-container {
+  width: 100%;
+  max-width: 400px;
+  height: 200px; 
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1); 
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 32px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text-section .card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #666;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.card-number {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 12px 0;
+  color: #1e1e1e;
+}
+
+.card-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-down {
+  color: #e53935;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.status-desc {
+  font-size: 15px;
+  color: #999;
+}
+
+.icon-section .icon-circle {
+  background-color: #14b8a6;
+  border-radius: 50%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transform: translateY(-10px);
+}
+
+
+.card-icon {
+  color: white;
+  font-size: 32px;
+}
