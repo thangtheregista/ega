@@ -18,7 +18,9 @@ import MostViewedVideos from "../../components/MostViewedVideos/Video.jsx";
 import CustomerReview from "../../components/CustomerReview/CustomerReview.jsx";
 import NewSofaBanner from "../../components/sofaBanner/NewSofaBanner.jsx";
 import StorySection from "../../components/storySection/StorySection.jsx";
+import useDocumentTitle from "../../components/useDocumentTitle/useDocumentTitle.jsx";
 function Client() {
+    useDocumentTitle("EGA Furniture");
     return (
         <>
             <ShopLayout>

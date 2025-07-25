@@ -12,6 +12,8 @@ export default function Login() {
         e.preventDefault();
         const user = users.find(user => user.username === email && user.password === password);
         if (user) {
+            localStorage.setItem('isLoggedIn', 'true');
+            localStorage.setItem('userRole', user.role);
             switch (user.role) {
                 case "admin":
                     navigate("/ega/dashboard")
