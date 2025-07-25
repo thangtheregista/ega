@@ -5,8 +5,11 @@ import BarChart from "../../components/admin-sale-barchart/BarChart.jsx";
 import DoughnutChart from "../../components/admin-traffic-source-doughnut/DoughnutChart.jsx";
 import LatestProducts from "../../components/admin-latest-products/LatestProducts.jsx";
 import LatestOrders from "../../components/admin-latest-orders/LatestOrders.jsx";
-import AuthorsTable from "../staff/AuthorsTableList.jsx";
-import TotalCustomersCard from "../TotalCustomersCard/TotalCustomersCard.jsx";
+import AuthorsTable from "../../components/AuthorsTable/AuthorsTableList.jsx";
+import TotalCustomersCard from "../../components/TotalCustomersCard/TotalCustomersCard.jsx";
+import BudgetCard from "../../components/BudgetCard/BudgetCard.jsx";
+import RevenueCard from "../../components/RevenueCard/RevenueCard.jsx";
+import InvoicesCard from "../../components/InvoicesCard/InvoicesCard.jsx";
 
 export default function Dashboard() {
     return(
@@ -19,13 +22,14 @@ export default function Dashboard() {
                     <AdminSidebar/>
                 </aside>
                 <main>
-                    <div className="one">1</div>
-                    <div className="one">2</div>
-                    <div className="one">3</div>
-                    <div className="one">4</div>
+                    <div className="one"><BudgetCard/></div>
+                    <div className="one"><TotalCustomersCard /></div>
+                    <div className="one"><InvoicesCard /></div>
+                    <div className="one"><RevenueCard/></div>
+
                     <BarChart/>
-                    <AuthorsTable/>
-                    <TotalCustomersCard/>
+                    {/*<AuthorsTable/>*/}
+
                     <DoughnutChart/>
                     <LatestProducts/>
                     <LatestOrders/>

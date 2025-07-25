@@ -1,9 +1,9 @@
 import React from "react";
 import "./AuthorsTable.css";
-import anh1 from './images/anh1.jpg';
-import anh2 from './images/anh2.jpg';
-import anh3 from './images/anh3.jpg';
-import anh4 from './images/anh4.jpg';
+import anh1 from '../../pages/staff/images/anh1.jpg';
+import anh2 from '../../pages/staff/images/anh2.jpg';
+import anh3 from '../../pages/staff/images/anh3.jpg';
+import anh4 from '../../pages/staff/images/anh4.jpg';
 
 
 const authors = [
