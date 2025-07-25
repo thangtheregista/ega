@@ -6,20 +6,22 @@ import LoginPage from "./pages/login/login.jsx";
 import RegisterPage from "./pages/register/register.jsx";
 import WatchAllProducts from "./pages/watch-all-products/watch-all-products.jsx";
 import Dashboard from "./pages/admin/Dashboard.jsx";
+import ScrollToTop from "./components/scroll-to-top/scroll-to-top.jsx";
 
 function App() {
 
-  return (
-    <>
-        <Routes>
-            <Route path="/" element={<Client />}></Route>
-            <Route path="/ega/login" element={<LoginPage />}></Route>
-            <Route path="/ega/register" element={<RegisterPage />}></Route>
-            <Route path="/ega/flashsale" element={<WatchAllProducts />}></Route>
-            <Route path="ega/dashboard" element={<Dashboard/>}></Route>
-        </Routes>
-    </>
-  )
+    return (
+        <>
+            <ScrollToTop/>
+            <Routes>
+                <Route path="/" element={<Client/>}></Route>
+                <Route path="/ega/login" element={<LoginPage/>}></Route>
+                <Route path="/ega/register" element={<RegisterPage/>}></Route>
+                <Route path="/ega/flashsale" element={<WatchAllProducts/>}></Route>
+                <Route path="ega/dashboard" element={<Dashboard/>}></Route>
+            </Routes>
+        </>
+    )
 }
 
 export default App
