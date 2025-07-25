@@ -47,7 +47,7 @@ export default function Header() {
                     <span className="flag">🇻🇳</span>
                     <span className="search">🔍</span>
                     <Dropdown align="end">
-                        <Dropdown.Toggle as="span" className="user" style={{ cursor: 'pointer' }}>
+                        <Dropdown.Toggle as="span" className="user" style={{cursor: 'pointer'}}>
                             👤
                         </Dropdown.Toggle>
                         <Dropdown.Menu>

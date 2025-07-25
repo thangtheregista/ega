@@ -1,72 +1,32 @@
 .most-viewed-container {
-  padding: 35px 15px;
-  background-color: #f5f5f5;
-  overflow-x: auto;
+  padding: 35px 1rem;
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
 }
 
-.title {
+.mv-title {
   text-align: center;
   font-size: 32px;
-  font-weight: bold;
   margin-bottom: 40px;
-  color: #333;
 }
 
 .video-list {
   display: flex;
-  flex-wrap: nowrap;         /* ❗ Không cho xuống dòng */
-  gap: 24px;
-  overflow-x: auto;          /* ✅ Cuộn ngang khi tràn */
-  padding-bottom: 10px;
-}
-
-.video-card {
-  flex: 0 0 auto;             /* ❗ Giữ kích thước cố định */
-  width: 360px;
-  height: 340px;
-  position: relative;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  background-color: #000;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  overflow-x: auto;
+  max-width: 1600px;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .video-element {
+  max-width: 340px;
+  min-height: 340px;
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.play-icon {
-  position: absolute;
-  bottom: 12px;
-  right: 12px;
-  background: rgba(0, 0, 0, 0.6);
-  color: white;
-  padding: 10px;
-  border-radius: 50%;
-  font-size: 20px;
-  pointer-events: none;
-}
-
-/* Nút giữa video */
-.center-play-btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 40px;
-  background: rgba(0, 0, 0, 0.6);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 64px;
-  height: 64px;
-  cursor: pointer;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.video-card:hover .center-play-btn {
-  opacity: 1;
+  border-radius: 10px;
 }
