@@ -155,77 +155,81 @@ export default function Header() {
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                     <nav className="nav mobile-nav">
-                        <CButton
-                            className="mobile-nav__link"
-                            href="#"
-                            onClick={(event) => {
-                                event.preventDefault()
-                                setVisibleA(!visibleA)
-                            }}
-                        >
-                            Sản phẩm <MdKeyboardArrowDown />
-                        </CButton>
-                        <CCollapse visible={visibleA}>
-                            <CCard className="mt-3">
-                                <CCardBody>
-                                    <div className="">
-                                        <ul className="mobile-nav__submenu-list">
-                                            <li><a href="#" onClick={handleClose}>Nội thất</a></li>
-                                            <li><a href="#" onClick={handleClose}>Sofa phòng khách</a></li>
-                                            <li><a href="#" onClick={handleClose}>Bàn ăn</a></li>
-                                            <li><a href="#" onClick={handleClose}>Ghế ăn</a></li>
-                                            <li><a href="#" onClick={handleClose}>Tủ và giá đỡ</a></li>
-                                            <li><a href="#" onClick={handleClose}>Nội thất sân vườn</a></li>
-                                        </ul>
-                                        <ul className="mobile-nav__submenu-list">
-                                            <li><a href="#" onClick={handleClose}>Đèn trang trí</a></li>
-                                            <li><a href="#" onClick={handleClose}>Đèn ngoài trời</a></li>
-                                            <li><a href="#" onClick={handleClose}>Đèn tường</a></li>
-                                            <li><a href="#" onClick={handleClose}>Đèn bàn</a></li>
-                                            <li><a href="#" onClick={handleClose}>Đèn trần</a></li>
-                                            <li><a href="#" onClick={handleClose}>Phụ kiện chống sét</a></li>
-                                        </ul>
-                                        <ul className="mobile-nav__submenu-list">
-                                            <li><a href="#" onClick={handleClose}>Vật dụng trong nhà</a></li>
-                                            <li><a href="#" onClick={handleClose}>Gương</a></li>
-                                            <li><a href="#" onClick={handleClose}>Móc và giá treo áo</a></li>
-                                            <li><a href="#" onClick={handleClose}>Phụ kiện nhà bếp</a></li>
-                                            <li><a href="#" onClick={handleClose}>Chân nến và đèn lồng</a></li>
-                                            <li><a href="#" onClick={handleClose}>Phụ kiện chống sét</a></li>
-                                        </ul>
-                                        <ul className="mobile-nav__submenu-list">
-                                            <li><a href="#" onClick={handleClose}>Bộ sưu tập</a></li>
-                                            <li><a href="#" onClick={handleClose}>MỚI! Nâng cao nỗi nhớ</a></li>
-                                            <li><a href="#" onClick={handleClose}>BST Nỗi nhớ</a></li>
-                                            <li><a href="#" onClick={handleClose}>BST Bước ngoặc</a></li>
-                                        </ul>
-                                    </div>
-                                </CCardBody>
-                            </CCard>
-                        </CCollapse>
-                        <CButton
-                            className="mobile-nav__link"
-                            href="#"
-                            onClick={(event) => {
-                                event.preventDefault()
-                                setVisibleB(!visibleB)
-                            }}
-                        >
-                            Phòng <MdKeyboardArrowDown />
-                        </CButton>
-                        <CCollapse visible={visibleB}>
-                            <CCard className="mt-3">
-                                <CCardBody>
-                                    <div className="">
-                                        <ul className="mobile-nav__submenu-list__variant-b">
-                                            <li><a href="#" onClick={handleClose}>Phòng khách</a></li>
-                                            <li><a href="#" onClick={handleClose}>Phòng ngủ</a></li>
-                                            <li><a href="#" onClick={handleClose}>Phòng bếp</a></li>
-                                        </ul>
-                                    </div>
-                                </CCardBody>
-                            </CCard>
-                        </CCollapse>
+                        <div>
+                            <CButton
+                                className="mobile-nav__link"
+                                href="#"
+                                onClick={(event) => {
+                                    event.preventDefault()
+                                    setVisibleA(!visibleA)
+                                }}
+                            >
+                                Sản phẩm <MdKeyboardArrowDown />
+                            </CButton>
+                            <CCollapse visible={visibleA}>
+                                <CCard className="mt-1">
+                                    <CCardBody>
+                                        <div className="">
+                                            <ul className="mobile-nav__submenu-list">
+                                                <li><a href="#" onClick={handleClose}>Nội thất</a></li>
+                                                <li><a href="#" onClick={handleClose}>Sofa phòng khách</a></li>
+                                                <li><a href="#" onClick={handleClose}>Bàn ăn</a></li>
+                                                <li><a href="#" onClick={handleClose}>Ghế ăn</a></li>
+                                                <li><a href="#" onClick={handleClose}>Tủ và giá đỡ</a></li>
+                                                <li><a href="#" onClick={handleClose}>Nội thất sân vườn</a></li>
+                                            </ul>
+                                            <ul className="mobile-nav__submenu-list">
+                                                <li><a href="#" onClick={handleClose}>Đèn trang trí</a></li>
+                                                <li><a href="#" onClick={handleClose}>Đèn ngoài trời</a></li>
+                                                <li><a href="#" onClick={handleClose}>Đèn tường</a></li>
+                                                <li><a href="#" onClick={handleClose}>Đèn bàn</a></li>
+                                                <li><a href="#" onClick={handleClose}>Đèn trần</a></li>
+                                                <li><a href="#" onClick={handleClose}>Phụ kiện chống sét</a></li>
+                                            </ul>
+                                            <ul className="mobile-nav__submenu-list">
+                                                <li><a href="#" onClick={handleClose}>Vật dụng trong nhà</a></li>
+                                                <li><a href="#" onClick={handleClose}>Gương</a></li>
+                                                <li><a href="#" onClick={handleClose}>Móc và giá treo áo</a></li>
+                                                <li><a href="#" onClick={handleClose}>Phụ kiện nhà bếp</a></li>
+                                                <li><a href="#" onClick={handleClose}>Chân nến và đèn lồng</a></li>
+                                                <li><a href="#" onClick={handleClose}>Phụ kiện chống sét</a></li>
+                                            </ul>
+                                            <ul className="mobile-nav__submenu-list">
+                                                <li><a href="#" onClick={handleClose}>Bộ sưu tập</a></li>
+                                                <li><a href="#" onClick={handleClose}>MỚI! Nâng cao nỗi nhớ</a></li>
+                                                <li><a href="#" onClick={handleClose}>BST Nỗi nhớ</a></li>
+                                                <li><a href="#" onClick={handleClose}>BST Bước ngoặc</a></li>
+                                            </ul>
+                                        </div>
+                                    </CCardBody>
+                                </CCard>
+                            </CCollapse>
+                        </div>
+                        <div>
+                            <CButton
+                                className="mobile-nav__link"
+                                href="#"
+                                onClick={(event) => {
+                                    event.preventDefault()
+                                    setVisibleB(!visibleB)
+                                }}
+                            >
+                                Phòng <MdKeyboardArrowDown />
+                            </CButton>
+                            <CCollapse visible={visibleB}>
+                                <CCard className="mt-1">
+                                    <CCardBody>
+                                        <div className="">
+                                            <ul className="mobile-nav__submenu-list__variant-b">
+                                                <li><a href="#" onClick={handleClose}>Phòng khách</a></li>
+                                                <li><a href="#" onClick={handleClose}>Phòng ngủ</a></li>
+                                                <li><a href="#" onClick={handleClose}>Phòng bếp</a></li>
+                                            </ul>
+                                        </div>
+                                    </CCardBody>
+                                </CCard>
+                            </CCollapse>
+                        </div>
                         <a href="#" onClick={handleClose}>Khuyến mãi</a>
                         <a href="#" onClick={handleClose}>Góc cảm hứng</a>
                         <a href="#" onClick={handleClose}>Hướng dẫn thiết lập</a>
