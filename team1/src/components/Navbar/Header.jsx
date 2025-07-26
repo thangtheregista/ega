@@ -101,7 +101,24 @@ export default function Header() {
                 </nav>
 
                 <div className="icons">
-                    <span className="flag">🇻🇳</span>
+                    <Dropdown align="end">
+                        <Dropdown.Toggle as="span" className="flag" style={{cursor: 'pointer'}}>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Vietnam.svg"
+                                 alt="Flag of Vietnam" style={{width: '20px', height: '15px'}}/>
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu>
+                            <Dropdown.Item as={Link} to="#" data-lang="vi" title="Tiếng Việt">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Vietnam.svg"
+                                     alt="Flag of Vietnam" style={{width: '20px', height: '15px', marginRight: '5px'}}/>
+                                Tiếng Việt
+                            </Dropdown.Item>
+                            <Dropdown.Item as={Link} to="#" data-lang="us" title="Tiếng Anh">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg"
+                                     alt="Flag of USA" style={{width: '20px', height: '15px', marginRight: '5px'}}/>
+                                Tiếng Anh
+                            </Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
                     <span className="search">🔍</span>
                     <Dropdown align="end">
                         <Dropdown.Toggle as="span" className="user" style={{cursor: 'pointer'}}>
@@ -143,10 +160,7 @@ export default function Header() {
                             )}
                         </Dropdown.Menu>
                     </Dropdown>
-                    <span className="cart">
-                        🛒
-                        {/*<span className="cart-count">0</span>*/}
-                    </span>
+                    <span className="cart"> 🛒 {/*<span className="cart-count">0</span>*/} </span>
                 </div>
             </div>
             <Offcanvas show={show} onHide={handleClose} placement="start">
