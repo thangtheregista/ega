@@ -1,15 +1,8 @@
 .table-container {
   padding: 20px;
   background: #fff;
-  border-radius: 12px;
   font-family: Arial, sans-serif;
-  width: 100vw;
   box-sizing: border-box;
-
-  
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-
- 
   border: 1px solid #ddd;
   overflow-x: auto;
 }
@@ -18,8 +11,6 @@ table {
   width: 100%;
   border-collapse: collapse;
   min-width: 1000px;
-
-  
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
@@ -47,8 +38,6 @@ th, td {
   height: 42px;
   border-radius: 50%;
   object-fit: cover;
-
-  
   border: 1px solid #ccc;
 }
 

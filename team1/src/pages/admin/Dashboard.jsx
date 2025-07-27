@@ -22,17 +22,19 @@ export default function Dashboard() {
                     <AdminSidebar/>
                 </aside>
                 <main>
-                    <div className="one"><BudgetCard/></div>
-                    <div className="one"><TotalCustomersCard /></div>
-                    <div className="one"><InvoicesCard /></div>
-                    <div className="one"><RevenueCard/></div>
+                    <div className="dashboard">
+                        <div className="one"><BudgetCard/></div>
+                        <div className="one"><TotalCustomersCard /></div>
+                        <div className="one"><InvoicesCard /></div>
+                        <div className="one"><RevenueCard/></div>
 
-                    <BarChart/>
-                    {/*<AuthorsTable/>*/}
+                        <BarChart/>
+                        {/*<AuthorsTable/>*/}
 
-                    <DoughnutChart/>
-                    <LatestProducts/>
-                    <LatestOrders/>
+                        <DoughnutChart/>
+                        <LatestProducts/>
+                        <LatestOrders/>
+                    </div>
                 </main>
             </AdminLayout>
         </div>
