@@ -1,0 +1,82 @@
+.profile {
+    display: flex;
+    gap: 2rem;
+    height: 100%;
+    align-items: flex-start;
+}
+
+.profile__card,
+.edit-profile {
+    height: 100%;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    flex: 1;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.profile__title,
+.edit-profile__title {
+    margin-bottom: 1rem;
+}
+
+.profile__info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.profile__avatar {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.profile__name {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.profile__role {
+    margin: 0;
+    font-size: 0.8rem;
+    color: gray;
+}
+
+.profile__field {
+    margin-bottom: 1rem;
+}
+
+.profile__textarea,
+.profile__input,
+.edit-profile__field input,
+.edit-profile__field textarea,
+.edit-profile__field select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.3rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.profile__button,
+.edit-profile__button {
+    background: #7366ff;
+    border: none;
+    color: #fff;
+    padding: 0.7rem 2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.edit-profile__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.edit-profile__field--full {
+    grid-column: span 3;
+}

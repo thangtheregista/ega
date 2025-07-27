@@ -1,6 +1,6 @@
 .admin-layout {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 280px auto;
     grid-template-rows: auto auto;
 }
 .admin-layout header {
@@ -14,12 +14,14 @@
 .admin-layout main {
     grid-column: 2/-1;
     grid-row: 2/3;
+
+}
+.dashboard {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-auto-rows: 150px;
     gap: 20px ;
     padding: 40px;
-
 }
 .one {
     grid-column: span 3;
