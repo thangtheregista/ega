@@ -115,7 +115,7 @@ export default function Header() {
                             <Dropdown.Item as={Link} to="#" data-lang="us" title="Tiếng Anh">
                                 <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg"
                                      alt="Flag of USA" style={{width: '20px', height: '15px', marginRight: '5px'}}/>
-                                Tiếng Anh
+                                English
                             </Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
