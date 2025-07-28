@@ -8,7 +8,7 @@ export default function AdminSidebar() {
                 <a href="#" className="menu-item">Orders</a>
                 <a href="#" className="menu-item">Products</a>
                 <Link to="/ega/dashboard/staff" className="menu-item">Staff</Link>
-                <a href="#" className="menu-item">Customers</a>
+                <Link to="/ega/dashboard/customers" className="menu-item">Customers</Link>
                 <a href="#" className="menu-item"> Account</a>
 
             </div>
