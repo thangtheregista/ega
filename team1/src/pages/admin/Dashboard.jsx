@@ -18,7 +18,8 @@ export default function Dashboard() {
     useEffect(() => {
         const checkAdminLoggedIn = () => {
             const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-            if (!isLoggedIn) {
+            const userRole = localStorage.getItem("userRole");
+            if (!isLoggedIn || userRole !== "admin") {
                 alert("You are not logged in!");
                 navigate("/ega/login");
             }

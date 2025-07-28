@@ -108,3 +108,7 @@
     background-color: #E14B33;
     color: white;
 }
+.error-message {
+    color: red;
+    font-size: 14px;
+}
