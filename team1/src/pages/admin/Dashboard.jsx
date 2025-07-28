@@ -10,8 +10,21 @@ import TotalCustomersCard from "../../components/TotalCustomersCard/TotalCustome
 import BudgetCard from "../../components/BudgetCard/BudgetCard.jsx";
 import RevenueCard from "../../components/RevenueCard/RevenueCard.jsx";
 import InvoicesCard from "../../components/InvoicesCard/InvoicesCard.jsx";
+import {useEffect} from "react";
+import {useNavigate} from "react-router-dom";
 
 export default function Dashboard() {
+    const navigate = useNavigate();
+    useEffect(() => {
+        const checkAdminLoggedIn = () => {
+            const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+            if (!isLoggedIn) {
+                alert("You are not logged in!");
+                navigate("/ega/login");
+            }
+        }
+        checkAdminLoggedIn();
+    }, []);
     return(
         <div>
             <AdminLayout>
