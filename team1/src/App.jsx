@@ -11,8 +11,9 @@ import Staff from "./pages/staff/Staff.jsx";
 import AdminLayout from "./layouts/admin/AdminLayout.jsx";
 import AdminNav from "./components/admin-nav/AdminNav.jsx";
 import AdminSidebar from "./components/admin-sidebar/AdminSidebar.jsx";
-import AuthorsTable from "./components/AuthorsTable/AuthorsTableList.jsx";
 import StaffForm from "./components/StaffForm/StaffForm.jsx";
+import CustomersTable from "./components/admin-customers-table/CustomersTable.jsx";
+;
 
 function App() {
     return (
@@ -36,6 +37,21 @@ function App() {
                         <main>
                             <div className="staff">
                                 <StaffForm/>
+                            </div>
+                        </main>
+                    </AdminLayout>
+                }></Route>
+                <Route path="/ega/dashboard/customers" element={
+                    <AdminLayout>
+                        <header>
+                            <AdminNav/>
+                        </header>
+                        <aside>
+                            <AdminSidebar/>
+                        </aside>
+                        <main>
+                            <div className="staff">
+                                <CustomersTable/>
                             </div>
                         </main>
                     </AdminLayout>
