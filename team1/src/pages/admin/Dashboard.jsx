@@ -19,7 +19,7 @@ export default function Dashboard() {
         const checkAdminLoggedIn = () => {
             const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
             if (!isLoggedIn) {
-                alert("You are logged in!");
+                alert("You are not logged in!");
                 navigate("/ega/login");
             }
         }
