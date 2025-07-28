@@ -24,7 +24,7 @@ export default function Dashboard() {
             }
         }
         checkAdminLoggedIn();
-    }, [navigate]);
+    }, []);
     return(
         <div>
             <AdminLayout>
