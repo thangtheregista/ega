@@ -8,33 +8,7 @@ export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate()
-    const handleLogin = (e) => {
-        e.preventDefault();
-        const user = users.find(user => user.username === email && user.password === password);
-        if (user) {
-            localStorage.setItem('isLoggedIn', 'true');
-            localStorage.setItem('userRole', user.role);
-            switch (user.role) {
-                case "admin":
-                    navigate("/ega/dashboard")
-                    break;
-                case "supplier":
-                    window.location.href = "/supplier";
-                    break;
-                case "customer":
-                    window.location.href = "/customer";
-                    break;
-                case "staff":
-                    window.location.href = "/staff";
-                    break;
-                default:
-                    alert("Role not recognized");
-            }
-        } else {
-            alert("Invalid username or password");
-        }
-    }
-    const users = [
+    const authorizedUsers = [
         {
             username: "admin@gmail.com",
             password: "admin123",
@@ -46,16 +20,40 @@ export default function Login() {
             role: "supplier"
         },
         {
-            username: "customer@gmail.com",
-            password: "customer123",
-            role: "customer"
-        },
-        {
             username: "staff@gmail.com",
             password: "staff123",
             role: "staff"
         },
     ]
+    const handleLogin = (e) => {
+        e.preventDefault();
+        const egaCustomers = JSON.parse(localStorage.getItem("egaCustomers")) || [];
+        const user = authorizedUsers.find(user => user.username === email && user.password === password);
+        const customer = egaCustomers.find(customer => customer.email === email && customer.password === password);
+        if (user || customer) {
+            const role = user ? user.role : "customer";
+            localStorage.setItem('isLoggedIn', 'true');
+            localStorage.setItem('userRole', role);
+            switch (role) {
+                case "admin":
+                    navigate("/ega/dashboard")
+                    break;
+                case "supplier":
+                    window.location.href = "/supplier";
+                    break;
+                case "customer":
+                    navigate("/ega/customer");
+                    break;
+                case "staff":
+                    window.location.href = "/staff";
+                    break;
+                default:
+                    alert("Role not recognized");
+            }
+        } else {
+            alert("Invalid username or password");
+        }
+    }
     return(
         <div className="login-element">
             <div className="login-element__wrapper">
