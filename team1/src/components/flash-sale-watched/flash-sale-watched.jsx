@@ -6,7 +6,7 @@ function FlashSaleWatched() {
     const [watchedProducts, setWatchedProducts] = React.useState([]);
     const fetchWatchedProducts = async () => {
         try {
-            const response = await axios.get("https://6879bbed63f24f1fdca2bb76.mockapi.io/api/v1/ega-furniture/products?category=watched");
+            const response = await axios.get("https://6879bbed63f24f1fdca2bb76.mockapi.io/api/v1/ega-furniture/products?category=sofas");
             setWatchedProducts(response.data);
         } catch (error) {
             console.error("Error fetching watched products:", error);
@@ -26,7 +26,7 @@ function FlashSaleWatched() {
         <>
             <h1 style={{margin: "20px 20px 0 20px"}}>Sản phẩm đã xem</h1>
             <div className="flash-sale-watched-container">
-                {watchedProducts.map((product) => (
+                {watchedProducts.slice(0, 5).map((product) => (
                     <div className="watched-item" key={product.id}>
                         <div className="watched-img">
                             <HoverImage pic={product.pic} pic2={product.pic2} picName={product.name} picLink={picLinks[product.id] || ""} />
@@ -36,7 +36,7 @@ function FlashSaleWatched() {
                         <strong style={{ color: "red" }}>{product.salePrice}</strong>
                         <div className="watched-original-price">
                             <p style={{ color: "#969696", textDecoration: "line-through" }}>{product.originalPrice}</p>
-                            <div className="watched-sale-num">{product.salePercent}</div>
+                            <div className="watched-sale-num">-50%</div>
                         </div>
                         <div className="watched-smallPics">
                             {[product.small1, product.small2, product.small3].map((img, idx) => {
