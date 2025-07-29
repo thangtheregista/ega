@@ -1,40 +1,33 @@
 import "./login.css"
 import { FaFacebookF } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
+import axios from "axios";
 
 export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const navigate = useNavigate()
-    const authorizedUsers = [
-        {
-            username: "admin@gmail.com",
-            password: "admin123",
-            role: "admin"
-        },
-        {
-            username: "supplier@gmail.com",
-            password: "supplier123",
-            role: "supplier"
-        },
-        {
-            username: "staff@gmail.com",
-            password: "staff123",
-            role: "staff"
-        },
-    ]
+    const navigate = useNavigate();
+    const [users, setUsers] = useState([]);
+    const fetchUsers = async () => {
+        try {
+            const response = await axios.get("https://6887fd68adf0e59551b8be5e.mockapi.io/users/");
+            setUsers(response.data);
+        } catch (error) {
+            console.error("Error fetching users:", error);
+        }
+    }
+    useEffect(() => {
+        fetchUsers();
+    },[]);
     const handleLogin = (e) => {
         e.preventDefault();
-        const egaCustomers = JSON.parse(localStorage.getItem("egaCustomers")) || [];
-        const user = authorizedUsers.find(user => user.username === email && user.password === password);
-        const customer = egaCustomers.find(customer => customer.email === email && customer.password === password);
-        if (user || customer) {
-            const role = user ? user.role : "customer";
+        const user = users.find(user => user.email === email && user.password === password);
+        if (user) {
             localStorage.setItem('isLoggedIn', 'true');
-            localStorage.setItem('userRole', role);
-            switch (role) {
+            localStorage.setItem('userRole', user.role);
+            switch (user.role) {
                 case "admin":
                     navigate("/ega/dashboard")
                     break;

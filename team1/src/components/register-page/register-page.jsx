@@ -2,6 +2,7 @@ import React, {useEffect} from "react";
 import "./register-page.css"
 import {FaFacebookF, FaGoogle} from "react-icons/fa";
 import {useNavigate} from "react-router-dom";
+import axios from "axios";
 
 function Register() {
     const navigate = useNavigate();
@@ -10,36 +11,36 @@ function Register() {
         firstName: "",
         phone: "",
         email: "",
+        role: "customer",
         password: "",
         repeatPassword: "",
     });
-
+    const [users, setUsers] = React.useState([]);
+    const fetchUsers = async () => {
+        try {
+            const response = await axios.get("https://6887fd68adf0e59551b8be5e.mockapi.io/users/");
+            setUsers(response.data);
+        } catch (error) {
+            console.error("Error fetching users:", error);
+        }
+    }
     useEffect(() => {
-        const isLoggedIn = localStorage.getItem("isLoggedIn");
-        if (isLoggedIn) {
-            alert("Bạn đã đăng nhập, vui lòng đăng xuất trước khi đăng ký tài khoản mới.");
-            navigate("/ega/dashboard");
-        }
-        if (!localStorage.getItem("egaCustomers")) {
-            localStorage.setItem("egaCustomers", JSON.stringify([]));
-        }
-    }, []);
+        fetchUsers();
+    },[]);
 
     function handleChange(e) {
         setFormData({...formData, [e.target.name]: e.target.value});
     }
 
     const [errors, setErrors] = React.useState({});
-    const egaCustomers = JSON.parse(localStorage.getItem("egaCustomers")) || [];
-
     function handleValidate() {
         const newErrors = {};
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         const phoneRegex = /^(0|\+84)(\d{9,10})$/;
         if (!emailRegex.test(formData.email)) newErrors.email = "Email không hợp lệ.";
-        const isEmailExist = egaCustomers.some(customer => customer.email === formData.email);
+        const isEmailExist = users.some(customer => customer.email === formData.email);
         if (isEmailExist) newErrors.email = "Email đã tồn tại.";
-        const isPhoneExist = egaCustomers.some(customer => customer.phone === formData.phone);
+        const isPhoneExist = users.some(customer => customer.phone === formData.phone);
         if (isPhoneExist) newErrors.phone = "Số điện thoại đã tồn tại.";
         if (!phoneRegex.test(formData.phone)) newErrors.phone = "Số điện thoại không hợp lệ.";
         if (formData.password.length < 6) newErrors.password = "Mật khẩu phải có ít nhất 6 ký tự.";
@@ -49,7 +50,7 @@ function Register() {
         return newErrors;
     }
 
-    function handleSubmit(e) {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const errors = handleValidate();
         if (Object.keys(errors).length > 0) {
@@ -58,17 +59,24 @@ function Register() {
         } else {
             setErrors({});
         }
-        egaCustomers.push({
-            id: egaCustomers.length + 1,
-            role: "customer",
-            lastName: formData.lastName,
-            firstName: formData.firstName,
-            phone: formData.phone,
-            email: formData.email,
-            password: formData.password,
-        });
-        localStorage.setItem("egaCustomers", JSON.stringify(egaCustomers));
-        alert("Đăng ký thành công!");
+        const maxId = users.length > 0 ? Math.max(...users.map(u => u.id)) : 0;
+        try {
+            const newCustomer = {
+                id: maxId + 1,
+                lastName: formData.lastName,
+                firstName: formData.firstName,
+                phone: formData.phone,
+                email: formData.email,
+                role: formData.role,
+                password: formData.password
+            }
+            await axios.post("https://6887fd68adf0e59551b8be5e.mockapi.io/users/", newCustomer);
+            alert("Đăng ký thành công!");
+        } catch (error) {
+            console.error("Error creating new customer:", error);
+            alert("Đăng ký không thành công, vui lòng thử lại sau.");
+            return;
+        }
         localStorage.setItem("isLoggedIn", "true");
         localStorage.setItem("userRole", "customer");
         navigate("/");
