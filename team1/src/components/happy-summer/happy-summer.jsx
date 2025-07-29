@@ -34,7 +34,7 @@ function HappySummer() {
                     <CountDownTimer initHours={13} initMinutes={22} initSeconds={11} />
                 </div>
                 <div className="hs-body">
-                    {sofas.map((sofa) => (
+                    {sofas.slice(0, 8).map((sofa) => (
                         <div className="hs-item" key={sofa.id}>
                             <div className="hs-img">
                                 <HoverImage pic={sofa.pic} pic2={sofa.pic2} picName={sofa.name} picLink={picLinks[sofa.id] || ""} />

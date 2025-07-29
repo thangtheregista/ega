@@ -6,7 +6,7 @@ function FlashSaleProducts() {
     const [flashSaleProducts, setFlashSaleProducts] = React.useState([]);
     const fetchFlashSaleProducts = async () => {
         try {
-            const response = await axios.get("https://6879bbed63f24f1fdca2bb76.mockapi.io/api/v1/ega-furniture/products?category=flashSale");
+            const response = await axios.get("https://6879bbed63f24f1fdca2bb76.mockapi.io/api/v1/ega-furniture/products?category=sofas");
             setFlashSaleProducts(response.data);
         } catch (error) {
             console.error("Error fetching flash sale products:", error);
