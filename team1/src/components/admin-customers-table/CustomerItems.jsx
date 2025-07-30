@@ -19,7 +19,7 @@ export default function CustomerItems({currentItems}) {
                     <td>
                         <div className="email">{author.phone}</div>
                     </td>
-                    <td>{author.date}</td>
+
                     <td>
                         <button className="edit-btn">Block</button>
                         <button className="edit-btn">Reset Password</button>
