@@ -181,7 +181,7 @@ const FloatingButtons = () => {
                                 src="//bizweb.dktcdn.net/100/491/756/themes/956460/assets/addthis-phone.svg?1746582633520"
                                 alt="Gọi ngay cho chúng tôi"
                             />
-                            <span className="tooltip-text">Gọi ngay cho chúng tôi</span>
+                            <span className="tooltip-text">Hãy gọi ngay cho chúng tôi</span>
                         </a>
                     </li>
 
