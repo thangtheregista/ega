@@ -12,7 +12,7 @@ const FloatingButtons = () => {
     }, []);
 
     const scrollToTop = () => {
-        const scrollStep = -window.scrollY / (500 / 15); // 500ms duration, 15ms per frame
+        const scrollStep = -window.scrollY / (500 / 15);
         const scrollAnimation = () => {
             if (window.scrollY !== 0) {
                 window.scrollBy(0, scrollStep);
