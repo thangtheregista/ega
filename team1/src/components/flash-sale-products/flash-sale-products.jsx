@@ -2,6 +2,7 @@ import React from "react";
 import "./flash-sale-products.css"
 import axios from "axios";
 import HoverImage from "../HoverImage/hoverImage.jsx";
+import {Link} from "react-router-dom";
 function FlashSaleProducts() {
     const [flashSaleProducts, setFlashSaleProducts] = React.useState([]);
     const fetchFlashSaleProducts = async () => {
@@ -28,7 +29,9 @@ function FlashSaleProducts() {
                 {flashSaleProducts.map((product) => (
                     <div className="fs-item" key={product.id}>
                         <div className="fs-img">
-                            <HoverImage pic={product.pic} pic2={product.pic2} picName={product.name} picLink={picLinks[product.id] || ""} />
+                            <Link to={`/ega/product/${product.id}`} className="router-link">
+                                <HoverImage pic={product.pic} pic2={product.pic2} picName={product.name} picLink={picLinks[product.id] || ""} />
+                            </Link>
                             {product.mark && (
                                 <div className="fs-mark">{product.mark}</div>
                             )}
@@ -36,7 +39,10 @@ function FlashSaleProducts() {
                                 <div className="fs-note">{product.note}</div>
                             )}
                         </div>
-                        <h5>{product.name}</h5>
+                        <Link to={`/ega/product/${product.id}`} className="router-link">
+                            <h5>{product.name}</h5>
+
+                        </Link>
                         <strong>{product.rating}</strong> <br/>
                         <strong style={{ color: "red" }}>{product.salePrice}</strong>
                         <div className="fs-original-price">

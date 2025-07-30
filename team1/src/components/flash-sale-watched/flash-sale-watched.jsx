@@ -2,6 +2,7 @@ import React from "react";
 import "./flash-sale-watched.css"
 import axios from "axios";
 import HoverImage from "../HoverImage/hoverImage.jsx";
+import {Link} from "react-router-dom";
 function FlashSaleWatched() {
     const [watchedProducts, setWatchedProducts] = React.useState([]);
     const fetchWatchedProducts = async () => {
@@ -29,9 +30,13 @@ function FlashSaleWatched() {
                 {watchedProducts.slice(0, 5).map((product) => (
                     <div className="watched-item" key={product.id}>
                         <div className="watched-img">
-                            <HoverImage pic={product.pic} pic2={product.pic2} picName={product.name} picLink={picLinks[product.id] || ""} />
+                            <Link to={`/ega/product/${product.id}`} className="router-link">
+                                <HoverImage pic={product.pic} pic2={product.pic2} picName={product.name} picLink={picLinks[product.id] || ""} />
+                            </Link>
                         </div>
-                        <h5>{product.name}</h5>
+                        <Link to={`/ega/product/${product.id}`} className="router-link">
+                            <h5>{product.name}</h5>
+                        </Link>
                         <strong>{product.rating}</strong> <br/>
                         <strong style={{ color: "red" }}>{product.salePrice}</strong>
                         <div className="watched-original-price">
