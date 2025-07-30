@@ -2,6 +2,7 @@ import React from "react";
 import "./kitchen-furniture.css"
 import axios from "axios";
 import HoverImage from "../HoverImage/hoverImage.jsx";
+import {Link} from "react-router-dom";
 function KitchenFurniture() {
     const [kitchenFurnitures, setKitchenFurnitures] = React.useState([]);
     const fetchKitchenFurnitures = async () => {
@@ -34,9 +35,13 @@ function KitchenFurniture() {
                     {kitchenFurnitures.map((kitchen) => (
                         <div className="kitchen-furniture-item" key={kitchen.id}>
                             <div className="kitchen-furniture-img">
-                                <HoverImage pic={kitchen.pic} pic2={kitchen.pic2} picName={kitchen.name} picLink={picLinks[kitchen.id] || ""} />
+                                <Link to={`/ega/product/${kitchen.id}`} className="router-link">
+                                    <HoverImage pic={kitchen.pic} pic2={kitchen.pic2} picName={kitchen.name} picLink={picLinks[kitchen.id] || ""} />
+                                </Link>
                             </div>
-                            <h5>{kitchen.name}</h5>
+                            <Link to={`/ega/product/${kitchen.id}`} className="router-link">
+                                <h5>{kitchen.name}</h5>
+                            </Link>
                             <strong>{kitchen.rating}</strong> <br/>
                             <strong style={{color: "red"}}>{kitchen.salePrice}</strong>
                             <div className="kf-original-price">

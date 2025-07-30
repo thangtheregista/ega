@@ -2,6 +2,7 @@ import React from "react";
 import "./modern-furniture.css"
 import HoverImage from "../HoverImage/hoverImage.jsx";
 import axios from "axios";
+import {Link} from "react-router-dom";
 function ModernFurniture() {
     const [furnitures, setFurnitures] = React.useState([]);
     const fetchFurnitures = async () => {
@@ -34,9 +35,13 @@ function ModernFurniture() {
                     {furnitures.map((furniture) => (
                         <div className="furniture-item" key={furniture.id}>
                             <div className="furniture-img">
-                                <HoverImage pic={furniture.pic} pic2={furniture.pic2} picName={furniture.name} picLink={picLinks[furniture.id] || ""} />
+                                <Link to={`/ega/product/${furniture.id}`} className="router-link">
+                                    <HoverImage pic={furniture.pic} pic2={furniture.pic2} picName={furniture.name} picLink={picLinks[furniture.id] || ""} />
+                                </Link>
                             </div>
-                            <h5>{furniture.name}</h5>
+                            <Link to={`/ega/product/${furniture.id}`} className="router-link">
+                                <h5>{furniture.name}</h5>
+                            </Link>
                             <strong>{furniture.rating}</strong> <br/>
                             <strong style={{color: "red"}}>{furniture.salePrice}</strong>
                             <div className="mf-original-price">
