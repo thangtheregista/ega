@@ -38,7 +38,7 @@ const FloatingButtons = () => {
         .backtop {
           width: 44px;
           height: 44px;
-          background: #f97b22; /* Nền cam */
+          background: #f97b22;
           border-radius: 50%;
           display: flex;
           align-items: center;
@@ -50,13 +50,13 @@ const FloatingButtons = () => {
         }
 
         .backtop:hover {
-          background: #e0671d; /* Màu cam đậm hơn khi hover */
+          background: #e0671d;
         }
 
         .backtop svg {
           width: 20px;
           height: 20px;
-          fill: #fff; /* Đổi mũi tên thành màu trắng */
+          fill: #fff; 
         }
 
         .addThis_listing {
