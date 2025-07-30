@@ -19,6 +19,7 @@ import CustomerReview from "../../components/CustomerReview/CustomerReview.jsx";
 import NewSofaBanner from "../../components/sofaBanner/NewSofaBanner.jsx";
 import StorySection from "../../components/storySection/StorySection.jsx";
 import useDocumentTitle from "../../components/useDocumentTitle/useDocumentTitle.jsx";
+import FloatingButtons from "../../components/floatingButtons/FloatingButtons.jsx";
 function Client() {
     useDocumentTitle("EGA Furniture");
     return (
@@ -43,6 +44,7 @@ function Client() {
                     <CustomerReview/>
                     <InspirationCorner />
                     <Policies/>
+                    <FloatingButtons/>
                 </main>
                 <footer>
                     <Footer />
