@@ -12,7 +12,7 @@ const FloatingButtons = () => {
     }, []);
 
     const scrollToTop = () => {
-        const scrollStep = -window.scrollY / (500 / 15); // 500ms duration, 15ms per frame
+        const scrollStep = -window.scrollY / (500 / 15);
         const scrollAnimation = () => {
             if (window.scrollY !== 0) {
                 window.scrollBy(0, scrollStep);
@@ -38,7 +38,7 @@ const FloatingButtons = () => {
         .backtop {
           width: 44px;
           height: 44px;
-          background: #f97b22; /* Nền cam */
+          background: #f97b22;
           border-radius: 50%;
           display: flex;
           align-items: center;
@@ -50,13 +50,13 @@ const FloatingButtons = () => {
         }
 
         .backtop:hover {
-          background: #e0671d; /* Màu cam đậm hơn khi hover */
+          background: #e0671d;
         }
 
         .backtop svg {
           width: 20px;
           height: 20px;
-          fill: #fff; /* Đổi mũi tên thành màu trắng */
+          fill: #fff; 
         }
 
         .addThis_listing {
@@ -181,7 +181,7 @@ const FloatingButtons = () => {
                                 src="//bizweb.dktcdn.net/100/491/756/themes/956460/assets/addthis-phone.svg?1746582633520"
                                 alt="Gọi ngay cho chúng tôi"
                             />
-                            <span className="tooltip-text">Gọi ngay cho chúng tôi</span>
+                            <span className="tooltip-text">Hãy gọi ngay cho chúng tôi</span>
                         </a>
                     </li>
 
