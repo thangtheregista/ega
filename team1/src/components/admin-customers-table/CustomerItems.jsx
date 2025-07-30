@@ -8,7 +8,7 @@ export default function CustomerItems({currentItems}) {
                     <td className="author-cell">
                         <img src={author.avatar} alt={author.name} />
                         <div>
-                            <div className="name">{author.name}</div>
+                            <div className="name">{`${author.firstName} ${author.lastName}`}</div>
                             <div className="email">{author.email}</div>
                         </div>
                     </td>
