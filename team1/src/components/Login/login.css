@@ -1,6 +1,6 @@
 .login-element {
     margin: 5rem 0 2rem 0;
-    width: 100vw;
+    width: 100%;
 }
 .login-element__wrapper {
     max-width: 1640px;

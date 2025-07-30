@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import "../AuthorsTable/AuthorsTable.css";
 import anh1 from '../../pages/staff/images/anh1.jpg';
 
@@ -7,91 +7,103 @@ import CustomerItems from "./CustomerItems.jsx";
 import ReactPaginate from 'react-paginate';
 
 import "./customerTable.css"
+import axios from "axios";
 
-const authors = [
-    {
-        name: "John Michael 1",
-        email: "john@creative-tim.com",
-        location: "Vung Tau, Vietnam",
-        phone: "0123456789",
-        date: "23/04/18",
-        avatar: anh1
-    },
-    {
-        name: "John Michael 2",
-        email: "john@creative-tim.com",
-        location: "Vung Tau, Vietnam",
-        phone: "0123456789",
-        date: "23/04/18",
-        avatar: anh1
-    },
-    {
-        name: "John Michael 3",
-        email: "john@creative-tim.com",
-        location: "Vung Tau, Vietnam",
-        phone: "0123456789",
-        date: "23/04/18",
-        avatar: anh1
-    },
-    {
-        name: "John Michael 4",
-        email: "john@creative-tim.com",
-        location: "Vung Tau, Vietnam",
-        phone: "0123456789",
-        date: "23/04/18",
-        avatar: anh1
-    },
-    {
-        name: "John Michael 5",
-        email: "john@creative-tim.com",
-        location: "Vung Tau, Vietnam",
-        phone: "0123456789",
-        date: "23/04/18",
-        avatar: anh1
-    },
-    {
-        name: "John Michael 6",
-        email: "john@creative-tim.com",
-        location: "Vung Tau, Vietnam",
-        phone: "0123456789",
-        date: "23/04/18",
-        avatar: anh1
-    },
-    {
-        name: "John Michael 7",
-        email: "john@creative-tim.com",
-        location: "Vung Tau, Vietnam",
-        phone: "0123456789",
-        date: "23/04/18",
-        avatar: anh1
-    },
-    {
-        name: "John Michael 8",
-        email: "john@creative-tim.com",
-        location: "Vung Tau, Vietnam",
-        phone: "0123456789",
-        date: "23/04/18",
-        avatar: anh1
-    },
-    {
-        name: "John Michael 9",
-        email: "john@creative-tim.com",
-        location: "Vung Tau, Vietnam",
-        phone: "0123456789",
-        date: "23/04/18",
-        avatar: anh1
-    },
-    {
-        name: "John Michael 10",
-        email: "john@creative-tim.com",
-        location: "Vung Tau, Vietnam",
-        phone: "0123456789",
-        date: "23/04/18",
-        avatar: anh1
-    },
-];
+// const authors = [
+//     {
+//         name: "John Michael 1",
+//         email: "john@creative-tim.com",
+//         location: "Vung Tau, Vietnam",
+//         phone: "0123456789",
+//         date: "23/04/18",
+//         avatar: anh1
+//     },
+//     {
+//         name: "John Michael 2",
+//         email: "john@creative-tim.com",
+//         location: "Vung Tau, Vietnam",
+//         phone: "0123456789",
+//         date: "23/04/18",
+//         avatar: anh1
+//     },
+//     {
+//         name: "John Michael 3",
+//         email: "john@creative-tim.com",
+//         location: "Vung Tau, Vietnam",
+//         phone: "0123456789",
+//         date: "23/04/18",
+//         avatar: anh1
+//     },
+//     {
+//         name: "John Michael 4",
+//         email: "john@creative-tim.com",
+//         location: "Vung Tau, Vietnam",
+//         phone: "0123456789",
+//         date: "23/04/18",
+//         avatar: anh1
+//     },
+//     {
+//         name: "John Michael 5",
+//         email: "john@creative-tim.com",
+//         location: "Vung Tau, Vietnam",
+//         phone: "0123456789",
+//         date: "23/04/18",
+//         avatar: anh1
+//     },
+//     {
+//         name: "John Michael 6",
+//         email: "john@creative-tim.com",
+//         location: "Vung Tau, Vietnam",
+//         phone: "0123456789",
+//         date: "23/04/18",
+//         avatar: anh1
+//     },
+//     {
+//         name: "John Michael 7",
+//         email: "john@creative-tim.com",
+//         location: "Vung Tau, Vietnam",
+//         phone: "0123456789",
+//         date: "23/04/18",
+//         avatar: anh1
+//     },
+//     {
+//         name: "John Michael 8",
+//         email: "john@creative-tim.com",
+//         location: "Vung Tau, Vietnam",
+//         phone: "0123456789",
+//         date: "23/04/18",
+//         avatar: anh1
+//     },
+//     {
+//         name: "John Michael 9",
+//         email: "john@creative-tim.com",
+//         location: "Vung Tau, Vietnam",
+//         phone: "0123456789",
+//         date: "23/04/18",
+//         avatar: anh1
+//     },
+//     {
+//         name: "John Michael 10",
+//         email: "john@creative-tim.com",
+//         location: "Vung Tau, Vietnam",
+//         phone: "0123456789",
+//         date: "23/04/18",
+//         avatar: anh1
+//     },
+// ];
 
 export default function CustomersTable() {
+    const [authors, setAuthors] = useState([])
+    const fetchAuthors = async () => {
+        try {
+            const response = await axios.get("https://6887fd68adf0e59551b8be5e.mockapi.io/users/")
+            setAuthors(response.data.filter((author) => author.role === "customer"))
+        } catch (error) {
+            console.error("Error fetching authors:", error);
+        }
+    }
+
+    //react-paginate
     const [itemOffset, setItemOffset] = useState(0);
     const itemsPerPage = 6;
     const endOffset = itemOffset + itemsPerPage;
@@ -106,6 +118,9 @@ export default function CustomersTable() {
         );
         setItemOffset(newOffset);
     };
+    useEffect(() => {
+        fetchAuthors()
+    }, []);
     return(
 
             <div className="table-container">
@@ -124,7 +139,6 @@ export default function CustomersTable() {
                         <th>NAME</th>
                         <th>LOCATION</th>
                         <th>PHONE</th>
-                        <th>SIGNED UP</th>
                         <th></th>
                     </tr>
                     </thead>
