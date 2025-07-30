@@ -13,9 +13,12 @@ import AdminNav from "./components/admin-nav/AdminNav.jsx";
 import AdminSidebar from "./components/admin-sidebar/AdminSidebar.jsx";
 import StaffForm from "./components/StaffForm/StaffForm.jsx";
 import CustomersTable from "./components/admin-customers-table/CustomersTable.jsx";
+import ProductDetail from "./pages/ProductDetail/ProductDetail.jsx";
+import CartPage from "./pages/cart/CartPage.jsx";
 ;
 
 function App() {
+
     return (
         <>
             <ScrollToTop/>
@@ -24,7 +27,8 @@ function App() {
                 <Route path="/ega/login" element={<LoginPage/>}></Route>
                 <Route path="/ega/register" element={<RegisterPage/>}></Route>
                 <Route path="/ega/flashsale" element={<WatchAllProducts/>}></Route>
-                <Route path="/ega/product/:id" element={<div>Hello</div>}></Route>
+                <Route path="/ega/product/:id" element={<ProductDetail/>}></Route>
+                <Route path="/ega/cart" element={<CartPage/>}></Route>
                 <Route path="/ega/dashboard" element={<Dashboard/>}></Route>
                 <Route path="/ega/dashboard/staff" element={<Staff/>}></Route>
                 <Route path="/ega/dashboard/staff/add" element={

@@ -17,7 +17,7 @@ export default function Header() {
 
     const [visibleA, setVisibleA] = useState(false)
     const [visibleB, setVisibleB] = useState(false)
-
+    const [cartCount, setCartCount] = useState(0);
     useEffect(() => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 0);
@@ -33,6 +33,22 @@ export default function Header() {
         localStorage.removeItem('currentUser');
         navigate('/ega/login');
     }
+    useEffect(() => {
+        // Get cart from localStorage when header mounts
+        const updateCart = () => {
+            const savedCart = localStorage.getItem("cart");
+            if (savedCart) {
+                const cart = JSON.parse(savedCart);
+                // const count = cart.reduce((total, item) => total + item.quantity, 0);
+                const count = cart.length
+                setCartCount(count);
+            }
+        };
+
+        // Listen to storage changes
+        window.addEventListener("storage", updateCart);
+        return () => window.removeEventListener("storage", updateCart);
+    }, []);
     return (
         <div>
             <div className="top-bar">
@@ -161,7 +177,12 @@ export default function Header() {
                             )}
                         </Dropdown.Menu>
                     </Dropdown>
-                    <span className="cart"> 🛒 {/*<span className="cart-count">0</span>*/} </span>
+                    <span className="cart">
+                        🛒
+                        {cartCount > 0 && (
+                            <span className="cart-count">{cartCount}</span>
+                        )}
+                        {/*<span className="cart-count">0</span>*/} </span>
                 </div>
             </div>
             <Offcanvas show={show} onHide={handleClose} placement="start">

@@ -12,7 +12,6 @@ export default function AdminNav() {
             <div className="navbar-left">
                 <div className="logo">
                     <Link to="/"><img src="https://bizweb.dktcdn.net/100/491/756/themes/956460/assets/logo.png?1746582633520" alt="Logo"/></Link>
-
                 </div>
             </div>
             <div className="navbar-right">
