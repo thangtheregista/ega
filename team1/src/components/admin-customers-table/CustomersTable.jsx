@@ -1,96 +1,9 @@
 import React, {useEffect, useState} from "react";
 import "../AuthorsTable/AuthorsTable.css";
-import anh1 from '../../pages/staff/images/anh1.jpg';
-
-import {Link} from "react-router-dom";
 import CustomerItems from "./CustomerItems.jsx";
 import ReactPaginate from 'react-paginate';
-
 import "./customerTable.css"
 import axios from "axios";
-
-// const authors = [
-//     {
-//         name: "John Michael 1",
-//         email: "john@creative-tim.com",
-//         location: "Vung Tau, Vietnam",
-//         phone: "0123456789",
-//         date: "23/04/18",
-//         avatar: anh1
-//     },
-//     {
-//         name: "John Michael 2",
-//         email: "john@creative-tim.com",
-//         location: "Vung Tau, Vietnam",
-//         phone: "0123456789",
-//         date: "23/04/18",
-//         avatar: anh1
-//     },
-//     {
-//         name: "John Michael 3",
-//         email: "john@creative-tim.com",
-//         location: "Vung Tau, Vietnam",
-//         phone: "0123456789",
-//         date: "23/04/18",
-//         avatar: anh1
-//     },
-//     {
-//         name: "John Michael 4",
-//         email: "john@creative-tim.com",
-//         location: "Vung Tau, Vietnam",
-//         phone: "0123456789",
-//         date: "23/04/18",
-//         avatar: anh1
-//     },
-//     {
-//         name: "John Michael 5",
-//         email: "john@creative-tim.com",
-//         location: "Vung Tau, Vietnam",
-//         phone: "0123456789",
-//         date: "23/04/18",
-//         avatar: anh1
-//     },
-//     {
-//         name: "John Michael 6",
-//         email: "john@creative-tim.com",
-//         location: "Vung Tau, Vietnam",
-//         phone: "0123456789",
-//         date: "23/04/18",
-//         avatar: anh1
-//     },
-//     {
-//         name: "John Michael 7",
-//         email: "john@creative-tim.com",
-//         location: "Vung Tau, Vietnam",
-//         phone: "0123456789",
-//         date: "23/04/18",
-//         avatar: anh1
-//     },
-//     {
-//         name: "John Michael 8",
-//         email: "john@creative-tim.com",
-//         location: "Vung Tau, Vietnam",
-//         phone: "0123456789",
-//         date: "23/04/18",
-//         avatar: anh1
-//     },
-//     {
-//         name: "John Michael 9",
-//         email: "john@creative-tim.com",
-//         location: "Vung Tau, Vietnam",
-//         phone: "0123456789",
-//         date: "23/04/18",
-//         avatar: anh1
-//     },
-//     {
-//         name: "John Michael 10",
-//         email: "john@creative-tim.com",
-//         location: "Vung Tau, Vietnam",
-//         phone: "0123456789",
-//         date: "23/04/18",
-//         avatar: anh1
-//     },
-// ];
 
 export default function CustomersTable() {
     const [authors, setAuthors] = useState([])

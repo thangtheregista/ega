@@ -1,6 +1,12 @@
 import "./adminNav.css"
 import {Link} from "react-router-dom";
+import {useEffect, useState} from "react";
 export default function AdminNav() {
+    const [currentUser, setCurrentUser] = useState({});
+    useEffect(() => {
+        const storedUser = localStorage.getItem("currentUser");
+        setCurrentUser(storedUser ? JSON.parse(storedUser) : {});
+    }, []);
     return (
         <div className="navbar">
             <div className="navbar-left">
@@ -12,9 +18,9 @@ export default function AdminNav() {
             <div className="navbar-right">
 
                 <div className="profile">
-                    <img src="https://admin.pixelstrap.com/cuba/assets/images/dashboard/profile.png" alt="Profile"/>
+                    <img src={currentUser.avatar} alt="Profile"/>
                     <div className="profile-info">
-                        <span>Emay Walter</span>
+                        <span>{`${currentUser.lastName} ${currentUser.firstName}`}</span>
                         <span>Admin ▼</span>
                     </div>
                 </div>

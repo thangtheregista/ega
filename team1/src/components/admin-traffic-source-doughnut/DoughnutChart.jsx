@@ -16,7 +16,7 @@ export default function DoughnutChart() {
         <div className="doughnut-chart">
             <Doughnut
                 data={{
-                    labels: ["Phone", "Tablet", "Desktop"],
+                    labels: ["Lamps", "Beds", "Sofas"],
                     datasets: [
                         {
                             label: "Traffic Sources",
