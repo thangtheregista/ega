@@ -4,7 +4,7 @@ import axios from "axios";
 import {ProgressBar} from "react-bootstrap";
 import HoverImage from "../HoverImage/hoverImage.jsx";
 import CountDownTimer from "../CountdownTimer/countdown-timer.jsx";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 function HappySummer() {
     const [sofas, setSofas] = React.useState([]);
     const fetchSofas = async () => {
@@ -37,7 +37,9 @@ function HappySummer() {
                     {sofas.slice(0, 8).map((sofa) => (
                         <div className="hs-item" key={sofa.id}>
                             <div className="hs-img">
-                                <HoverImage pic={sofa.pic} pic2={sofa.pic2} picName={sofa.name} picLink={picLinks[sofa.id] || ""} />
+                                <Link to={`/ega/product/${sofa.id}`} className="router-link">
+                                    <HoverImage pic={sofa.pic} pic2={sofa.pic2} picName={sofa.name} picLink={picLinks[sofa.id] || ""} />
+                                </Link>
                                 {sofa.mark && (
                                     <div className="hs-mark">{sofa.mark}</div>
                                 )}
@@ -45,7 +47,9 @@ function HappySummer() {
                                     <div className="hs-note">{sofa.note}</div>
                                 )}
                             </div>
-                            <h5>{sofa.name}</h5>
+                            <Link to={`/ega/product/${sofa.id}`} className="router-link">
+                                <h5>{sofa.name}</h5>
+                            </Link>
                             <strong>{sofa.rating}</strong> <br/>
                             <strong style={{color: "red"}}>{sofa.salePrice}</strong>
                             <div className="original-price">

@@ -24,6 +24,7 @@ function App() {
                 <Route path="/ega/login" element={<LoginPage/>}></Route>
                 <Route path="/ega/register" element={<RegisterPage/>}></Route>
                 <Route path="/ega/flashsale" element={<WatchAllProducts/>}></Route>
+                <Route path="/ega/product/:id" element={<div>Hello</div>}></Route>
                 <Route path="/ega/dashboard" element={<Dashboard/>}></Route>
                 <Route path="/ega/dashboard/staff" element={<Staff/>}></Route>
                 <Route path="/ega/dashboard/staff/add" element={
