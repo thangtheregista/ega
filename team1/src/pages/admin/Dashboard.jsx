@@ -12,8 +12,10 @@ import RevenueCard from "../../components/RevenueCard/RevenueCard.jsx";
 import InvoicesCard from "../../components/InvoicesCard/InvoicesCard.jsx";
 import {useEffect} from "react";
 import {useNavigate} from "react-router-dom";
+import useDocumentTitle from "../../components/useDocumentTitle/useDocumentTitle.jsx";
 
 export default function Dashboard() {
+    useDocumentTitle("Admin - EGA Furniture")
     const navigate = useNavigate();
     useEffect(() => {
         const checkAdminLoggedIn = () => {

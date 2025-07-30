@@ -6,7 +6,7 @@ export default function LatestProducts() {
     const [latestProducts, setLatestProducts] = React.useState([]);
     const fetchLatestProducts = async () => {
         try {
-            const response = await axios.get("https://6879bbed63f24f1fdca2bb76.mockapi.io/api/v1/ega-furniture/products?category=watched");
+            const response = await axios.get("https://6879bbed63f24f1fdca2bb76.mockapi.io/api/v1/ega-furniture/products?category=sofas");
             setLatestProducts(response.data);
         } catch (error) {
             console.error("Error fetching watched products:", error);

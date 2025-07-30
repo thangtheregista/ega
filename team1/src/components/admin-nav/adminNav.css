@@ -60,20 +60,23 @@
 
 .profile {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    gap: 10px;
+    position: relative;
 }
 
 .profile img {
-    width: 32px;
-    height: 32px;
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
+    position: absolute;
+    left: -3.5rem;
 }
 
 .profile-info {
     display: flex;
     flex-direction: column;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .profile-info span:first-child {
