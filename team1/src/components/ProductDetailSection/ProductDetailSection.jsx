@@ -2,33 +2,14 @@ import "./productDetailSection.css"
 import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import axios from "axios";
+import {useCart} from "../../hooks/CartContext.jsx";
 export default function ProductDetailSection() {
     const {id} = useParams()
     const [product, setProduct] = useState([])
 
     const [mainImage, setMainImage] = useState([])
 
-    const [quantity, setQuantity] = useState(1)
-    const handlePlus = () => {
-        setQuantity(quantity + 1)
-    }
-    const handleMinus = () => {
-        setQuantity(quantity - 1)
-    }
-    const [cart, setCart] = useState(() => {
-        const saved = localStorage.getItem("cart");
-        return saved ? JSON.parse(saved) : [];
-    });
-    const handleAddToCart = () => {
-        const newItem = {
-            id: product.id,
-            name: product.name,
-            price: product.salePrice,
-            quantity: quantity,
-            image: mainImage
-        }
-        setCart([...cart, newItem])
-    }
+
     useEffect(() => {
         const fetchProduct = async () => {
             try {
@@ -43,10 +24,29 @@ export default function ProductDetailSection() {
 
         fetchProduct()
     }, [id]);
-    useEffect(() => {
-        localStorage.setItem("cart", JSON.stringify(cart));
-        window.dispatchEvent(new Event("storage"));
-    }, [cart]);
+
+    const [quantity, setQuantity] = useState(1)
+    const handlePlus = () => {
+        setQuantity(quantity + 1)
+    }
+    const handleMinus = () => {
+        setQuantity(quantity - 1)
+    }
+    const {addToCart} = useCart();
+
+    const handleAddToCart = () => {
+        const newItem = {
+            id: product.id,
+            name: product.name,
+            price: product.salePrice,
+            quantity: quantity,
+            image: mainImage,
+            checked: true
+        }
+        addToCart(newItem)
+    }
+
+
     return (
         <div className="product-page">
 
