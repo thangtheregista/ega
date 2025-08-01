@@ -2,6 +2,7 @@ import NothingInCart from "../NothingInCart/NothingInCart.jsx";
 import "./cartList.css"
 import {useCart} from "../../hooks/CartContext.jsx";
 import {useEffect} from "react";
+import {useNavigate} from "react-router-dom";
 
 export default function CartList() {
     const {cart} = useCart();
@@ -33,9 +34,12 @@ export default function CartList() {
         }
         return sum;
     }, 0);
-    useEffect(() => {
-        console.log(cart)
-    }, []);
+
+    const navigate = useNavigate()
+    const handleCheckout = () => {
+        const itemsToCheckout = cart.filter(item => item.checked);
+        navigate('/ega/checkout', { state: { items: itemsToCheckout } });
+    };
     return(
         <>
             {cart.length > 0 ?
@@ -78,23 +82,21 @@ export default function CartList() {
                             </div>
                         </div>
                         <div className="checkout">
-                            <div className="delivery-time">
-                                <h5>HẸN GIỜ NHẬN HÀNG</h5>
-                                <div className="d-flex ">
-                                    <div className="flex-grow-1">
-                                        <label htmlFor="date">Ngày nhận hàng</label>
-                                        <input type="date" id="date" value="2025-07-31" />
-                                    </div>
-                                    <div className="flex-grow-1">
-                                        <label htmlFor="time">Thời gian nhận hàng</label>
-                                        <select id="time">
-                                            <option>Chọn thời gian</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-
-                            </div>
+                            {/*<div className="delivery-time">*/}
+                            {/*    <h5>HẸN GIỜ NHẬN HÀNG</h5>*/}
+                            {/*    <div className="d-flex ">*/}
+                            {/*        <div className="flex-grow-1">*/}
+                            {/*            <label htmlFor="date">Ngày nhận hàng</label>*/}
+                            {/*            <input type="date" id="date" value="2025-07-31" />*/}
+                            {/*        </div>*/}
+                            {/*        <div className="flex-grow-1">*/}
+                            {/*            <label htmlFor="time">Thời gian nhận hàng</label>*/}
+                            {/*            <select id="time">*/}
+                            {/*                <option>Chọn thời gian</option>*/}
+                            {/*            </select>*/}
+                            {/*        </div>*/}
+                            {/*    </div>*/}
+                            {/*</div>*/}
 
 
 
@@ -109,7 +111,13 @@ export default function CartList() {
                                 <input type="text" placeholder="Nhập mã giảm giá"/>
                             </div>
 
-                            <button className="pay-btn">Thanh Toán</button>
+                            <button
+                                className="pay-btn"
+                                disabled={cart.filter(item => item.checked).length === 0}
+                                onClick={handleCheckout}
+                            >
+                                Thanh Toán
+                            </button>
 
                             <div className="payment-icons">
                                 <img src="https://www.citypng.com/public/uploads/preview/hd-visa-payment-logo-png-7017516947777256ndfrewd52.png" alt="Visa"/>

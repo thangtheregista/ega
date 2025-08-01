@@ -1,0 +1,112 @@
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+    min-height: 100vh;
+}
+
+.checkout-left,
+.checkout-right {
+    background: #fff;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.checkout-left {
+    flex: 2;
+}
+
+.checkout-right {
+    flex: 1;
+}
+
+.checkout-left h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.checkout-left h2 {
+    font-size: 18px;
+    margin: 20px 0 10px;
+}
+
+.checkout-left form input,
+.checkout-left form select,
+.checkout-left form textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    font-size: 14px;
+}
+
+.shipping-info {
+    background: #e1f5fe;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.payment-options label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.cart-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.cart-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.item-info p {
+    margin: 0;
+}
+.item-info p {
+    margin: 5px;
+}
+.checkout-right input[type="text"] {
+    width: calc(100% - 90px);
+    padding: 8px;
+}
+
+.checkout-right button {
+    padding: 8px 12px;
+    margin-top: 10px;
+}
+
+.total {
+    margin-top: 20px;
+}
+
+.total p {
+    margin: 5px 0;
+}
+
+.total h3 {
+    margin-top: 10px;
+}
+
+.order-btn {
+    display: block;
+    width: 100%;
+    background: #007bff;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.checkout-right a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #007bff;
+}
