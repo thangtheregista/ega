@@ -20,6 +20,7 @@ import NewSofaBanner from "../../components/sofaBanner/NewSofaBanner.jsx";
 import StorySection from "../../components/storySection/StorySection.jsx";
 import useDocumentTitle from "../../components/useDocumentTitle/useDocumentTitle.jsx";
 import FloatingButtons from "../../components/floatingButtons/FloatingButtons.jsx";
+import NotificationPopup from "../../components/NotificationPopup/NotificationPopup.jsx";
 
 function Client() {
     useDocumentTitle("EGA Furniture");
@@ -46,6 +47,7 @@ function Client() {
                     <InspirationCorner />
                     <Policies/>
                     <FloatingButtons/>
+                    <NotificationPopup/>
                 </main>
                 <footer>
                     <Footer />
