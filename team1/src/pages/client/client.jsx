@@ -20,6 +20,7 @@ import NewSofaBanner from "../../components/sofaBanner/NewSofaBanner.jsx";
 import StorySection from "../../components/storySection/StorySection.jsx";
 import useDocumentTitle from "../../components/useDocumentTitle/useDocumentTitle.jsx";
 import FloatingButtons from "../../components/floatingButtons/FloatingButtons.jsx";
+
 function Client() {
     useDocumentTitle("EGA Furniture");
     return (

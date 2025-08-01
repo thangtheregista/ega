@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 const FloatingButtons = () => {
     const [showTop, setShowTop] = useState(false);
@@ -7,22 +7,19 @@ const FloatingButtons = () => {
         const handleScroll = () => {
             setShowTop(window.scrollY > 100);
         };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    // const scrollToTop = () => {
-    //     const scrollStep = -window.scrollY / (500 / 15);
-    //     const scrollAnimation = () => {
-    //         if (window.scrollY !== 0) {
-    //             window.scrollBy(0, scrollStep);
-    //             requestAnimationFrame(scrollAnimation);
-    //         }
-    //     };
-    //     requestAnimationFrame(scrollAnimation);
-    // };
     const scrollToTop = () => {
-        window.scrollTo(0, 0);
+        const scrollStep = -window.scrollY / (500 / 15);
+        const scrollAnimation = () => {
+            if (window.scrollY !== 0) {
+                window.scrollBy(0, scrollStep);
+                requestAnimationFrame(scrollAnimation);
+            }
+        };
+        requestAnimationFrame(scrollAnimation);
     };
 
     return (
@@ -59,7 +56,7 @@ const FloatingButtons = () => {
         .backtop svg {
           width: 20px;
           height: 20px;
-          fill: #fff; 
+          fill: #fff;
         }
 
         .addThis_listing {
@@ -167,7 +164,7 @@ const FloatingButtons = () => {
                         }}
                     >
                         <svg viewBox="0 0 24 24">
-                            <path d="M12 4l-8 8h6v8h4v-8h6z"/>
+                            <path d="M12 4l-8 8h6v8h4v-8h6z" />
                         </svg>
                     </a>
                 )}
