@@ -12,14 +12,7 @@ const FloatingButtons = () => {
     }, []);
 
     const scrollToTop = () => {
-        const scrollStep = -window.scrollY / (500 / 15);
-        const scrollAnimation = () => {
-            if (window.scrollY !== 0) {
-                window.scrollBy(0, scrollStep);
-                requestAnimationFrame(scrollAnimation);
-            }
-        };
-        requestAnimationFrame(scrollAnimation);
+        window.scrollTo(0,0)
     };
 
     return (
