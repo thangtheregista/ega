@@ -32,7 +32,7 @@ const StorySection = () => {
                                     </i>
                                 </b>
                             </p>
-                            <Link to="/gioi-thieu" className="story-link">
+                            <Link to="/ega/intro" className="story-link">
                                 Xem chi tiết
                                 <svg
                                     className="story-icon"
