@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const StorySection = () => {
     return (
@@ -31,7 +32,7 @@ const StorySection = () => {
                                     </i>
                                 </b>
                             </p>
-                            <a href="/gioi-thieu" className="story-link">
+                            <Link to="/ega/intro" className="story-link">
                                 Xem chi tiết
                                 <svg
                                     className="story-icon"
@@ -43,7 +44,7 @@ const StorySection = () => {
                                 >
                                     <path d="M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z"/>
                                 </svg>
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -51,28 +52,28 @@ const StorySection = () => {
 
             <style>{`
                .story-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-family: "SVN-Gilroy", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    color: #000;
-    text-decoration: underline;
-    transition: color 0.3s ease;
-}
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 6px;
+                    font-family: "SVN-Gilroy", sans-serif;
+                    font-weight: 500;
+                    font-size: 16px;
+                    color: #000;
+                    text-decoration: underline;
+                    transition: color 0.3s ease;
+                }
 
-.story-link:hover {
-    color: #f97b22;
-}
+                .story-link:hover {
+                    color: #f97b22;
+                }
 
-.story-icon {
-    transition: transform 0.3s ease;
-}
+                .story-icon {
+                    transition: transform 0.3s ease;
+                }
 
-.story-link:hover .story-icon {
-    transform: translateX(4px);
-}   
+                .story-link:hover .story-icon {
+                    transform: translateX(4px);
+                }   
             `}</style>
         </section>
     );

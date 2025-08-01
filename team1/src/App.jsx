@@ -18,12 +18,11 @@ import CartPage from "./pages/cart/CartPage.jsx";
 import CheckoutPage from "./pages/checkout/CheckoutPage.jsx";
 import LatestOrders from "./components/admin-latest-orders/LatestOrders.jsx";
 import OrderList from "./components/OrderList/OrderList.jsx";
-;
+import Introduce from "./components/Introduce/Introduce.jsx";
 
 function App() {
 
-    return (
-        <>
+    return (<>
             <ScrollToTop/>
             <Routes>
                 <Route path="/" element={<Client/>}></Route>
@@ -34,55 +33,49 @@ function App() {
                 <Route path="/ega/cart" element={<CartPage/>}></Route>
                 <Route path="/ega/checkout" element={<CheckoutPage/>}></Route>
                 <Route path="/ega/dashboard" element={<Dashboard/>}></Route>
-                <Route path="/ega/dashboard/orders" element={
-                    <AdminLayout>
-                        <header>
-                            <AdminNav/>
-                        </header>
-                        <aside>
-                            <AdminSidebar/>
-                        </aside>
-                        <main>
-                            <OrderList/>
-                        </main>
-                    </AdminLayout>
-                }></Route>
+                <Route path="/ega/dashboard/orders" element={<AdminLayout>
+                    <header>
+                        <AdminNav/>
+                    </header>
+                    <aside>
+                        <AdminSidebar/>
+                    </aside>
+                    <main>
+                        <OrderList/>
+                    </main>
+                </AdminLayout>}></Route>
 
                 <Route path="/ega/dashboard/staff" element={<Staff/>}></Route>
-                <Route path="/ega/dashboard/staff/add" element={
-                    <AdminLayout>
-                        <header>
-                            <AdminNav/>
-                        </header>
-                        <aside>
-                            <AdminSidebar/>
-                        </aside>
-                        <main>
-                            <div className="staff">
-                                <StaffForm/>
-                            </div>
-                        </main>
-                    </AdminLayout>
-                }></Route>
-                <Route path="/ega/dashboard/customers" element={
-                    <AdminLayout>
-                        <header>
-                            <AdminNav/>
-                        </header>
-                        <aside>
-                            <AdminSidebar/>
-                        </aside>
-                        <main>
-                            <div className="staff">
-                                <CustomersTable/>
-                            </div>
-                        </main>
-                    </AdminLayout>
-                }></Route>
+                <Route path="/ega/dashboard/staff/add" element={<AdminLayout>
+                    <header>
+                        <AdminNav/>
+                    </header>
+                    <aside>
+                        <AdminSidebar/>
+                    </aside>
+                    <main>
+                        <div className="staff">
+                            <StaffForm/>
+                        </div>
+                    </main>
+                </AdminLayout>}></Route>
+                <Route path="/ega/dashboard/customers" element={<AdminLayout>
+                    <header>
+                        <AdminNav/>
+                    </header>
+                    <aside>
+                        <AdminSidebar/>
+                    </aside>
+                    <main>
+                        <div className="staff">
+                            <CustomersTable/>
+                        </div>
+                    </main>
+                </AdminLayout>}></Route>
+                <Route path="/ega/intro" element={<Introduce/>}></Route>
             </Routes>
         </>
     )
-
 }
 
 export default App
