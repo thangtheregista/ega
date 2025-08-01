@@ -5,7 +5,7 @@ export default function AdminSidebar() {
         <div className="sidebar">
             <div className="menu">
                 <Link to="/ega/dashboard" className="menu-item">Dashboard</Link>
-                <a href="#" className="menu-item">Orders</a>
+                <Link to="/ega/dashboard/orders" className="menu-item">Orders</Link>
                 <a href="#" className="menu-item">Products</a>
                 <Link to="/ega/dashboard/staff" className="menu-item">Staff</Link>
                 <Link to="/ega/dashboard/customers" className="menu-item">Customers</Link>
