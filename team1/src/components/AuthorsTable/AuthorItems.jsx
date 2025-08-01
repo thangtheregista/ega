@@ -1,11 +1,11 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
-export default function AuthorItems({currentItems}) {
-
+export default function AuthorItems({currentItems, handleDelete}) {
     return(
         <>
-            {currentItems.map((author, index) => (
-                <tr key={index}>
+            {currentItems.map((author) => (
+                <tr key={author.id}>
                     <td className="author-cell">
                         <img src={author.avatar} alt={author.name} />
                         <div>
@@ -24,9 +24,9 @@ export default function AuthorItems({currentItems}) {
                     </td>
                     <td>{author.date}</td>
                     <td>
-                        <button className="edit-btn">Edit</button>
-                        <button className="edit-btn">Delete</button>
-                        <button className="edit-btn">Reset Password</button>
+                        <Link to={`/ega/dashboard/staff/edit/${author.id}`}><button className="edit-btn">Edit</button></Link>
+                        <button className="delete-btn" onClick={() => handleDelete(author.id)}>Delete</button>
+                        <button className="reset-btn">Reset Password</button>
                     </td>
                 </tr>
             ))}

@@ -22,8 +22,6 @@ export default function AuthorsTable() {
     const itemsPerPage = 6;
     const endOffset = itemOffset + itemsPerPage;
     console.log(`Loading items from ${itemOffset} to ${endOffset}`);
-
-    const currentItems = authors.slice(itemOffset, endOffset);
     const pageCount = Math.ceil(authors.length / itemsPerPage);
     const handlePageClick = (event) => {
         const newOffset = (event.selected * itemsPerPage) % authors.length;
@@ -32,6 +30,21 @@ export default function AuthorsTable() {
         );
         setItemOffset(newOffset);
     };
+    const [searchItem, setSearchItem] = useState("");
+    const filteredStaffs = authors.filter((staff) => {
+        return staff.email.toLowerCase().includes(searchItem.toLowerCase());
+    })
+    const currentItems = filteredStaffs.slice(itemOffset, endOffset);
+    const handleDelete = async (id) => {
+        if (window.confirm("Are you sure?")) {
+            try {
+                await axios.delete(`https://6887fd68adf0e59551b8be5e.mockapi.io/users/${id}`);
+                fetchAuthors();
+            } catch (error) {
+                console.error(error);
+            }
+        }
+    }
     return (
         <div>
             <div className="table-container">
@@ -40,7 +53,7 @@ export default function AuthorsTable() {
                     <div className="d-flex w-100 align-items-center justify-content-between">
                         <div className="d-flex gap-2 align-items-center">
                             <span>Search:</span>
-                            <input type="text" placeholder="Search by name or email" />
+                            <input type="text" placeholder="Search by email only!" onChange={(e) => setSearchItem(e.target.value)} />
                         </div>
                         <Link to="/ega/dashboard/staff/add">
                             <button className="btn btn-primary">Add staff</button>
@@ -58,7 +71,7 @@ export default function AuthorsTable() {
                     </tr>
                     </thead>
                     <tbody>
-                    <AuthorItems currentItems={currentItems} />
+                    <AuthorItems currentItems={currentItems} handleDelete={handleDelete} />
                     </tbody>
                 </table>
                 <ReactPaginate
