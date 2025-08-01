@@ -28,18 +28,8 @@ function EditStaff() {
             console.error("Error fetching staff data:", error);
         }
     }
-    const [users, setUsers] = useState([]);
-    const fetchStaffs = async () => {
-        try {
-            const response = await axios.get("https://6887fd68adf0e59551b8be5e.mockapi.io/users?role=staff");
-            setUsers(response.data);
-        } catch (error) {
-            console.error("Error fetching users:", error);
-        }
-    }
     React.useEffect(() => {
         fetchStaff();
-        fetchStaffs();
     }, [id]);
     const navigate = useNavigate();
     if (!formData) {
@@ -52,30 +42,22 @@ function EditStaff() {
             [name]: name === "age" || name === "salary" ? parseFloat(value) : value
         }));
     }
-
     const [errors, setErrors] = useState({});
-
     function handleValidate() {
         const newErrors = {};
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-        const isEmailExist = users.some(staff => staff.email === formData.email);
         const phoneRegex = /^(0|\+84)(\d{9,10})$/;
-        const isPhoneExist = users.some(staff => staff.phone === formData.phone);
         if (!formData.firstName) newErrors.firstName = "Vui lòng nhập tên.";
         if (!formData.lastName) newErrors.lastName = "Vui lòng nhập họ.";
         if (!formData.email) {
             newErrors.email = "Vui lòng nhập email.";
         } else if (!emailRegex.test(formData.email)) {
             newErrors.email = "Email không hợp lệ.";
-        } else if (isEmailExist) {
-            newErrors.email = "Email đã tồn tại.";
         }
         if (!formData.phone) {
             newErrors.phone = "Vui lòng nhập số điện thoại.";
         } else if (!phoneRegex.test(formData.phone)) {
             newErrors.phone = "Số điện thoại không hợp lệ.";
-        } else if (isPhoneExist) {
-            newErrors.phone = "Số điện thoại đã tồn tại.";
         }
         if (!formData.address) newErrors.address = "Vui lòng nhập địa chỉ.";
         if (!formData.age || isNaN(formData.age) || formData.age <= 18 || formData.age > 60) {
@@ -185,11 +167,7 @@ function EditStaff() {
                             {errors.avatar && <span className="error-message">{errors.avatar}</span>}
                         </div>
                     </div>
-                    {/*<div className="edit-profile__field edit-profile__field--full">*/}
-                    {/*    <label htmlFor="about">About Me</label>*/}
-                    {/*    <textarea id="about" placeholder="Enter about your description"></textarea>*/}
-                    {/*</div>*/}
-                    <button className="edit-profile__button" onClick={(e) => handleSubmit(e)}>Add Profile</button>
+                    <button className="edit-profile__button" onClick={(e) => handleSubmit(e)}>Update Profile</button>
                 </div>
             </div>
         </>

@@ -19,6 +19,7 @@ import CheckoutPage from "./pages/checkout/CheckoutPage.jsx";
 import LatestOrders from "./components/admin-latest-orders/LatestOrders.jsx";
 import OrderList from "./components/OrderList/OrderList.jsx";
 import Introduce from "./components/Introduce/Introduce.jsx";
+import EditStaff from "./components/AuthorsTable/edit_staff/edit_staff.jsx";
 
 function App() {
 
@@ -56,6 +57,19 @@ function App() {
                     <main>
                         <div className="staff">
                             <StaffForm/>
+                        </div>
+                    </main>
+                </AdminLayout>}></Route>
+                <Route path="/ega/dashboard/staff/edit/:id" element={<AdminLayout>
+                    <header>
+                        <AdminNav/>
+                    </header>
+                    <aside>
+                        <AdminSidebar/>
+                    </aside>
+                    <main>
+                        <div className="staff">
+                            <EditStaff/>
                         </div>
                     </main>
                 </AdminLayout>}></Route>

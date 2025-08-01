@@ -92,10 +92,3 @@ th, td {
   cursor: pointer;
   font-weight: bold;
 }
-.reset-btn {
-  background: none;
-  border: none;
-  color: #f59e0b;
-  cursor: pointer;
-  font-weight: bold;
-}
