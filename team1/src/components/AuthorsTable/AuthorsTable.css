@@ -85,3 +85,10 @@ th, td {
   cursor: pointer;
   font-weight: bold;
 }
+.delete-btn {
+  background: none;
+  border: none;
+  color: #D3232A;
+  cursor: pointer;
+  font-weight: bold;
+}
