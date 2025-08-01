@@ -96,7 +96,7 @@ export default function CheckoutPage() {
     }, []);
     return(
         <div>
-            <div className="container">
+            <div className="checkout-container">
                 <div className="checkout-left">
                     <h1>EGA Furniture</h1>
                     <h2>Thông tin nhận hàng</h2>
