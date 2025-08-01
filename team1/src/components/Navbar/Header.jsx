@@ -6,6 +6,7 @@ import {Link, useNavigate} from 'react-router-dom';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { CButton, CCollapse, CCard, CCardBody } from '@coreui/react'
+import {useCart} from "../../hooks/CartContext.jsx";
 
 
 export default function Header() {
@@ -17,6 +18,7 @@ export default function Header() {
 
     const [visibleA, setVisibleA] = useState(false)
     const [visibleB, setVisibleB] = useState(false)
+
 
     useEffect(() => {
         const handleScroll = () => {
@@ -33,6 +35,7 @@ export default function Header() {
         localStorage.removeItem('currentUser');
         navigate('/ega/login');
     }
+    const {cartCount} = useCart()
     return (
         <div>
             <div className="top-bar">
@@ -161,7 +164,14 @@ export default function Header() {
                             )}
                         </Dropdown.Menu>
                     </Dropdown>
-                    <span className="cart"> 🛒 {/*<span className="cart-count">0</span>*/} </span>
+                    <Link to="/ega/cart" className="router-link">
+                        <span className="cart">
+                        🛒
+                            {cartCount > 0 && (
+                                <span className="cart-count">{cartCount}</span>
+                            )}
+                            {/*<span className="cart-count">0</span>*/} </span>
+                    </Link>
                 </div>
             </div>
             <Offcanvas show={show} onHide={handleClose} placement="start">

@@ -26,7 +26,7 @@ function Client() {
         <>
             <ShopLayout>
                 <nav>
-                    <Header />
+                    <Header/>
                 </nav>
                 <main>
                     <Carousels />

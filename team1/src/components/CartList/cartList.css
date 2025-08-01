@@ -1,0 +1,140 @@
+.cart-container {
+    max-width: 1200px;
+    margin: 81px auto 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.cart-container h1 {
+    margin-bottom: 10px;
+}
+.cart-wrapper {
+    display: flex;
+    gap:30px;
+    flex-wrap: wrap;
+}
+
+.cart-items-container {
+    flex: 1;
+}
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
+    border-bottom: 1px solid #ccc;
+    flex-wrap: wrap;
+}
+.remove-btn {
+    background-color: transparent;
+}
+.cart-item img {
+    width: 100px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.item-info {
+    flex: 2;
+}
+.item-info h3 {
+    font-size: 16px;
+}
+
+.item-qty {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.item-qty button {
+    padding: 5px 10px;
+}
+
+.item-price {
+    flex: 1;
+    text-align: right;
+    font-weight: bold;
+    color: red;
+}
+
+.order-note {
+    margin-bottom: 20px;
+}
+
+.order-note textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 12px;
+}
+
+.checkout {
+    background-color: #F7F7F7;
+    padding: 20px;
+}
+.delivery-time h5 {
+    font-size: 16px;
+    color: #DA2424
+}
+.delivery-time label,
+.invoice label {
+    display: block;
+    margin: 10px 0 5px;
+}
+.delivery-time input {
+    height: 30px;
+}
+.delivery-time select {
+    height: 30px;
+}
+input[type="date"] {
+    text-align: center;
+}
+.total {
+    margin: 10px 0;
+}
+.total p {
+    font-size: 16px;
+    margin: 0
+}
+.total h3 {
+    margin: 5px 0;
+    color: #d32f2f;
+}
+
+.discount {
+    margin-bottom: 20px;
+}
+
+.discount input {
+    width: 100%;
+    padding: 10px;
+}
+
+.pay-btn {
+    width: 100%;
+    background: #000;
+    color: #fff;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.payment-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.payment-icons img {
+    width: 40px;
+    height: auto;
+}
+
+@media (max-width: 982px) {
+    .cart-wrapper {
+        flex-direction: column;
+    }
+}
