@@ -9,13 +9,13 @@ export default function BudgetCard() {
         <div className="card-container">
             <div className="card-content">
                 <div className="text-section">
-                    <p className="card-title">BUDGET</p>
+                    <p className="card-title">LỢI NHUẬN</p>
                     <h2 className="card-number">$24K</h2>
                     <div className="card-status">
                         <span className="status-down" style={{
                             color: "#65C15C"
                         }}>↑ 16%</span>
-                        <span className="status-desc">Since last month</span>
+                        <span className="status-desc">Từ tháng trước</span>
                     </div>
                 </div>
                 <div className="icon-section">

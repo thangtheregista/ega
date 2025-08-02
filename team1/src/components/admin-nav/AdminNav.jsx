@@ -20,7 +20,7 @@ export default function AdminNav() {
                     <img src={currentUser.avatar} alt="Profile"/>
                     <div className="profile-info">
                         <span>{`${currentUser.lastName} ${currentUser.firstName}`}</span>
-                        <span>Admin ▼</span>
+                        <span>Quản trị viên ▼</span>
                     </div>
                 </div>
             </div>

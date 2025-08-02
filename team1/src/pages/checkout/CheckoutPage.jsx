@@ -70,6 +70,13 @@ export default function CheckoutPage() {
             return;
         }
         const orderData = {
+            date: new Date().toLocaleDateString('vi-VN', {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit',
+            }),
             shippingInfo,
             items,
             subtotal,

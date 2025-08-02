@@ -16,10 +16,10 @@ export default function DoughnutChart() {
         <div className="doughnut-chart">
             <Doughnut
                 data={{
-                    labels: ["Lamps", "Beds", "Sofas"],
+                    labels: ["Đèn", "Giường", "Ghế Sofa"],
                     datasets: [
                         {
-                            label: "Traffic Sources",
+                            label: "Nguồn thu",
                             data: [22, 15, 63],
                         }
                     ]
@@ -27,7 +27,7 @@ export default function DoughnutChart() {
                 options={{
                     plugins: {
                         title: {
-                            text: "Traffic Sources",
+                            text: "Nguồn thu",
                         }
                     }
                 }}

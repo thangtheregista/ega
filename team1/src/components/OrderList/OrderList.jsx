@@ -15,62 +15,77 @@ export default function OrderList() {
     useEffect(() => {
         fetchOrders()
     }, []);
+    const handleStatusChange = async (orderId, newStatus) => {
+        try {
+            await axios.put(`https://6887fd68adf0e59551b8be5e.mockapi.io/orders/${orderId}`, {
+                status: newStatus
+            });
+            setOrders(orders.map(order =>
+                order.id === orderId ? { ...order, status: newStatus } : order
+            ));
+            alert("Cập nhật trạng thái đơn hàng thành công!");
+        } catch (error) {
+            console.error("Error updating order status:", error);
+            alert("Cập nhật trạng thái đơn hàng thất bại!");
+        }
+    };
     return(
         <div className="latest-orders__table-card">
-            <div className="table-card__header">Latest orders</div>
+            <div className="table-card__header">Đơn hàng mới nhất</div>
             <div className="table-card__body">
                 <table className="table-card__table">
                     <thead>
                     <tr>
-                        <th>Order</th>
-                        <th>Customer</th>
-                        <th>Phone</th>
-                        <th>Status</th>
-                        <th>Total Amount</th>
+                        <th>STT</th>
+                        <th>Sản phẩm</th>
+                        <th>Số lượng</th>
+                        <th>Khách hàng</th>
+                        <th>SĐT</th>
+                        <th>Địa chỉ</th>
+                        <th>Thành tiền</th>
+                        <th>Trạng thái</th>
+                        <th>Ghi chú</th>
                     </tr>
                     </thead>
                     <tbody>
-                    {orders.map((order) => (
+                    {orders.sort((a, b) => b.id - a.id).map((order) => (
                         <tr>
                             <td>{order.id}</td>
+                            <td>
+                                <div className="table-card__product">
+                                    {order.items.map((item) => (
+                                        <div className="table-card__product-item" key={item.id}>
+                                            <img src={item.image} alt={item.name}/>
+                                            <span>{item.name}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </td>
+                            <td>
+                                <div className="table-card__product-quantity">
+                                    {order.items.map((item) => (
+                                        <span className="table-card__product-quantity-item" key={item.id}>
+                                            {item.quantity}
+                                        </span>
+                                    ))}
+                                </div>
+                            </td>
                             <td>{order.shippingInfo.name}</td>
                             <td>{order.shippingInfo.phone}</td>
-                            <td><span className="table-card__status table-card__status--pending">{order.status}</span></td>
+                            <td>{order.shippingInfo.address}</td>
                             <td>{order.total.toLocaleString('vi-VN') + "₫"}</td>
-
+                            <td>
+                                <select onChange={(e) => handleStatusChange(order.id, e.target.value)}
+                                value={order.status} className="form-select form-select-sm" style={{width: "130px"}}
+                                >
+                                    <option value="Pending" selected={order.status === "pending"}>Đang xử lý</option>
+                                    <option value="Delivered" selected={order.status === "delivered"}>Đã giao hàng</option>
+                                    <option value="Refunded" selected={order.status === "refunded"}>Đã hủy</option>
+                                </select>
+                            </td>
+                            <td>{order.shippingInfo.note}</td>
                         </tr>
                     ))}
-
-                    {/*<tr>*/}
-                    {/*    <td>ORD-006</td>*/}
-                    {/*    <td>Cao Yu</td>*/}
-                    {/*    <td>Jun 26, 2025</td>*/}
-                    {/*    <td><span className="table-card__status table-card__status--delivered">Delivered</span></td>*/}
-                    {/*</tr>*/}
-                    {/*<tr>*/}
-                    {/*    <td>ORD-004</td>*/}
-                    {/*    <td>Alexa Richardson</td>*/}
-                    {/*    <td>Jun 26, 2025</td>*/}
-                    {/*    <td><span className="table-card__status table-card__status--refunded">Refunded</span></td>*/}
-                    {/*</tr>*/}
-                    {/*<tr>*/}
-                    {/*    <td>ORD-003</td>*/}
-                    {/*    <td>Anje Keizer</td>*/}
-                    {/*    <td>Jun 26, 2025</td>*/}
-                    {/*    <td><span className="table-card__status table-card__status--pending">Pending</span></td>*/}
-                    {/*</tr>*/}
-                    {/*<tr>*/}
-                    {/*    <td>ORD-002</td>*/}
-                    {/*    <td>Clarke Gillebert</td>*/}
-                    {/*    <td>Jun 26, 2025</td>*/}
-                    {/*    <td><span className="table-card__status table-card__status--delivered">Delivered</span></td>*/}
-                    {/*</tr>*/}
-                    {/*<tr>*/}
-                    {/*    <td>ORD-001</td>*/}
-                    {/*    <td>Adam Denisov</td>*/}
-                    {/*    <td>Jun 26, 2025</td>*/}
-                    {/*    <td><span className="table-card__status table-card__status--delivered">Delivered</span></td>*/}
-                    {/*</tr>*/}
                     </tbody>
                 </table>
             </div>

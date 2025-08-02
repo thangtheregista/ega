@@ -121,7 +121,7 @@ export default function CartList() {
 
                             <div className="payment-icons">
                                 <img src="https://www.citypng.com/public/uploads/preview/hd-visa-payment-logo-png-7017516947777256ndfrewd52.png" alt="Visa"/>
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-Um_18W4RYvM3fTuOQvb96-Jx4-5QjvYXcw&s" alt="MasterCard"/>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard"/>
                                 <img src="https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-MoMo-Circle.png" alt="Momo"/>
                                 <img src="https://s3.thoainguyentek.com/2021/11/zalopay-logo.png" alt="ZaloPay"/>
                                 <img src="https://png.pngtree.com/png-clipart/20220603/original/pngtree-red-badge-cod-cash-on-delivery-png-image_7900047.png" alt="COD"/>
