@@ -21,8 +21,8 @@ export default function CustomerItems({currentItems}) {
                     </td>
 
                     <td>
-                        <button className="edit-btn">Block</button>
-                        <button className="edit-btn">Reset Password</button>
+                        <button className="edit-btn">Khóa</button>
+                        <button className="delete-btn">Xóa</button>
                     </td>
                 </tr>
             ))}

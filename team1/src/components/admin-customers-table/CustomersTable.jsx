@@ -38,20 +38,20 @@ export default function CustomersTable() {
 
             <div className="table-container">
                 <div className="d-flex flex-column justify-content-center align-items-start mb-3">
-                    <h2>Customers list</h2>
+                    <h2>Danh sách khách hàng</h2>
                     <div className="d-flex w-100 align-items-center justify-content-between">
                         <div className="d-flex gap-2 align-items-center">
-                            <span>Search:</span>
-                            <input type="text" placeholder="Search by name or email" />
+                            <span>Tìm kiếm:</span>
+                            <input type="text" placeholder="Tìm kiếm bằng email!" />
                         </div>
                     </div>
                 </div>
                 <table>
                     <thead>
                     <tr>
-                        <th>NAME</th>
-                        <th>LOCATION</th>
-                        <th>PHONE</th>
+                        <th>TÊN</th>
+                        <th>ĐỊA CHỈ</th>
+                        <th>SỐ ĐIỆN THOẠI</th>
                         <th></th>
                     </tr>
                     </thead>

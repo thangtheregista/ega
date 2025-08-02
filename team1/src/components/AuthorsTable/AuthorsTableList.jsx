@@ -36,7 +36,7 @@ export default function AuthorsTable() {
     })
     const currentItems = filteredStaffs.slice(itemOffset, endOffset);
     const handleDelete = async (id) => {
-        if (window.confirm("Are you sure?")) {
+        if (window.confirm("Bạn có chắc muốn xóa nhân viên này không?")) {
             try {
                 await axios.delete(`https://6887fd68adf0e59551b8be5e.mockapi.io/users/${id}`);
                 fetchAuthors();
@@ -49,24 +49,24 @@ export default function AuthorsTable() {
         <div>
             <div className="table-container">
                 <div className="d-flex flex-column justify-content-center align-items-start mb-3">
-                    <h2>Staff list</h2>
+                    <h2>Danh sách nhân viên</h2>
                     <div className="d-flex w-100 align-items-center justify-content-between">
                         <div className="d-flex gap-2 align-items-center">
-                            <span>Search:</span>
-                            <input type="text" placeholder="Search by email only!" onChange={(e) => setSearchItem(e.target.value)} />
+                            <span>Tìm kiếm:</span>
+                            <input type="text" placeholder="Tìm kiếm bằng email!" onChange={(e) => setSearchItem(e.target.value)} />
                         </div>
                         <Link to="/ega/dashboard/staff/add">
-                            <button className="btn btn-primary">Add staff</button>
+                            <button className="btn btn-primary">Thêm nhân viên</button>
                         </Link>
                     </div>
                 </div>
                 <table>
                     <thead>
                     <tr>
-                        <th>NAME</th>
-                        <th>ROLE</th>
-                        <th>STATUS</th>
-                        <th>EMPLOYED</th>
+                        <th>TÊN</th>
+                        <th>CHỨC VỤ VÀ PHÒNG BAN</th>
+                        <th>TRẠNG THÁI</th>
+                        <th>NGÀY GIA NHẬP</th>
                         <th></th>
                     </tr>
                     </thead>
