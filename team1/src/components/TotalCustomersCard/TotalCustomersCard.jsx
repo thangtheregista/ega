@@ -7,11 +7,11 @@ export default function TotalCustomersCard() {
     <div className="card-container">
       <div className="card-content">
         <div className="text-section">
-          <p className="card-title">TOTAL CUSTOMERS</p>
+          <p className="card-title">KHÁCH HÀNG</p>
           <h2 className="card-number">1.6k</h2>
           <div className="card-status">
             <span className="status-down">↓ 16%</span>
-            <span className="status-desc">Since last month</span>
+            <span className="status-desc">Từ tháng trước</span>
           </div>
         </div>
         <div className="icon-section">

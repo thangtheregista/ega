@@ -13,10 +13,10 @@ export default function BarChart() {
         <div className="bar-chart">
             <Bar
                 data={{
-                    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    labels: ["Tháng 1", "Tháng 2", "Tháng 3", "Tháng 4", "Tháng 5", "Tháng 6", "Tháng 7", "Tháng 8", "Tháng 9", "Tháng 10", "Tháng 11", "Tháng 12"],
                     datasets: [
                         {
-                            label: "Revenue",
+                            label: "Doanh thu",
                             data: [1200, 1900, 3000, 5000, 2000, 3000, 4000, 3500, 4500, 6000, 7000, 8000],
                         }
                     ]
@@ -24,7 +24,7 @@ export default function BarChart() {
                 options={{
                     plugins: {
                         title: {
-                            text: "Revenue",
+                            text: "Doanh thu hàng tháng",
                         }
                     }
                 }}
