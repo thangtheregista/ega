@@ -9,6 +9,7 @@ export default function CheckoutPage() {
     const {setCart} = useCart()
     const location = useLocation()
     const navigate = useNavigate()
+    const [user, setUser] = useState()
     const items = location.state?.items || [];
     const subtotal = items.reduce((sum, item) => {
         if (item.checked) {
@@ -84,16 +85,41 @@ export default function CheckoutPage() {
             total,
             status: "Pending"
         }
+        // try {
+        //     await axios.post(`https://6887fd68adf0e59551b8be5e.mockapi.io/orders`, {
+        //         id: uuidv4(),
+        //         ...orderData
+        //     })
+        //     console.log(orderData)
+        //     alert('Đặt hàng thành công!');
+        //     const orderedIds = items.map(item => item.id);
+        //     setCart(prev => prev.filter(item => !orderedIds.includes(item.id)));
+        //     navigate("/")
+        // } catch (error) {
+        //     console.error(error)
+        // }
         try {
-            await axios.post(`https://6887fd68adf0e59551b8be5e.mockapi.io/orders`, {
-                id: uuidv4(),
-                ...orderData
-            })
+            const response = await axios.get(
+                `https://6887fd68adf0e59551b8be5e.mockapi.io/users`,
+                {
+                    params: {
+                        email: shippingInfo.email
+                    }
+                }
+            );
+            const user = response.data[0]
+            await axios.put(
+                `https://6887fd68adf0e59551b8be5e.mockapi.io/users/${user.id}`,
+                { orders: {
+                    id : uuidv4(),
+                    ...orderData
+                    } }
+            );
             console.log(orderData)
-            alert('Đặt hàng thành công!');
-            const orderedIds = items.map(item => item.id);
-            setCart(prev => prev.filter(item => !orderedIds.includes(item.id)));
-            navigate("/")
+                alert('Đặt hàng thành công!');
+                const orderedIds = items.map(item => item.id);
+                setCart(prev => prev.filter(item => !orderedIds.includes(item.id)));
+                navigate("/")
         } catch (error) {
             console.error(error)
         }
