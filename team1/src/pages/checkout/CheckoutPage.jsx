@@ -9,7 +9,7 @@ export default function CheckoutPage() {
     const {setCart} = useCart()
     const location = useLocation()
     const navigate = useNavigate()
-    const [user, setUser] = useState()
+    const [note, setNote] = useState()
     const items = location.state?.items || [];
     const subtotal = items.reduce((sum, item) => {
         if (item.checked) {
@@ -35,6 +35,7 @@ export default function CheckoutPage() {
             ...prev,
             [name] : value
         }))
+        setNote(value)
     }
     const validate = () => {
         const newErrors = {};
@@ -78,7 +79,8 @@ export default function CheckoutPage() {
                 hour: '2-digit',
                 minute: '2-digit',
             }),
-            shippingInfo,
+            // shippingInfo,
+            note,
             items,
             subtotal,
             shippingFee,
