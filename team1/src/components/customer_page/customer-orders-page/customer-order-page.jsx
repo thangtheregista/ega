@@ -47,10 +47,10 @@ function CustomerOrdersPage() {
                                     <tr key={order.id}>
                                         <td>{order.id}</td>
                                         <td>{order.items.map(item => (
-                                            <span key={item.id}>{item.name}</span>
+                                            <p key={item.id}>{item.name}</p>
                                         ))}</td>
                                         <td>{order.items.map(item => (
-                                            <span key={item.id}>{item.quantity}</span>
+                                            <p key={item.id}>{item.quantity}</p>
                                         ))}</td>
                                         <td>{new Date(order.date).toLocaleDateString()}</td>
                                         <td>{currentCustomer.shippingAddress}</td>
