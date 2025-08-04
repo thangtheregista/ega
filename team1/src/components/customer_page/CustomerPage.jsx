@@ -1,17 +1,16 @@
 import React from "react";
 import "./customerPage.css";
 import axios from "axios";
+import {Link} from "react-router-dom";
 
 function CustomerPage() {
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
     const [showAccountInfo, setShowAccountInfo] = React.useState(true);
-    const [showOrders, setShowOrders] = React.useState(false);
     const [showAddress, setShowAddress] = React.useState(false);
     const [showChangePassword, setShowChangePassword] = React.useState(false);
 
     function handleShowAccountInfo() {
         setShowAccountInfo(true);
-        setShowOrders(false);
         setShowAddress(false);
         setShowChangePassword(false);
         document.getElementById("customer-aside__menu-info").style.color = "#EC720E";
@@ -20,21 +19,9 @@ function CustomerPage() {
         document.getElementById("customer-aside__menu-changePassword").style.color = "#000";
     }
 
-    function handleShowOrders() {
-        setShowOrders(true);
-        setShowAccountInfo(false);
-        setShowAddress(false);
-        setShowChangePassword(false);
-        document.getElementById("customer-aside__menu-orders").style.color = "#EC720E";
-        document.getElementById("customer-aside__menu-info").style.color = "#000";
-        document.getElementById("customer-aside__menu-address").style.color = "#000";
-        document.getElementById("customer-aside__menu-changePassword").style.color = "#000";
-    }
-
     function handleShowAddress() {
         setShowAddress(true);
         setShowAccountInfo(false);
-        setShowOrders(false);
         setShowChangePassword(false);
         document.getElementById("customer-aside__menu-address").style.color = "#EC720E";
         document.getElementById("customer-aside__menu-info").style.color = "#000";
@@ -45,7 +32,6 @@ function CustomerPage() {
     function handleShowChangePassword() {
         setShowChangePassword(true);
         setShowAccountInfo(false);
-        setShowOrders(false);
         setShowAddress(false);
         document.getElementById("customer-aside__menu-changePassword").style.color = "#EC720E";
         document.getElementById("customer-aside__menu-info").style.color = "#000";
@@ -86,8 +72,8 @@ function CustomerPage() {
                         </div>
                         <a href="#" id="customer-aside__menu-info" onClick={() => handleShowAccountInfo()} style={{color: "#EC720E"}}>Thông
                             tin cá nhân</a>
-                        <a href="#" id="customer-aside__menu-orders" onClick={() => handleShowOrders()}>Đơn hàng
-                            của tôi</a>
+                        <Link to="/ega/customer/orders"><a href="#" id="customer-aside__menu-orders">Đơn hàng
+                            của tôi</a></Link>
                         <a href="#" id="customer-aside__menu-address" onClick={() => handleShowAddress()}>Địa chỉ
                             giao hàng</a>
                         <a href="#" id="customer-aside__menu-changePassword" onClick={() => handleShowChangePassword()}>Đổi
@@ -101,50 +87,6 @@ function CustomerPage() {
                                     tên: </strong><span>{`${currentUser.firstName} ${currentUser.lastName}`}</span>
                                 <br/>
                                 <strong>Email: </strong><span>{currentUser.email}</span>
-                            </div>
-                        ) : showOrders ? (
-                            <div className="customer-main__orders">
-                                <h3>ĐƠN HÀNG CỦA BẠN</h3>
-                                <table border={1}>
-                                    <thead>
-                                    <tr>
-                                        <th>Đơn hàng</th>
-                                        <th>Ngày</th>
-                                        <th>Địa chỉ</th>
-                                        <th>Giá trị đơn hàng</th>
-                                        <th>TT Thanh toán</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    {currentCustomer.orders && currentCustomer.orders.length > 0 ? (
-                                        currentCustomer.orders.map((order) => (
-                                            <tr key={order.id}>
-                                                <td>
-                                                    {order.items.map((item) => (
-                                                        <div key={item.id}>
-                                                            <strong>{item.name}</strong> x {item.quantity}
-                                                        </div>
-                                                    ))}
-                                                    {order.items.length > 1 && (
-                                                        <div>
-                                                            <strong>+ {order.items.length - 1} sản phẩm
-                                                                khác</strong>
-                                                        </div>
-                                                    )}
-                                                </td>
-                                                <td>{new Date(order.date).toLocaleDateString()}</td>
-                                                <td>{order.shippingAddress}</td>
-                                                <td>{order.subtotal} VNĐ</td>
-                                                <td>{order.total} VNĐ</td>
-                                            </tr>
-                                        ))
-                                    ) : (
-                                        <tr>
-                                            <td colSpan="5">Bạn chưa có đơn hàng nào.</td>
-                                        </tr>
-                                    )}
-                                    </tbody>
-                                </table>
                             </div>
                         ) : showAddress ? (
                             <div className="customer-main__address">

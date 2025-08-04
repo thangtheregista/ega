@@ -23,6 +23,7 @@ import ShopLayout from "./layouts/shop/ShopLayout.jsx";
 import Header from "./components/Navbar/Header.jsx";
 import Footer from "./components/Navbar/Footer.jsx";
 import CustomerPage from "./components/customer_page/CustomerPage.jsx";
+import CustomerOrdersPage from "./components/customer_page/customer-orders-page/customer-order-page.jsx";
 
 function App() {
 
@@ -96,6 +97,17 @@ function App() {
                     </nav>
                     <main>
                         <CustomerPage/>
+                    </main>
+                    <footer>
+                        <Footer/>
+                    </footer>
+                </ShopLayout>}></Route>
+                <Route path="/ega/customer/orders" element={<ShopLayout>
+                    <nav>
+                        <Header/>
+                    </nav>
+                    <main>
+                        <CustomerOrdersPage/>
                     </main>
                     <footer>
                         <Footer/>
