@@ -16,10 +16,13 @@ import CustomersTable from "./components/admin-customers-table/CustomersTable.js
 import ProductDetail from "./pages/ProductDetail/ProductDetail.jsx";
 import CartPage from "./pages/cart/CartPage.jsx";
 import CheckoutPage from "./pages/checkout/CheckoutPage.jsx";
-import LatestOrders from "./components/admin-latest-orders/LatestOrders.jsx";
 import OrderList from "./components/OrderList/OrderList.jsx";
 import Introduce from "./components/Introduce/Introduce.jsx";
 import EditStaff from "./components/AuthorsTable/edit_staff/edit_staff.jsx";
+import ShopLayout from "./layouts/shop/ShopLayout.jsx";
+import Header from "./components/Navbar/Header.jsx";
+import Footer from "./components/Navbar/Footer.jsx";
+import CustomerPage from "./components/customer_page/CustomerPage.jsx";
 
 function App() {
 
@@ -87,6 +90,17 @@ function App() {
                     </main>
                 </AdminLayout>}></Route>
                 <Route path="/ega/intro" element={<Introduce/>}></Route>
+                <Route path="/ega/customer" element={<ShopLayout>
+                    <nav>
+                        <Header/>
+                    </nav>
+                    <main>
+                        <CustomerPage/>
+                    </main>
+                    <footer>
+                        <Footer/>
+                    </footer>
+                </ShopLayout>}></Route>
             </Routes>
         </>
     )

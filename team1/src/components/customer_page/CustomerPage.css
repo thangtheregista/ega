@@ -1,0 +1,59 @@
+.customerPage-container {
+    padding: 0 2rem;
+    margin: 6rem 0 8rem 7rem;
+}
+.customerPage-container a {
+    text-decoration: none;
+    color: inherit;
+}
+.customerPage-container a:hover {
+    text-decoration: underline;
+    color: #EC720E;
+}
+.customerPage-content {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+.customer-aside__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-right: #888888 1px solid;
+    max-width: 300px;
+    width: 100%;
+}
+.customer-main__address button {
+    margin-top: 1rem;
+    background: #EC720E;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+.customer-main__address button:hover {
+    background: chocolate;
+}
+.password_form-group {
+    margin-top: 1rem;
+}
+.password_form-group label {
+    font-weight: bold;
+}
+.password-input {
+    max-width: 600px;
+    width: 100%;
+    min-height: 40px;
+    height: 100%;
+    margin-top: 0.5rem;
+}
+.password-form button {
+    margin-top: 1rem;
+    background: #EC720E;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+.password-form button:hover {
+    background: chocolate;
+}

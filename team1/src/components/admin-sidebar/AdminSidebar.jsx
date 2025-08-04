@@ -10,7 +10,6 @@ export default function AdminSidebar() {
                 <Link to="/ega/dashboard/staff" className="menu-item">Nhân viên</Link>
                 <Link to="/ega/dashboard/customers" className="menu-item">Khách hàng</Link>
                 <a href="#" className="menu-item">Nhà cung cấp</a>
-
             </div>
         </div>
     )
