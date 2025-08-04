@@ -24,3 +24,36 @@
     max-width: 300px;
     width: 100%;
 }
+.customer-main__address button {
+    margin-top: 1rem;
+    background: #EC720E;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+.customer-main__address button:hover {
+    background: chocolate;
+}
+.password_form-group {
+    margin-top: 1rem;
+}
+.password_form-group label {
+    font-weight: bold;
+}
+.password-input {
+    max-width: 600px;
+    width: 100%;
+    min-height: 40px;
+    height: 100%;
+    margin-top: 0.5rem;
+}
+.password-form button {
+    margin-top: 1rem;
+    background: #EC720E;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+.password-form button:hover {
+    background: chocolate;
+}

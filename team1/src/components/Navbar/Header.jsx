@@ -146,7 +146,7 @@ export default function Header() {
                                     {userRole === 'customer' && (
                                         <>
                                             <Dropdown.Item as={Link} to="/ega/customer">Trang khách hàng</Dropdown.Item>
-                                            <Dropdown.Item as={Link} to="/ega/customer/orders">Đơn hàng của tôi</Dropdown.Item>
+                                            <Dropdown.Item as={Link} to="/ega/customer">Đơn hàng của tôi</Dropdown.Item>
                                             <Dropdown.Item onClick={handleLogout}>Đăng xuất</Dropdown.Item>
                                         </>
                                     )}
