@@ -85,7 +85,7 @@ export default function CheckoutPage() {
             subtotal,
             shippingFee,
             total,
-            status: "Pending"
+            status: "Đang xử lý"
         }
         // try {
         //     await axios.post(`https://6887fd68adf0e59551b8be5e.mockapi.io/orders`, {
@@ -110,12 +110,14 @@ export default function CheckoutPage() {
                 }
             );
             const user = response.data[0]
+            const currentOrders = user.orders || [];
+            const newOrder = {
+                id: uuidv4(),
+                ...orderData
+            }
             await axios.put(
                 `https://6887fd68adf0e59551b8be5e.mockapi.io/users/${user.id}`,
-                { orders: {
-                    id : uuidv4(),
-                    ...orderData
-                    } }
+                { orders: [...currentOrders, newOrder] }
             );
             console.log(orderData)
                 alert('Đặt hàng thành công!');

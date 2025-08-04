@@ -68,7 +68,6 @@ export default function Footer() {
 
       <div className="payment-icons">
         <img src="/images/footer_trustbadge.webp" alt="visa" />
-        
       </div>
     </footer>
   );
