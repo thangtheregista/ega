@@ -1,32 +1,25 @@
 .navbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  background: #fdf5e6;
-  padding: 8px 16px;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  font-family: Arial, sans-serif;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0 20px;
+  background: #fff;
+  border-bottom: 1px solid #eee;
 }
 
 .navbar-left {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 20px;
   font-size: 14px;
 }
 
-.hot-icon {
-  font-size: 18px;
-}
-
-.hot-message {
-  color: #333;
-}
-
-.buy-now {
-  color: red;
-  font-weight: bold;
+.navbar-left .logo img {
+  max-width: 145px;
+  width: 100%;
+  height: auto;
+  margin-right: 8px;
 }
 
 .navbar-right {
@@ -40,6 +33,8 @@
   align-items: center;
   gap: 4px;
   font-size: 14px;
+  position: relative;
+  right: -1rem;
 }
 
 .lang-switch img {
@@ -52,6 +47,8 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  position: relative;
+  right: -1rem;
 }
 
 .icon-item {
@@ -70,10 +67,6 @@
   color: white;
 }
 
-.badge.red {
-  background-color: red;
-}
-
 .badge.green {
   background-color: green;
 }
@@ -81,18 +74,23 @@
 .profile {
   display: flex;
   align-items: center;
-  gap: 8px;
 }
 
 .avatar {
-  width: 32px;
-  height: 32px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   object-fit: cover;
+  position: relative;
+  right: -1.2rem;
 }
 
 .profile-info {
   display: flex;
   flex-direction: column;
-  font-size: 12px;
+  font-size: 14px;
+}
+
+.profile-info span:first-child {
+  font-weight: 600;
 }

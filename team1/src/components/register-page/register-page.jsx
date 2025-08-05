@@ -71,6 +71,7 @@ function Register() {
                 password: formData.password
             }
             await axios.post("https://6887fd68adf0e59551b8be5e.mockapi.io/users/", newCustomer);
+            localStorage.setItem("currentUser", JSON.stringify(newCustomer));
             alert("Đăng ký thành công!");
         } catch (error) {
             console.error("Error creating new customer:", error);

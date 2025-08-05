@@ -36,7 +36,17 @@ function App() {
                 <Route path="/ega/flashsale" element={<WatchAllProducts/>}></Route>
                 <Route path="/ega/product/:id" element={<ProductDetail/>}></Route>
                 <Route path="/ega/cart" element={<CartPage/>}></Route>
-                <Route path="/ega/checkout" element={<CheckoutPage/>}></Route>
+                <Route path="/ega/checkout" element={<ShopLayout>
+                    <nav>
+                        <Header/>
+                    </nav>
+                    <main>
+                        <CheckoutPage/>
+                    </main>
+                    <footer>
+                        <Footer/>
+                    </footer>
+                </ShopLayout>}></Route>
                 <Route path="/ega/dashboard" element={<Dashboard/>}></Route>
                 <Route path="/ega/dashboard/orders" element={<AdminLayout>
                     <header>
