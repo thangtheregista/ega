@@ -13,7 +13,7 @@ export default function OrderList() {
                     userID: user.id,
                     userPhone: user.phone,
                     userEmail: user.email,
-                    userAddress: user.address,
+                    userAddress: user.shippingAddress,
                     order: order
                 }))
             );
