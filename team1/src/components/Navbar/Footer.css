@@ -1,5 +1,5 @@
 .footer {
-  background-color: #292929; /* Nền tối */
+  background-color: #292929;
   color: #fff;
   padding: 40px 0;
   font-family: Arial, sans-serif;
@@ -99,33 +99,37 @@
 
 .social-icons i {
   background-color: white;
-  color: black;
-  width: 32px;
-  height: 32px;
-  font-size: 16px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 0.3s;
+  overflow: hidden;
   cursor: pointer;
+  transition: all 0.3s;
+}
+
+.social-icons i img {
+  width: 20px;
+  height: 20px;
 }
 
 .social-icons i:hover {
   background-color: orange;
-  color: white;
 }
 
-.payment-icons {
+.payment-icons1 {
   border-top: 1px solid #333;
   margin-top: 30px;
   padding-top: 20px;
   text-align: center;
 }
 
-.payment-icons img {
-  height: 30px;
-  margin: 0 10px;
+.payment-icons1 img {
+  height: auto;
+  width: auto;
+  max-width: 100%;
 }
 
 /* Responsive */
@@ -150,6 +154,7 @@
     justify-content: center;
   }
 }
+
 @media (max-width: 490px) {
   .footer-logo {
     width: 50px;
