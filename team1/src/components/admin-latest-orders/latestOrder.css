@@ -72,6 +72,10 @@
     background: #f59e0b;
 }
 
+.table-card__status--shipping {
+    background: #3b82f6;
+}
+
 .table-card__status--delivered {
     background: #10b981;
 }

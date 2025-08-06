@@ -6,8 +6,28 @@ export default function LatestOrders() {
     const [orders, setOrders] = useState([]);
     const fetchOrders = async () => {
         try {
-            const response = await axios.get("https://6887fd68adf0e59551b8be5e.mockapi.io/orders");
-            setOrders(response.data);
+            const response = await axios.get("https://6887fd68adf0e59551b8be5e.mockapi.io/users");
+            const users = response.data;
+            const ordersWithUserName = users.flatMap(user =>
+                user.orders.map(order => ({
+                    id: order.id,
+                    items: order.items,
+                    shippingInfo: user.shippingAddress,
+                    date: order.date,
+                    status: order.status,
+                    userName: `${user.lastName} ${user.firstName}`,
+                }))
+            );
+            const sortedOrders = [...ordersWithUserName].sort((a, b) => {
+                const parseDate = (dateStr) => {
+                    const [time, date] = dateStr.split(' ');
+                    const [hour, minute] = time.split(':').map(Number);
+                    const [day, month, year] = date.split('/').map(Number);
+                    return new Date(year, month - 1, day, hour, minute);
+                };
+                return parseDate(b.date) - parseDate(a.date);
+            });
+            setOrders(sortedOrders);
         } catch (error) {
             console.error("Error fetching orders:", error);
         }
@@ -15,6 +35,12 @@ export default function LatestOrders() {
     useEffect(() => {
         fetchOrders();
     }, []);
+    const statusMap = {
+        "Đang xử lý": "pending",
+        "Đang giao hàng": "shipping",
+        "Đã giao hàng": "delivered",
+        "Đã hủy": "refunded",
+    };
     return (
         <div className="latest-orders__table-card">
             <div className="table-card__header">Đơn đặt mới nhất</div>
@@ -31,7 +57,7 @@ export default function LatestOrders() {
                     </tr>
                     </thead>
                     <tbody>
-                    {orders.sort((a, b) => b.id - a.id).map(order => (
+                    {orders.map(order => (
                         <tr key={order.id}>
                             <td>{order.id}</td>
                             <td>
@@ -53,13 +79,13 @@ export default function LatestOrders() {
                                     ))}
                                 </div>
                             </td>
-                            <td>{order.shippingInfo.name}</td>
+                            <td>{order.userName}</td>
                             <td>{order.date}</td>
                             <td>
                                 <span
-                                    className={`table-card__status table-card__status--${order.status.toLowerCase()}`}>
-                                    {order.status}
-                                </span>
+                                    className={`table-card__status table-card__status--${(statusMap[order.status] || order.status).toLowerCase()}`}>
+    {order.status}
+</span>
                             </td>
                         </tr>
                     ))}

@@ -13,15 +13,15 @@ export default function CustomerItems({currentItems}) {
                         </div>
                     </td>
                     <td>
-                        <div className="email">{author.location}</div>
+                        <div className="shippingAddress">{author.shippingAddress}</div>
 
                     </td>
                     <td>
-                        <div className="email">{author.phone}</div>
+                        <div className="phone">{author.phone}</div>
                     </td>
 
                     <td>
-                        <button className="edit-btn">Khóa</button>
+                        <button className="block-btn">Khóa</button>
                         <button className="delete-btn">Xóa</button>
                     </td>
                 </tr>

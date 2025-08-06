@@ -92,3 +92,10 @@ th, td {
   cursor: pointer;
   font-weight: bold;
 }
+.block-btn {
+  background: none;
+  border: none;
+  color: #e68a00;
+  cursor: pointer;
+  font-weight: bold;
+}
