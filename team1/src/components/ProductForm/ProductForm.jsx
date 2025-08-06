@@ -235,7 +235,7 @@ export default function ProductForm() {
 
                 <div className="product-form__actions">
                     <button className="edit-profile__button" onClick={(e) => handleSubmit(e)}>Thêm</button>
-                    <button className="back__button" onClick={() => navigate(-1)}>Quay lại</button>
+                    <button className="back__button" onClick={() => navigate("/ega/dashboard/products")}>Quay lại</button>
                 </div>
             </form>
         </div>
