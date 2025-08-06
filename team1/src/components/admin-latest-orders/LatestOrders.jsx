@@ -65,7 +65,7 @@ export default function LatestOrders() {
                                     {order.items.map((item) => (
                                         <div className="table-card__product-item" key={item.id}>
                                             <img src={item.image} alt={item.name}/>
-                                            <span>{item.name}</span>
+                                            <span className="table-card__product-item__name">{item.name}</span>
                                         </div>
                                     ))}
                                 </div>

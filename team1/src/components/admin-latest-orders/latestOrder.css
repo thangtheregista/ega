@@ -45,6 +45,7 @@
 .table-card__product {
     display: flex;
     flex-direction: column;
+    width: 200px;
 }
 .table-card__product-item img {
     width: 40px;
@@ -94,4 +95,11 @@
     text-decoration: none;
     font-size: 14px;
     color: #007bff;
+}
+.table-card__product-item__name {
+    display: inline-block;
+    max-width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
