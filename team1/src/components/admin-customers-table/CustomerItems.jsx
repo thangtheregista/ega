@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function CustomerItems({currentItems}) {
+export default function CustomerItems({currentItems, handleDelete}) {
     return(
         <>
             {currentItems.map((author, index) => (
@@ -13,6 +13,9 @@ export default function CustomerItems({currentItems}) {
                         </div>
                     </td>
                     <td>
+                        <div className="orders_sum">{author.orders.length}</div>
+                    </td>
+                    <td>
                         <div className="shippingAddress">{author.shippingAddress}</div>
 
                     </td>
@@ -22,7 +25,7 @@ export default function CustomerItems({currentItems}) {
 
                     <td>
                         <button className="block-btn">Khóa</button>
-                        <button className="delete-btn">Xóa</button>
+                        <button className="delete-btn" onClick={() => handleDelete(author.id)}>Xóa</button>
                     </td>
                 </tr>
             ))}

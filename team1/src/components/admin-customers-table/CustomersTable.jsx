@@ -22,7 +22,6 @@ export default function CustomersTable() {
     const endOffset = itemOffset + itemsPerPage;
     console.log(`Loading items from ${itemOffset} to ${endOffset}`);
 
-    const currentItems = authors.slice(itemOffset, endOffset);
     const pageCount = Math.ceil(authors.length / itemsPerPage);
     const handlePageClick = (event) => {
         const newOffset = (event.selected * itemsPerPage) % authors.length;
@@ -34,6 +33,21 @@ export default function CustomersTable() {
     useEffect(() => {
         fetchAuthors()
     }, []);
+    const [searchItem, setSearchItem] = useState("");
+    const filteredAuthors = authors.filter((author) => {
+        return author.email.toLowerCase().includes(searchItem.toLowerCase());
+    });
+    const currentItems = filteredAuthors.slice(itemOffset, endOffset);
+    const handleDelete = async (id) => {
+        if (window.confirm("Bạn có chắc muốn xóa khách hàng này không?")) {
+            try {
+                await axios.delete(`https://6887fd68adf0e59551b8be5e.mockapi.io/users/${id}`);
+                fetchAuthors();
+            } catch (error) {
+                console.error("Error deleting author:", error);
+            }
+        }
+    }
     return(
 
             <div className="table-container">
@@ -42,7 +56,7 @@ export default function CustomersTable() {
                     <div className="d-flex w-100 align-items-center justify-content-between">
                         <div className="d-flex gap-2 align-items-center">
                             <span>Tìm kiếm:</span>
-                            <input type="text" placeholder="Tìm kiếm bằng email!" />
+                            <input type="text" placeholder="Tìm kiếm bằng email!" onChange={(e) => setSearchItem(e.target.value)}/>
                         </div>
                     </div>
                 </div>
@@ -50,13 +64,14 @@ export default function CustomersTable() {
                     <thead>
                     <tr>
                         <th>TÊN</th>
+                        <th>TỔNG SẢN PHẨM ĐÃ MUA</th>
                         <th>ĐỊA CHỈ</th>
                         <th>SỐ ĐIỆN THOẠI</th>
                         <th></th>
                     </tr>
                     </thead>
                     <tbody>
-                    <CustomerItems currentItems={currentItems}/>
+                    <CustomerItems currentItems={currentItems} handleDelete={handleDelete}/>
                     </tbody>
                 </table>
                 <ReactPaginate
