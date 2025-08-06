@@ -3,6 +3,7 @@ import axios from "axios";
 import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import ReactPaginate from "react-paginate";
+import ProductItems from "./ProductItems.jsx";
 
 export default function ProductList() {
     const [products, setProducts] = useState([])
@@ -37,6 +38,8 @@ export default function ProductList() {
     const endOffset = itemOffset + itemsPerPage;
     console.log(`Loading items from ${itemOffset} to ${endOffset}`);
     const pageCount = Math.ceil(filteredProducts.length / itemsPerPage);
+    const currentItems = filteredProducts.slice(itemOffset, endOffset);
+
     const handlePageClick = (event) => {
         const newOffset = (event.selected * itemsPerPage) % filteredProducts.length;
         console.log(
@@ -70,24 +73,7 @@ export default function ProductList() {
                 </tr>
                 </thead>
                 <tbody>
-                {filteredProducts.map(product => (
-                    <tr>
-                        <td><img src={product.pic}/>{product.name}</td>
-                        <td>{product.category}</td>
-                        <td>{product.salePrice}</td>
-                        <td><span className="stars">{product.rating}</span></td>
-                        <td>
-                            <Link to={`/ega/dashboard/products/${product.id}`}>
-                                <button className="edit-btn">Sửa</button>
-                            </Link>
-                        </td>
-                        <td>
-                            <Link to={`/ega/dashboard/products/delete/${product.id}`}>
-                                <button className="delete-btn" onClick={() => handleDelete(product.id)}>Xoá</button>
-                            </Link>
-                        </td>
-                    </tr>
-                ))}
+                <ProductItems currentItems={currentItems} handleDelete={handleDelete}/>
                 </tbody>
             </table>
             <ReactPaginate
