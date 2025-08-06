@@ -41,8 +41,44 @@ export default function ProductForm() {
             }));
         }
     }
+    const [errors, setErrors] = useState({});
+    function handleValidate() {
+        const newErrors = {};
+        if (!formData.name) {
+            newErrors.name = "Tên sản phẩm không được để trống";
+        }
+        if (!formData.originalPrice) {
+            newErrors.originalPrice = "Giá gốc không được để trống";
+        }
+        if (!formData.salePrice) {
+            newErrors.salePrice = "Giá sale không được để trống";
+        }
+        if (!formData.pic) {
+            newErrors.pic = "URL ảnh 1 không được để trống";
+        }
+        if (!formData.pic2) {
+            newErrors.pic2 = "URL ảnh 2 không được để trống";
+        }
+        if (!formData.small3) {
+            newErrors.small3 = "URL ảnh 3 không được để trống";
+        }
+        if (!formData.category) {
+            newErrors.category = "Loại sản phẩm không được để trống";
+        }
+        if (!formData.rating) {
+            newErrors.rating = "Đánh giá không được để trống";
+        }
+        return newErrors;
+    }
     const handleSubmit = async (e) => {
-        e.preventDefault()
+        e.preventDefault();
+        const errors = handleValidate();
+        if (Object.keys(errors).length > 0) {
+            setErrors(errors);
+            return;
+        } else {
+            setErrors({});
+        }
         const maxId = products.length > 0 ? Math.max(...products.map(u => u.id)) : 0;
 
         try {
@@ -96,6 +132,7 @@ export default function ProductForm() {
                             value={formData.name}
                             onChange={handleInputChange}
                         />
+                        {errors.name && <span className="error-message">{errors.name}</span>}
                     </div>
                     <div className="product-form__group">
                         <label className="product-form__label">Giá gốc</label>
@@ -106,6 +143,7 @@ export default function ProductForm() {
                                value={formData.originalPrice}
                                onChange={handleInputChange}
                         />
+                        {errors.originalPrice && <span className="error-message">{errors.originalPrice}</span>}
                     </div>
                     <div className="product-form__group">
                         <label className="product-form__label">Giá sale</label>
@@ -117,6 +155,7 @@ export default function ProductForm() {
                             value={formData.salePrice}
                             onChange={handleInputChange}
                         />
+                        {errors.salePrice && <span className="error-message">{errors.salePrice}</span>}
                     </div>
                 </div>
 
@@ -131,6 +170,7 @@ export default function ProductForm() {
                             value={formData.pic}
                             onChange={handleInputChange}
                         />
+                        {errors.pic && <span className="error-message">{errors.pic}</span>}
                     </div>
 
                     <div className="product-form__group">
@@ -143,6 +183,7 @@ export default function ProductForm() {
                             value={formData.pic2}
                             onChange={handleInputChange}
                         />
+                        {errors.pic2 && <span className="error-message">{errors.pic2}</span>}
                     </div>
                     <div className="product-form__group">
                         <label className="product-form__label">URL ảnh 3</label>
@@ -154,6 +195,7 @@ export default function ProductForm() {
                             value={formData.small3}
                             onChange={handleInputChange}
                         />
+                        {errors.small3 && <span className="error-message">{errors.small3}</span>}
                     </div>
                 </div>
 
@@ -168,6 +210,7 @@ export default function ProductForm() {
                             value={formData.category}
                             onChange={handleInputChange}
                         />
+                        {errors.category && <span className="error-message">{errors.category}</span>}
                     </div>
                     <div className="product-form__group">
                         <label className="product-form__label">Đánh giá</label>
@@ -178,6 +221,7 @@ export default function ProductForm() {
                             <option value="⭐⭐⭐⭐">★★★★☆</option>
                             <option value="⭐⭐⭐⭐⭐">★★★★★</option>
                         </select>
+                        {errors.rating && <span className="error-message">{errors.rating}</span>}
                     </div>
                 </div>
 
@@ -191,7 +235,7 @@ export default function ProductForm() {
 
                 <div className="product-form__actions">
                     <button className="edit-profile__button" onClick={(e) => handleSubmit(e)}>Thêm</button>
-                    <button className="back__button" onClick={() => navigate(-1)}>Quay lại</button>
+                    <button className="back__button" onClick={() => navigate("/ega/dashboard/products")}>Quay lại</button>
                 </div>
             </form>
         </div>
