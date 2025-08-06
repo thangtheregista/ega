@@ -17,7 +17,8 @@ export default function ProductForm() {
         originalPrice: "",
         sold: "🔥 Sắp cháy hàng",
         progress: 90,
-        category: ""
+        category: "",
+        date: new Date().toISOString().split('T')[0]
     })
     const handleInputChange = (e) => {
         const { name, value } = e.target;

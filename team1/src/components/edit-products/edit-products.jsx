@@ -16,7 +16,8 @@ function EditProducts() {
         rating: "",
         salePrice: "",
         originalPrice: "",
-        category: ""
+        category: "",
+        date: new Date().toISOString().split('T')[0]
     });
     const handleInputChange = (e) => {
         const {name, value} = e.target;
@@ -80,7 +81,11 @@ function EditProducts() {
             setErrors({});
         }
         try {
-            await axios.put(`https://6879bbed63f24f1fdca2bb76.mockapi.io/api/v1/ega-furniture/products/${id}`, formData);
+            const updatedData = {
+                ...formData,
+                date: new Date().toISOString().split('T')[0]
+            };
+            await axios.put(`https://6879bbed63f24f1fdca2bb76.mockapi.io/api/v1/ega-furniture/products/${id}`, updatedData);
             alert("Cập nhật sản phẩm thành công!");
             navigate("/ega/dashboard/products");
         } catch (error) {
@@ -101,7 +106,7 @@ function EditProducts() {
     return (
         <div className="product-form">
             <h2 className="product-form__title">Sửa sản phẩm</h2>
-            <form className="product-form__body">
+            <form className="product-form__body" onSubmit={handleSubmit}>
                 <div className="product-form__row">
                     <div className="product-form__group">
                         <label className="product-form__label">Tên sản phẩm</label>
@@ -207,8 +212,8 @@ function EditProducts() {
                     </div>
                 </div>
                 <div className="product-form__actions">
-                    <button className="edit-profile__button" onClick={(e) => handleSubmit(e)}>Cập nhật</button>
-                    <button className="back__button" onClick={() => navigate("/ega/dashboard/products")}>Quay lại
+                    <button className="edit-profile__button" type="submit">Cập nhật</button>
+                    <button className="back__button" type="button" onClick={() => navigate("/ega/dashboard/products")}>Quay lại
                     </button>
                 </div>
             </form>

@@ -13,7 +13,7 @@ export default function CustomerItems({currentItems, handleDelete}) {
                         </div>
                     </td>
                     <td>
-                        <div className="orders_sum">{author.orders.length}</div>
+                        <div className="orders_sum">{author.orders.filter(order => order.status === "Đã giao hàng").length}</div>
                     </td>
                     <td>
                         <div className="shippingAddress">{author.shippingAddress}</div>
