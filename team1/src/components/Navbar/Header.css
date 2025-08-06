@@ -131,8 +131,8 @@
 .desktop-nav__submenu-list li {
 }
 .desktop-nav__submenu-list li a {
-    text-decoration: none;
-    color: #A1A1A1;
+  text-decoration: none;
+  color: #A1A1A1;
 }
 .desktop-nav__submenu-list li:first-child a {
   font-weight: bolder;
@@ -141,7 +141,6 @@
 }
 .desktop-nav__submenu-list li:first-child a:hover {
   color: #EC720E
-
 }
 
 .desktop-nav__submenu a {
@@ -191,7 +190,6 @@
 .mobile-nav__submenu-list__variant-b li a {
   text-decoration: none;
   color: #A1A1A1;
-
 }
 
 .card-body {
@@ -202,13 +200,198 @@
   .desktop-nav {
     display: none;
   }
+  .search-bar-container {
+    display: none;
+  }
   .mobile-nav {
     display: flex;
     flex-direction: column;
     gap: 1rem;
   }
-
   .offcanvas-toggle {
     display: block;
   }
+}
+
+.search-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.search-popup-content {
+  background-color: #fff;
+  width: 50%;
+  max-width: 600px;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  text-align: center;
+}
+
+.search-popup-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.search-box {
+  display: flex;
+  flex-grow: 1;
+  width: 80%;
+  border: 2px solid #EC720E;
+  border-radius: 25px;
+  overflow: hidden;
+  background-color: #f9f9f9;
+}
+
+.search-box input {
+  flex-grow: 1;
+  border: none;
+  padding: 10px 20px;
+  outline: none;
+  font-size: 16px;
+  background: transparent;
+  color: #333;
+}
+
+.search-button {
+  background-color: #EC720E;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border-radius: 0 25px 25px 0;
+}
+
+.search-button:hover {
+  background-color: #D65A0C; /* Màu đậm hơn khi hover */
+  transition: background-color 0.3s ease;
+}
+
+.search-button .search-icon {
+  fill: #fff;
+  width: 20px;
+  height: 20px;
+}
+
+.close-popup {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  cursor: pointer;
+  line-height: 1;
+  color: #333;
+}
+
+.search-suggestions {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #666;
+}
+
+.search-suggestions span {
+  cursor: pointer;
+  padding: 5px 15px;
+  background-color: #f1f1f1;
+  border-radius: 20px;
+}
+
+.search-suggestions span:hover {
+  background-color: #e0e0e0; /* Màu nhạt hơn khi hover */
+  color: #EC720E; /* Màu nổi bật khi hover */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.search-bar-container {
+  position: relative;
+  width: 50%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.search-input-wrapper {
+  display: flex;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  overflow: hidden;
+  height: 40px;
+}
+
+.search-input-wrapper:focus-within {
+  border-color: #EC720E;
+}
+
+.search-bar-container input {
+  flex-grow: 1;
+  border: none;
+  padding: 10px 20px;
+  outline: none;
+  font-size: 16px;
+  background: transparent;
+}
+
+.search-bar-container .search-button {
+  background-color: #EC720E;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.search-bar-container .search-button:hover {
+  background-color: #D65A0C; /* Màu đậm hơn khi hover */
+  transition: background-color 0.3s ease;
+}
+
+.search-bar-container .search-icon {
+  fill: #fff;
+  width: 20px;
+  height: 20px;
+}
+
+.search-suggestions-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+  border-top: none;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 10px 20px;
+  z-index: 99;
+}
+
+.search-suggestions-dropdown .suggestion-item {
+  cursor: pointer;
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+}
+
+.search-suggestions-dropdown .suggestion-item:hover {
+  color: #EC720E; /* Màu nổi bật khi hover */
+  text-decoration: underline;
+  transition: color 0.3s ease;
 }
