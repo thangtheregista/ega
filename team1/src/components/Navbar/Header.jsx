@@ -8,7 +8,6 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import { CButton, CCollapse, CCard, CCardBody } from '@coreui/react'
 import {useCart} from "../../hooks/CartContext.jsx";
 
-
 export default function Header() {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -19,6 +18,13 @@ export default function Header() {
     const [visibleA, setVisibleA] = useState(false)
     const [visibleB, setVisibleB] = useState(false)
 
+    const [showSearchPopup, setShowSearchPopup] = useState(false);
+    const handleSearchClick = () => {
+        setShowSearchPopup(true);
+    };
+    const handleCloseSearchPopup = () => {
+        setShowSearchPopup(false);
+    };
 
     useEffect(() => {
         const handleScroll = () => {
@@ -49,7 +55,7 @@ export default function Header() {
                     <Link to="/"><span className="logo-icon"><img
                         src="https://bizweb.dktcdn.net/100/491/756/themes/956460/assets/logo.png?1746582633520"
                         alt=""/>
-                </span>
+                    </span>
                     </Link>
                 </div>
 
@@ -123,7 +129,7 @@ export default function Header() {
                             </Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
-                    <span className="search">🔍</span>
+                    <span className="search" onClick={handleSearchClick}>🔍</span>
                     <Dropdown align="end">
                         <Dropdown.Toggle as="span" className="user" style={{cursor: 'pointer'}}>
                             👤
@@ -171,9 +177,15 @@ export default function Header() {
                             {cartCount > 0 && (
                                 <span className="cart-count">{cartCount}</span>
                             )}
-                            {/*<span className="cart-count">0</span>*/} </span>
+                            </span>
                     </Link>
                 </div>
+            </div>
+            <div className="certification-section">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/FSC_Logo.svg/1200px-FSC_Logo.svg.png" alt="FSC Certification" />
+                <img src="https://www.oeko-tex.com/media/xrpu3e0v/oeko-tex-logo-cmyk.jpg" alt="OEKO-TEX Certification" />
+                <img src="https://www.c2ccertified.org/sites/default/files/C2C_CertifiedLogo_CMYK_0.png" alt="Cradle to Cradle Certification" />
+                <img src="https://masgreencertified.org/wp-content/uploads/2020/05/MAS-Certified-Green-Logo.jpg" alt="MAS Certified Green" />
             </div>
             <Offcanvas show={show} onHide={handleClose} placement="start">
                 <Offcanvas.Header closeButton>
@@ -260,9 +272,31 @@ export default function Header() {
                         <a href="#" onClick={handleClose}>Góc cảm hứng</a>
                         <a href="#" onClick={handleClose}>Hướng dẫn thiết lập</a>
                     </nav>
-
                 </Offcanvas.Body>
             </Offcanvas>
+
+            {showSearchPopup && (
+                <div className="search-popup-overlay" onClick={handleCloseSearchPopup}>
+                    <div className="search-popup-content" onClick={(e) => e.stopPropagation()}>
+                        <span className="close-popup" onClick={handleCloseSearchPopup}>×</span>
+                        <div className="search-popup-header">
+                            <div className="search-box">
+                                <input type="text" placeholder="Tìm theo từ khóa" />
+                                <button className="search-button">
+                                    <svg className="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                        <path d="M416 208c0 45.9-14.9 88.3-40 122.7L452.9 452.9c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div className="search-suggestions">
+                            <span>Mẫu Sofa mới</span>
+                            <span>Nội thất phòng khách</span>
+                            <span>Đèn trang trí</span>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
