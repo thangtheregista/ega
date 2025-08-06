@@ -48,7 +48,7 @@ export default function LatestOrders() {
                 <table className="table-card__table">
                     <thead>
                     <tr>
-                        <th>STT</th>
+                        <th>Mã đơn hàng</th>
                         <th>Sản phẩm</th>
                         <th>Số lượng</th>
                         <th>Tên khách hàng</th>

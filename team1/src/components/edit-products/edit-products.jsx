@@ -1,11 +1,12 @@
-import "./productForm.css"
-import React, {useEffect, useState} from "react";
+import React from "react";
+import "./edit-products.css"
+import {useNavigate, useParams} from "react-router-dom";
 import axios from "axios";
-import {useNavigate} from "react-router-dom";
-export default function ProductForm() {
+
+function EditProducts() {
+    const {id} = useParams();
     const navigate = useNavigate();
-    const [products, setProducts] = useState([])
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] = React.useState({
         pic: "",
         pic2: "",
         small1: "",
@@ -15,13 +16,11 @@ export default function ProductForm() {
         rating: "",
         salePrice: "",
         originalPrice: "",
-        sold: "🔥 Sắp cháy hàng",
-        progress: 90,
         category: "",
         date: new Date().toISOString().split('T')[0]
-    })
+    });
     const handleInputChange = (e) => {
-        const { name, value } = e.target;
+        const {name, value} = e.target;
         if (name === "pic") {
             setFormData(prevData => ({
                 ...prevData,
@@ -34,15 +33,15 @@ export default function ProductForm() {
                 [name]: value,
                 small2: value
             }));
-        }
-        else {
+        } else {
             setFormData(prevData => ({
                 ...prevData,
                 [name]: value
             }));
         }
     }
-    const [errors, setErrors] = useState({});
+    const [errors, setErrors] = React.useState({});
+
     function handleValidate() {
         const newErrors = {};
         if (!formData.name) {
@@ -71,6 +70,7 @@ export default function ProductForm() {
         }
         return newErrors;
     }
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         const errors = handleValidate();
@@ -80,48 +80,33 @@ export default function ProductForm() {
         } else {
             setErrors({});
         }
-        const maxId = products.length > 0 ? Math.max(...products.map(u => u.id)) : 0;
-
         try {
-            await axios.post(`https://6879bbed63f24f1fdca2bb76.mockapi.io/api/v1/ega-furniture/products`, {
-                id: maxId + 1,
-                ...formData
-            })
-            setFormData({
-                pic: "",
-                pic2: "",
-                small1: "",
-                small2: "",
-                small3: "",
-                name: "",
-                rating: "",
-                salePrice: "",
-                originalPrice: "",
-                sold: "🔥 Sắp cháy hàng",
-                progress: 90,
-                category: ""
-            })
-            alert("Thêm sản phẩm thành công!")
-
+            const updatedData = {
+                ...formData,
+                date: new Date().toISOString().split('T')[0]
+            };
+            await axios.put(`https://6879bbed63f24f1fdca2bb76.mockapi.io/api/v1/ega-furniture/products/${id}`, updatedData);
+            alert("Cập nhật sản phẩm thành công!");
+            navigate("/ega/dashboard/products");
         } catch (error) {
-            console.error(error)
+            console.error("Error updating product:", error);
         }
     }
-    const fetchProducts = async () => {
+    const fetchProduct = async () => {
         try {
-            const response = await axios.get(`https://6879bbed63f24f1fdca2bb76.mockapi.io/api/v1/ega-furniture/products`)
-            setProducts(response.data)
+            const response = await axios.get(`https://6879bbed63f24f1fdca2bb76.mockapi.io/api/v1/ega-furniture/products/${id}`);
+            setFormData(response.data);
         } catch (error) {
-            console.log(error)
+            console.error("Error fetching product:", error);
         }
     }
-    useEffect(() => {
-        fetchProducts()
-    }, []);
+    React.useEffect(() => {
+        fetchProduct();
+    }, [id]);
     return (
         <div className="product-form">
-            <h2 className="product-form__title">Thêm sản phẩm</h2>
-            <form className="product-form__body">
+            <h2 className="product-form__title">Sửa sản phẩm</h2>
+            <form className="product-form__body" onSubmit={handleSubmit}>
                 <div className="product-form__row">
                     <div className="product-form__group">
                         <label className="product-form__label">Tên sản phẩm</label>
@@ -215,7 +200,8 @@ export default function ProductForm() {
                     </div>
                     <div className="product-form__group">
                         <label className="product-form__label">Đánh giá</label>
-                        <select className="product-form__input" name="rating" value={formData.rating} onChange={handleInputChange}>
+                        <select className="product-form__input" name="rating" value={formData.rating}
+                                onChange={handleInputChange}>
                             <option value="⭐">★☆☆☆☆</option>
                             <option value="⭐⭐">★★☆☆☆</option>
                             <option value="⭐⭐⭐">★★★☆☆</option>
@@ -225,20 +211,14 @@ export default function ProductForm() {
                         {errors.rating && <span className="error-message">{errors.rating}</span>}
                     </div>
                 </div>
-
-                {/*<div className="product-form__row">*/}
-                {/*    <div className="product-form__group product-form__group--full">*/}
-                {/*        <label className="product-form__label">Description</label>*/}
-                {/*        <textarea className="product-form__input product-form__input--textarea"*/}
-                {/*                  placeholder="Product description..."></textarea>*/}
-                {/*    </div>*/}
-                {/*</div>*/}
-
                 <div className="product-form__actions">
-                    <button className="edit-profile__button" onClick={(e) => handleSubmit(e)}>Thêm</button>
-                    <button className="back__button" onClick={() => navigate("/ega/dashboard/products")}>Quay lại</button>
+                    <button className="edit-profile__button" type="submit">Cập nhật</button>
+                    <button className="back__button" type="button" onClick={() => navigate("/ega/dashboard/products")}>Quay lại
+                    </button>
                 </div>
             </form>
         </div>
     )
 }
+
+export default EditProducts;

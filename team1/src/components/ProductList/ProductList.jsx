@@ -67,7 +67,8 @@ export default function ProductList() {
                 <tr>
                     <th>TÊN SẢN PHẨM</th>
                     <th>LOẠI</th>
-                    <th>GIÁ</th>
+                    <th>GIÁ GỐC</th>
+                    <th>GIÁ SALE</th>
                     <th>ĐÁNH GIÁ</th>
                     <th colSpan={2}></th>
                 </tr>

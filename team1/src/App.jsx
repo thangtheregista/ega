@@ -26,6 +26,7 @@ import CustomerPage from "./components/customer_page/CustomerPage.jsx";
 import CustomerOrdersPage from "./components/customer_page/customer-orders-page/customer-order-page.jsx";
 import ProductList from "./components/ProductList/ProductList.jsx";
 import ProductForm from "./components/ProductForm/ProductForm.jsx";
+import EditProducts from "./components/edit-products/edit-products.jsx";
 
 function App() {
 
@@ -125,6 +126,19 @@ function App() {
                     <main>
                         <div className="staff">
                             <ProductForm/>
+                        </div>
+                    </main>
+                </AdminLayout>}></Route>
+                <Route path="/ega/dashboard/products/edit/:id" element={<AdminLayout>
+                    <header>
+                        <AdminNav/>
+                    </header>
+                    <aside>
+                        <AdminSidebar/>
+                    </aside>
+                    <main>
+                        <div className="staff">
+                            <EditProducts/>
                         </div>
                     </main>
                 </AdminLayout>}></Route>
