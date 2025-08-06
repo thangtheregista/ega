@@ -12,6 +12,8 @@ function Register() {
         phone: "",
         email: "",
         role: "customer",
+        avatar: "",
+        shippingAddress: "",
         password: "",
         repeatPassword: "",
     });
@@ -68,6 +70,8 @@ function Register() {
                 phone: formData.phone,
                 email: formData.email,
                 role: formData.role,
+                avatar: formData.avatar,
+                shippingAddress: formData.shippingAddress,
                 password: formData.password
             }
             await axios.post("https://6887fd68adf0e59551b8be5e.mockapi.io/users/", newCustomer);
@@ -110,6 +114,14 @@ function Register() {
                             <input type="text" className="register-input" name="phone" placeholder="Số điện thoại"
                                    required onChange={(e) => handleChange(e)}/>
                             { errors.phone && <p className="error-message">{errors.phone}</p>}
+                            <label htmlFor="shipping-address" className="register-label">Địa chỉ giao hàng <span>*</span></label>
+                            <input type="text" className="register-input" name="shippingAddress"
+                                   placeholder="Địa chỉ giao hàng" required onChange={(e) => handleChange(e)}/>
+                            { errors.shippingAddress && <p className="error-message">{errors.shippingAddress}</p>}
+                            <label htmlFor="avatar" className="register-label">Ảnh đại diện <span>*</span></label>
+                            <input type="text" className="register-input" name="avatar" placeholder="URL ảnh đại diện" required
+                                   onChange={(e) => handleChange(e)}/>
+                            { errors.avatar && <p className="error-message">{errors.avatar}</p>}
                             <label htmlFor="email" className="register-label">Email (Dùng để đăng nhập) <span>*</span></label>
                             <input type="text" className="register-input" name="email" placeholder="Email" required
                                    onChange={(e) => handleChange(e)}/>

@@ -31,7 +31,6 @@ export default function OrderList() {
             });
 
             console.log(sortedOrders);
-
             setOrders(sortedOrders)
         } catch (error) {
             console.log(error)
@@ -88,7 +87,7 @@ export default function OrderList() {
                     </tr>
                     </thead>
                     <tbody>
-                    {orders.sort((a, b) => b.id - a.id).map((order) => (
+                    {orders.map((order) => (
                         <tr key={order.order.id}>
                             <td>{order.order.id}</td>
                             <td>
@@ -120,7 +119,6 @@ export default function OrderList() {
                                 >
                                     <option value="Đang xử lý" selected={order.order.status === "Đang xử lý"}>Đang xử lý</option>
                                     <option value="Đang giao hàng" selected={order.order.status === "Đang giao hàng"}>Đang giao hàng</option>
-
                                     <option value="Đã giao hàng" selected={order.order.status === "Đã giao hàng"}>Đã giao hàng</option>
                                     <option value="Đã hủy" selected={order.order.status === "Đã hủy"}>Đã hủy</option>
                                 </select>

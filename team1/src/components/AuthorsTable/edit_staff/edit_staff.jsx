@@ -9,9 +9,9 @@ function EditStaff() {
         lastName: "",
         phone: "",
         email: "",
-        address: "",
-        age: null,
-        salary: null,
+        shippingAddress: "",
+        age: "",
+        salary: "",
         title: "",
         team: "",
         status: "",
@@ -59,7 +59,7 @@ function EditStaff() {
         } else if (!phoneRegex.test(formData.phone)) {
             newErrors.phone = "Số điện thoại không hợp lệ.";
         }
-        if (!formData.address) newErrors.address = "Vui lòng nhập địa chỉ.";
+        if (!formData.shippingAddress) newErrors.shippingAddress = "Vui lòng nhập địa chỉ.";
         if (!formData.age || isNaN(formData.age) || formData.age <= 18 || formData.age > 60) {
             newErrors.age = "Vui lòng nhập tuổi hợp lệ.";
         }
@@ -122,14 +122,14 @@ function EditStaff() {
                             {errors.password && <span className="error-message">{errors.password}</span>}
                         </div>
                         <div className="edit-profile__field">
-                            <label htmlFor="address">Địa chỉ</label>
-                            <input type="text" id="address" placeholder="Địa chỉ" name="address" value={formData.address}
+                            <label htmlFor="shippingAddress">Địa chỉ</label>
+                            <input type="text" id="shippingAddress" placeholder="Địa chỉ" name="shippingAddress" value={formData.shippingAddress}
                                    onChange={(e) => handleChange(e)}/>
-                            {errors.address && <span className="error-message">{errors.address}</span>}
+                            {errors.shippingAddress && <span className="error-message">{errors.shippingAddress}</span>}
                         </div>
                         <div className="edit-profile__field">
                             <label htmlFor="age">Tuổi</label>
-                            <input type="number" id="age" placeholder="Tuổi" name="age" value={formData.age} onChange={(e) => handleChange(e)}/>
+                            <input type="text" id="age" placeholder="Tuổi" name="age" value={formData.age} onChange={(e) => handleChange(e)}/>
                             {errors.age && <span className="error-message">{errors.age}</span>}
                         </div>
                         <div className="edit-profile__field">
@@ -139,7 +139,7 @@ function EditStaff() {
                         </div>
                         <div className="edit-profile__field">
                             <label htmlFor="salary">Lương</label>
-                            <input type="number" id="salary" placeholder="Lương" name="salary" value={formData.salary} onChange={(e) => handleChange(e)}/>
+                            <input type="text" id="salary" placeholder="Lương" name="salary" value={formData.salary} onChange={(e) => handleChange(e)}/>
                             {errors.salary && <span className="error-message">{errors.salary}</span>}
                         </div>
                         <div className="edit-profile__field">

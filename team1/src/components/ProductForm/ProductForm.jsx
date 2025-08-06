@@ -1,7 +1,9 @@
 import "./productForm.css"
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import axios from "axios";
+import {useNavigate} from "react-router-dom";
 export default function ProductForm() {
+    const navigate = useNavigate();
     const [products, setProducts] = useState([])
     const [formData, setFormData] = useState({
         pic: "",
@@ -62,7 +64,7 @@ export default function ProductForm() {
                 progress: 90,
                 category: ""
             })
-            alert("Product added successfully!")
+            alert("Thêm sản phẩm thành công!")
 
         } catch (error) {
             console.error(error)
@@ -81,36 +83,36 @@ export default function ProductForm() {
     }, []);
     return (
         <div className="product-form">
-            <h2 className="product-form__title">Add Product</h2>
+            <h2 className="product-form__title">Thêm sản phẩm</h2>
             <form className="product-form__body">
                 <div className="product-form__row">
                     <div className="product-form__group">
-                        <label className="product-form__label">Product Name</label>
+                        <label className="product-form__label">Tên sản phẩm</label>
                         <input
                             type="text"
                             className="product-form__input"
-                            placeholder="Product Name"
+                            placeholder="Tên sản phẩm"
                             name="name"
                             value={formData.name}
                             onChange={handleInputChange}
                         />
                     </div>
                     <div className="product-form__group">
-                        <label className="product-form__label">Original Price</label>
+                        <label className="product-form__label">Giá gốc</label>
                         <input type="text"
                                className="product-form__input"
-                               placeholder="Original Price"
+                               placeholder="Giá gốc"
                                name="originalPrice"
                                value={formData.originalPrice}
                                onChange={handleInputChange}
                         />
                     </div>
                     <div className="product-form__group">
-                        <label className="product-form__label">Sale Price</label>
+                        <label className="product-form__label">Giá sale</label>
                         <input
                             type="text"
                             className="product-form__input"
-                            placeholder="Sale Price"
+                            placeholder="Giá sale"
                             name="salePrice"
                             value={formData.salePrice}
                             onChange={handleInputChange}
@@ -120,11 +122,11 @@ export default function ProductForm() {
 
                 <div className="product-form__row">
                     <div className="product-form__group">
-                        <label className="product-form__label">Image 1 URL</label>
+                        <label className="product-form__label">URL ảnh 1</label>
                         <input
                             type="text"
                             className="product-form__input"
-                            placeholder="Image 1 URL"
+                            placeholder="URL ảnh 1"
                             name="pic"
                             value={formData.pic}
                             onChange={handleInputChange}
@@ -132,22 +134,22 @@ export default function ProductForm() {
                     </div>
 
                     <div className="product-form__group">
-                        <label className="product-form__label">Image 2 URL</label>
+                        <label className="product-form__label">URL ảnh 2</label>
                         <input
                             type="text"
                             className="product-form__input"
-                            placeholder="Image 2 URL"
+                            placeholder="URL ảnh 2"
                             name="pic2"
                             value={formData.pic2}
                             onChange={handleInputChange}
                         />
                     </div>
                     <div className="product-form__group">
-                        <label className="product-form__label">Image 3 URL</label>
+                        <label className="product-form__label">URL ảnh 3</label>
                         <input
                             type="text"
                             className="product-form__input"
-                            placeholder="Image 3 URL"
+                            placeholder="URL ảnh 3"
                             name="small3"
                             value={formData.small3}
                             onChange={handleInputChange}
@@ -157,18 +159,18 @@ export default function ProductForm() {
 
                 <div className="product-form__row">
                     <div className="product-form__group">
-                        <label className="product-form__label">Category</label>
+                        <label className="product-form__label">Loại</label>
                         <input
                             type="text"
                             className="product-form__input"
-                            placeholder="Category"
+                            placeholder="Loại"
                             name="category"
                             value={formData.category}
                             onChange={handleInputChange}
                         />
                     </div>
                     <div className="product-form__group">
-                        <label className="product-form__label">Rating</label>
+                        <label className="product-form__label">Đánh giá</label>
                         <select className="product-form__input" name="rating" value={formData.rating} onChange={handleInputChange}>
                             <option value="⭐">★☆☆☆☆</option>
                             <option value="⭐⭐">★★☆☆☆</option>
@@ -188,10 +190,8 @@ export default function ProductForm() {
                 {/*</div>*/}
 
                 <div className="product-form__actions">
-                    <button type="submit" className="product-form__button product-form__button--primary" onClick={handleSubmit}>Add Product
-                    </button>
-                    {/*<button type="button" className="product-form__button product-form__button--secondary">Cancel*/}
-                    {/*</button>*/}
+                    <button className="edit-profile__button" onClick={(e) => handleSubmit(e)}>Thêm</button>
+                    <button className="back__button" onClick={() => navigate(-1)}>Quay lại</button>
                 </div>
             </form>
         </div>
