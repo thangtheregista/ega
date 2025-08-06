@@ -9,7 +9,8 @@ export default function CheckoutPage() {
     const {setCart} = useCart()
     const location = useLocation()
     const navigate = useNavigate()
-    const [note, setNote] = useState()
+    const userNote = localStorage.getItem("note");
+    const [note, setNote] = useState(userNote)
     const items = location.state?.items || [];
     const subtotal = items.reduce((sum, item) => {
         if (item.checked) {
@@ -21,6 +22,7 @@ export default function CheckoutPage() {
     const shippingFee = 50000;
     const total = subtotal + shippingFee;
     const [errors, setErrors] = useState({});
+
     const [shippingInfo, setShippingInfo] = useState({
         email: "",
         firstName: "",
@@ -49,7 +51,10 @@ export default function CheckoutPage() {
             ...prev,
             [name] : value
         }))
-        setNote(value)
+        if (name === "note") {
+            localStorage.setItem("note", value);
+            setNote(value)
+        }
     }
     const validate = () => {
         const newErrors = {};
@@ -224,7 +229,7 @@ export default function CheckoutPage() {
                         <label>Ghi chú:</label>
                         <textarea
                             placeholder="Ghi chú (tùy chọn)"
-                            value={shippingInfo.note}
+                            value={note}
                             name="note"
                             onChange={handleChange}
                         ></textarea>

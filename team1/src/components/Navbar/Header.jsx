@@ -181,12 +181,12 @@ export default function Header() {
                     </Link>
                 </div>
             </div>
-            <div className="certification-section">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/FSC_Logo.svg/1200px-FSC_Logo.svg.png" alt="FSC Certification" />
-                <img src="https://www.oeko-tex.com/media/xrpu3e0v/oeko-tex-logo-cmyk.jpg" alt="OEKO-TEX Certification" />
-                <img src="https://www.c2ccertified.org/sites/default/files/C2C_CertifiedLogo_CMYK_0.png" alt="Cradle to Cradle Certification" />
-                <img src="https://masgreencertified.org/wp-content/uploads/2020/05/MAS-Certified-Green-Logo.jpg" alt="MAS Certified Green" />
-            </div>
+            {/*<div className="certification-section">*/}
+            {/*    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/FSC_Logo.svg/1200px-FSC_Logo.svg.png" alt="FSC Certification" />*/}
+            {/*    <img src="https://www.oeko-tex.com/media/xrpu3e0v/oeko-tex-logo-cmyk.jpg" alt="OEKO-TEX Certification" />*/}
+            {/*    <img src="https://www.c2ccertified.org/sites/default/files/C2C_CertifiedLogo_CMYK_0.png" alt="Cradle to Cradle Certification" />*/}
+            {/*    <img src="https://masgreencertified.org/wp-content/uploads/2020/05/MAS-Certified-Green-Logo.jpg" alt="MAS Certified Green" />*/}
+            {/*</div>*/}
             <Offcanvas show={show} onHide={handleClose} placement="start">
                 <Offcanvas.Header closeButton>
                     <Offcanvas.Title>Menu</Offcanvas.Title>

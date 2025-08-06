@@ -1,14 +1,14 @@
 import NothingInCart from "../NothingInCart/NothingInCart.jsx";
 import "./cartList.css"
 import {useCart} from "../../hooks/CartContext.jsx";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
 
 export default function CartList() {
     const {cart} = useCart();
     const {setCart} = useCart()
     const {removeFromCart} = useCart()
-
+    const [note, setNote] = useState();
     const handleQuantityChange = (id, delta) => {
         setCart((prevCart) =>
             prevCart
@@ -39,7 +39,11 @@ export default function CartList() {
     const handleCheckout = () => {
         const itemsToCheckout = cart.filter(item => item.checked);
         navigate('/ega/checkout', { state: { items: itemsToCheckout } });
+        localStorage.setItem("note", note || "");
     };
+    const handleNoteChange = (e) => {
+        setNote(e.target.value)
+    }
     return(
         <>
             {cart.length > 0 ?
@@ -78,7 +82,7 @@ export default function CartList() {
 
                             <div className="order-note">
                                 <label htmlFor="note">Ghi chú đơn hàng</label>
-                                <textarea id="note" rows="3"></textarea>
+                                <textarea id="note" rows="3" onChange={handleNoteChange} value={note}></textarea>
                             </div>
                         </div>
                         <div className="checkout">
