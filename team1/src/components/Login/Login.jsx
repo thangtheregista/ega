@@ -25,24 +25,28 @@ export default function Login() {
         e.preventDefault();
         const user = users.find(user => user.email === email && user.password === password);
         if (user) {
-            localStorage.setItem('isLoggedIn', 'true');
-            localStorage.setItem('userRole', user.role);
-            localStorage.setItem('currentUser', JSON.stringify(user));
-            switch (user.role) {
-                case "admin":
-                    navigate("/ega/dashboard")
-                    break;
-                case "supplier":
-                    window.location.href = "/supplier";
-                    break;
-                case "customer":
-                    navigate("/ega/customer");
-                    break;
-                case "staff":
-                    window.location.href = "/staff";
-                    break;
-                default:
-                    alert("Role not recognized");
+            if (!user.isBlocked) {
+                localStorage.setItem('isLoggedIn', 'true');
+                localStorage.setItem('userRole', user.role);
+                localStorage.setItem('currentUser', JSON.stringify(user));
+                switch (user.role) {
+                    case "admin":
+                        navigate("/ega/dashboard")
+                        break;
+                    case "supplier":
+                        window.location.href = "/supplier";
+                        break;
+                    case "customer":
+                        navigate("/ega/customer");
+                        break;
+                    case "staff":
+                        window.location.href = "/staff";
+                        break;
+                    default:
+                        alert("Role not recognized");
+                }
+            } else {
+                alert("Tài khoản của quý khách đã bị khóa do vi phạm chính sách mua hàng. Vui lòng liên hệ tổng đài 19006750 để được hỗ trợ!")
             }
         } else {
             alert("Invalid username or password");
