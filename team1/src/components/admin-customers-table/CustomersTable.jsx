@@ -48,6 +48,30 @@ export default function CustomersTable() {
             }
         }
     }
+    const handleBlockCustomer = async (id) => {
+        if (window.confirm("Bạn có chắc muốn khóa khách hàng này không?")) {
+            try {
+                await axios.put(`https://6887fd68adf0e59551b8be5e.mockapi.io/users/${id}`, {
+                    isBlocked: true
+                });
+                fetchAuthors();
+            } catch (error) {
+                console.error("Error deleting author:", error);
+            }
+        }
+    }
+    const handleUnblockCustomer = async (id) => {
+        if (window.confirm("Bạn có chắc muốn mở khóa khách hàng này không?")) {
+            try {
+                await axios.put(`https://6887fd68adf0e59551b8be5e.mockapi.io/users/${id}`, {
+                    isBlocked: false
+                });
+                fetchAuthors();
+            } catch (error) {
+                console.error("Error deleting author:", error);
+            }
+        }
+    }
     return(
 
             <div className="table-container">
@@ -71,7 +95,7 @@ export default function CustomersTable() {
                     </tr>
                     </thead>
                     <tbody>
-                    <CustomerItems currentItems={currentItems} handleDelete={handleDelete}/>
+                    <CustomerItems currentItems={currentItems} handleDelete={handleDelete} handleBlockCustomer={handleBlockCustomer} handleUnblockCustomer={handleUnblockCustomer} />
                     </tbody>
                 </table>
                 <ReactPaginate

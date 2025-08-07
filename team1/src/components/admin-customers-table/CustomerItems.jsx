@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function CustomerItems({currentItems, handleDelete}) {
+export default function CustomerItems({currentItems, handleDelete, handleBlockCustomer, handleUnblockCustomer}) {
     return(
         <>
             {currentItems.map((author, index) => (
@@ -24,7 +24,11 @@ export default function CustomerItems({currentItems, handleDelete}) {
                     </td>
 
                     <td>
-                        <button className="block-btn">Khóa</button>
+                        {!author.isBlocked ? (
+                            <button className="block-btn" onClick={() => handleBlockCustomer(author.id)}>Khóa</button>
+                        ) : (
+                            <button className="unBlock-btn" onClick={() => handleUnblockCustomer(author.id)}>Mở khóa</button>
+                        )}
                         <button className="delete-btn" onClick={() => handleDelete(author.id)}>Xóa</button>
                     </td>
                 </tr>
