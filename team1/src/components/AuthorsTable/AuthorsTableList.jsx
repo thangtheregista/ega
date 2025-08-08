@@ -67,7 +67,7 @@ export default function AuthorsTable() {
                         <th>CHỨC VỤ VÀ PHÒNG BAN</th>
                         <th>TRẠNG THÁI</th>
                         <th>NGÀY GIA NHẬP</th>
-                        <th></th>
+                        <th>HÀNH ĐỘNG</th>
                     </tr>
                     </thead>
                     <tbody>

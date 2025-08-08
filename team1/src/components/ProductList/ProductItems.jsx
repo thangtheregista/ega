@@ -14,8 +14,6 @@ export default function ProductItems({currentItems, handleDelete}) {
                         <Link to={`/ega/dashboard/products/edit/${product.id}`}>
                             <button className="edit-btn">Sửa</button>
                         </Link>
-                    </td>
-                    <td>
                         <button className="delete-btn" onClick={() => handleDelete(product.id)}>Xoá</button>
                     </td>
                 </tr>
