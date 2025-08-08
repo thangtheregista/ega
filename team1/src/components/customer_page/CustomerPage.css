@@ -24,14 +24,17 @@
     max-width: 300px;
     width: 100%;
 }
-.customer-main__address button {
+.customer-main {
+    margin-left: 1rem;
+}
+.customer-main__info button {
     margin-top: 1rem;
     background: #EC720E;
     color: white;
     border: none;
     border-radius: 5px;
 }
-.customer-main__address button:hover {
+.customer-main__info button:hover {
     background: chocolate;
 }
 .password_form-group {
