@@ -68,6 +68,15 @@ function EditProducts() {
         if (!formData.rating) {
             newErrors.rating = "Đánh giá không được để trống";
         }
+        if (formData.salePrice && formData.originalPrice && parseFloat(formData.salePrice) >= parseFloat(formData.originalPrice)) {
+            newErrors.salePrice = "Giá sale phải nhỏ hơn giá gốc";
+        }
+        if (parseFloat(formData.originalPrice) < 0) {
+            newErrors.originalPrice = "Giá gốc không được nhỏ hơn 0";
+        }
+        if (parseFloat(formData.salePrice) < 0) {
+            newErrors.salePrice = "Giá sale không được nhỏ hơn 0";
+        }
         return newErrors;
     }
 

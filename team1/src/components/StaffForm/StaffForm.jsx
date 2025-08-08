@@ -68,7 +68,7 @@ export default function StaffForm() {
             newErrors.phone = "Số điện thoại đã tồn tại.";
         }
         if (!formData.shippingAddress) newErrors.shippingAddress = "Vui lòng nhập địa chỉ.";
-        if (!formData.age || isNaN(formData.age) || formData.age <= 18 || formData.age > 60) {
+        if (!formData.age || isNaN(formData.age) || formData.age <= 18 || formData.age > 60 || formData.age < 0) {
             newErrors.age = "Vui lòng nhập tuổi hợp lệ.";
         }
         if (!formData.salary || isNaN(formData.salary) || formData.salary <= 0) {
