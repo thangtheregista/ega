@@ -1,14 +1,14 @@
 import NothingInCart from "../NothingInCart/NothingInCart.jsx";
 import "./cartList.css"
 import {useCart} from "../../hooks/CartContext.jsx";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
 
 export default function CartList() {
     const {cart} = useCart();
     const {setCart} = useCart()
     const {removeFromCart} = useCart()
-
+    const [note, setNote] = useState();
     const handleQuantityChange = (id, delta) => {
         setCart((prevCart) =>
             prevCart
@@ -39,7 +39,11 @@ export default function CartList() {
     const handleCheckout = () => {
         const itemsToCheckout = cart.filter(item => item.checked);
         navigate('/ega/checkout', { state: { items: itemsToCheckout } });
+        localStorage.setItem("note", note || "");
     };
+    const handleNoteChange = (e) => {
+        setNote(e.target.value)
+    }
     return(
         <>
             {cart.length > 0 ?
@@ -78,7 +82,7 @@ export default function CartList() {
 
                             <div className="order-note">
                                 <label htmlFor="note">Ghi chú đơn hàng</label>
-                                <textarea id="note" rows="3"></textarea>
+                                <textarea id="note" rows="3" onChange={handleNoteChange} value={note}></textarea>
                             </div>
                         </div>
                         <div className="checkout">
@@ -121,7 +125,7 @@ export default function CartList() {
 
                             <div className="payment-icons">
                                 <img src="https://www.citypng.com/public/uploads/preview/hd-visa-payment-logo-png-7017516947777256ndfrewd52.png" alt="Visa"/>
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-Um_18W4RYvM3fTuOQvb96-Jx4-5QjvYXcw&s" alt="MasterCard"/>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard"/>
                                 <img src="https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-MoMo-Circle.png" alt="Momo"/>
                                 <img src="https://s3.thoainguyentek.com/2021/11/zalopay-logo.png" alt="ZaloPay"/>
                                 <img src="https://png.pngtree.com/png-clipart/20220603/original/pngtree-red-badge-cod-cash-on-delivery-png-image_7900047.png" alt="COD"/>

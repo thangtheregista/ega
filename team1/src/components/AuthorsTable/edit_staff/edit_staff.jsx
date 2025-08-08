@@ -9,9 +9,9 @@ function EditStaff() {
         lastName: "",
         phone: "",
         email: "",
-        address: "",
-        age: null,
-        salary: null,
+        shippingAddress: "",
+        age: "",
+        salary: "",
         title: "",
         team: "",
         status: "",
@@ -59,8 +59,8 @@ function EditStaff() {
         } else if (!phoneRegex.test(formData.phone)) {
             newErrors.phone = "Số điện thoại không hợp lệ.";
         }
-        if (!formData.address) newErrors.address = "Vui lòng nhập địa chỉ.";
-        if (!formData.age || isNaN(formData.age) || formData.age <= 18 || formData.age > 60) {
+        if (!formData.shippingAddress) newErrors.shippingAddress = "Vui lòng nhập địa chỉ.";
+        if (!formData.age || isNaN(formData.age) || formData.age <= 18 || formData.age > 60 || formData.age < 0) {
             newErrors.age = "Vui lòng nhập tuổi hợp lệ.";
         }
         if (!formData.salary || isNaN(formData.salary) || formData.salary <= 0) {
@@ -95,57 +95,57 @@ function EditStaff() {
         <>
             <div className="profile">
                 <div className="edit-profile">
-                    <h2 className="edit-profile__title">Edit Profile</h2>
+                    <h2 className="edit-profile__title">Sửa hồ sơ</h2>
                     <div className="edit-profile__grid">
                         <div className="edit-profile__field">
-                            <label htmlFor="first-name">First Name</label>
+                            <label htmlFor="first-name">Tên</label>
                             <input type="text" id="first-name" name="firstName" value={formData.firstName}
-                                   placeholder="First name"
+                                   placeholder="Tên"
                                    onChange={(e) => handleChange(e)}/>
                             {errors.firstName && <span className="error-message">{errors.firstName}</span>}
                         </div>
                         <div className="edit-profile__field">
-                            <label htmlFor="last-name">Last Name</label>
-                            <input type="text" id="last-name" placeholder="Last name" name="lastName"
+                            <label htmlFor="last-name">Họ</label>
+                            <input type="text" id="last-name" placeholder="Họ" name="lastName"
                                    value={formData.lastName}
                                    onChange={(e) => handleChange(e)}/>
                             {errors.lastName && <span className="error-message">{errors.lastName}</span>}
                         </div>
                         <div className="edit-profile__field">
-                            <label htmlFor="email-edit">Email Address (Used for signing in)</label>
+                            <label htmlFor="email-edit">Email (Dùng để đăng nhập)</label>
                             <input type="email" id="email-edit" placeholder="Email" name="email" value={formData.email} onChange={(e) => handleChange(e)}/>
                             {errors.email && <span className="error-message">{errors.email}</span>}
                         </div>
                         <div className="edit-profile__field">
-                            <label htmlFor="password">Password</label>
-                            <input type="text" id="password" placeholder="Password" name="password" value={formData.password} onChange={(e) => handleChange(e)}/>
+                            <label htmlFor="password">Mật khẩu</label>
+                            <input type="text" id="password" placeholder="Mật khẩu" name="password" value={formData.password} onChange={(e) => handleChange(e)}/>
                             {errors.password && <span className="error-message">{errors.password}</span>}
                         </div>
                         <div className="edit-profile__field">
-                            <label htmlFor="address">Address</label>
-                            <input type="text" id="address" placeholder="Home address" name="address" value={formData.address}
+                            <label htmlFor="shippingAddress">Địa chỉ</label>
+                            <input type="text" id="shippingAddress" placeholder="Địa chỉ" name="shippingAddress" value={formData.shippingAddress}
                                    onChange={(e) => handleChange(e)}/>
-                            {errors.address && <span className="error-message">{errors.address}</span>}
+                            {errors.shippingAddress && <span className="error-message">{errors.shippingAddress}</span>}
                         </div>
                         <div className="edit-profile__field">
-                            <label htmlFor="age">Age</label>
-                            <input type="number" id="age" placeholder="Age" name="age" value={formData.age} onChange={(e) => handleChange(e)}/>
+                            <label htmlFor="age">Tuổi</label>
+                            <input type="text" id="age" placeholder="Tuổi" name="age" value={formData.age} onChange={(e) => handleChange(e)}/>
                             {errors.age && <span className="error-message">{errors.age}</span>}
                         </div>
                         <div className="edit-profile__field">
-                            <label htmlFor="phone">Phone Number</label>
-                            <input type="text" id="phone" placeholder="Phone Number" name="phone" value={formData.phone} onChange={(e) => handleChange(e)}/>
+                            <label htmlFor="phone">SĐT</label>
+                            <input type="text" id="phone" placeholder="SĐT" name="phone" value={formData.phone} onChange={(e) => handleChange(e)}/>
                             {errors.phone && <span className="error-message">{errors.phone}</span>}
                         </div>
                         <div className="edit-profile__field">
-                            <label htmlFor="salary">Salary</label>
-                            <input type="number" id="salary" placeholder="Salary" name="salary" value={formData.salary} onChange={(e) => handleChange(e)}/>
+                            <label htmlFor="salary">Lương</label>
+                            <input type="text" id="salary" placeholder="Lương" name="salary" value={formData.salary} onChange={(e) => handleChange(e)}/>
                             {errors.salary && <span className="error-message">{errors.salary}</span>}
                         </div>
                         <div className="edit-profile__field">
-                            <label htmlFor="team">Team</label>
+                            <label htmlFor="team">Phòng ban</label>
                             <select id="team" onChange={(e) => handleChange(e)} name="team" value={formData.team}>
-                                <option value="">--Select Team--</option>
+                                <option value="">--Chọn phòng ban--</option>
                                 <option value="Product & Content Management">Product & Content Management</option>
                                 <option value="Technology">Technology</option>
                                 <option value="Operations & Logistics">Operations & Logistics</option>
@@ -156,18 +156,19 @@ function EditStaff() {
                             {errors.team && <span className="error-message">{errors.team}</span>}
                         </div>
                         <div className="edit-profile__field">
-                            <label htmlFor="title">Title</label>
-                            <input type="text" id="title" placeholder="Title" name="title" value={formData.title} onChange={(e) => handleChange(e)}/>
+                            <label htmlFor="title">Chức vụ</label>
+                            <input type="text" id="title" placeholder="Chức vụ" name="title" value={formData.title} onChange={(e) => handleChange(e)}/>
                             {errors.title && <span className="error-message">{errors.title}</span>}
                         </div>
                         <div className="edit-profile__field">
-                            <label htmlFor="avatar">Link of avatar</label>
-                            <input type="text" id="avatar" placeholder="Link of avatar" name="avatar" value={formData.avatar}
+                            <label htmlFor="avatar">Link ảnh đại diện</label>
+                            <input type="text" id="avatar" placeholder="Link ảnh đại diện" name="avatar" value={formData.avatar}
                                    onChange={(e) => handleChange(e)}/>
                             {errors.avatar && <span className="error-message">{errors.avatar}</span>}
                         </div>
                     </div>
-                    <button className="edit-profile__button" onClick={(e) => handleSubmit(e)}>Update Profile</button>
+                    <button className="edit-profile__button" onClick={(e) => handleSubmit(e)}>Cập nhật</button>
+                    <button className="back__button" onClick={() => navigate(-1)}>Quay lại</button>
                 </div>
             </div>
         </>

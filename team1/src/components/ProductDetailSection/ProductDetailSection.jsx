@@ -3,6 +3,9 @@ import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import axios from "axios";
 import {useCart} from "../../hooks/CartContext.jsx";
+
+import Swal from 'sweetalert2'
+
 export default function ProductDetailSection() {
     const {id} = useParams()
     const [product, setProduct] = useState([])
@@ -14,15 +17,20 @@ export default function ProductDetailSection() {
         const fetchProduct = async () => {
             try {
                 const res = await axios.get(`https://6879bbed63f24f1fdca2bb76.mockapi.io/api/v1/ega-furniture/products/`)
-                setProduct(res.data.filter((item) => item.id === Number(id))[0])
-                console.log(res.data.filter((item) => item.id === Number(id))[0])
-                setMainImage(res.data.filter((item) => item.id === Number(id))[0].small1)
-            } catch (error) {
-                console.error(error)
-            }
-        }
 
-        fetchProduct()
+                const product = res.data.find((item) => String(item.id) === String(id));
+
+                if (product) {
+                    setProduct(product);
+                    setMainImage(product.small1);
+                    console.log(product);
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
+        fetchProduct();
     }, [id]);
 
     const [quantity, setQuantity] = useState(1)
@@ -44,6 +52,13 @@ export default function ProductDetailSection() {
             checked: true
         }
         addToCart(newItem)
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Thêm vào giỏ hàng thành công",
+            showConfirmButton: false,
+            timer: 1500
+        });
     }
 
 

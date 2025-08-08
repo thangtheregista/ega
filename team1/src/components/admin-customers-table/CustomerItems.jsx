@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function CustomerItems({currentItems}) {
+export default function CustomerItems({currentItems, handleDelete, handleBlockCustomer, handleUnblockCustomer}) {
     return(
         <>
             {currentItems.map((author, index) => (
@@ -13,16 +13,23 @@ export default function CustomerItems({currentItems}) {
                         </div>
                     </td>
                     <td>
-                        <div className="email">{author.location}</div>
+                        <div className="orders_sum">{author.orders.filter(order => order.status === "Đã giao hàng").length}</div>
+                    </td>
+                    <td>
+                        <div className="shippingAddress">{author.shippingAddress}</div>
 
                     </td>
                     <td>
-                        <div className="email">{author.phone}</div>
+                        <div className="phone">{author.phone}</div>
                     </td>
 
                     <td>
-                        <button className="edit-btn">Block</button>
-                        <button className="edit-btn">Reset Password</button>
+                        {!author.isBlocked ? (
+                            <button className="block-btn" onClick={() => handleBlockCustomer(author.id)}>Khóa</button>
+                        ) : (
+                            <button className="unBlock-btn" onClick={() => handleUnblockCustomer(author.id)}>Mở khóa</button>
+                        )}
+                        <button className="delete-btn" onClick={() => handleDelete(author.id)}>Xóa</button>
                     </td>
                 </tr>
             ))}

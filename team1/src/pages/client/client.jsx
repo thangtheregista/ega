@@ -22,6 +22,7 @@ import useDocumentTitle from "../../components/useDocumentTitle/useDocumentTitle
 import FloatingButtons from "../../components/floatingButtons/FloatingButtons.jsx";
 import NotificationPopup from "../../components/NotificationPopup/NotificationPopup.jsx";
 
+
 function Client() {
     useDocumentTitle("EGA Furniture");
     return (

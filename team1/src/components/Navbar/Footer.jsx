@@ -1,5 +1,7 @@
 import React from "react";
 import "./Footer.css";
+import footerImage from './image/footer.webp';
+
 
 export default function Footer() {
   return (
@@ -47,28 +49,17 @@ export default function Footer() {
             <button>Đăng ký</button>
           </div>
           <div className="social-icons">
-            <i className="fa-brands fa-facebook-f">
-                <img src="/images/zalo.webp" alt="" />
-            </i>
-            <i className="fa-brands fa-zalo">
-                <img src="/images/youtube.webp" alt="" />
-            </i>
-            <i className="fa-brands fa-instagram">
-                 <img src="/images/facebook.webp" alt="" />
-            </i>
-            <i className="fa-brands fa-youtube">
-                 <img src="/images/instagram.webp" alt="" />
-            </i>
-            <i className="fa-brands fa-tiktok">
-                <img src="/images/tiktok.webp" alt="" />
-            </i>
+            <i><img src="/images/zalo.webp" alt="Zalo" /></i>
+            <i><img src="/images/youtube.webp" alt="Youtube" /></i>
+            <i><img src="/images/facebook.webp" alt="Facebook" /></i>
+            <i><img src="/images/instagram.webp" alt="Instagram" /></i>
+            <i><img src="/images/tiktok.webp" alt="Tiktok" /></i>
           </div>
         </div>
       </div>
 
-      <div className="payment-icons">
-        <img src="/images/footer_trustbadge.webp" alt="visa" />
-        
+      <div className="payment-icons1">
+        <img src={footerImage} alt="Phương thức thanh toán" />
       </div>
     </footer>
   );

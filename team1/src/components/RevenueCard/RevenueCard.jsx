@@ -7,13 +7,13 @@ export default function RevenueCard() {
         <div className="card-container">
             <div className="card-content">
                 <div className="text-section">
-                    <p className="card-title">REVENUE</p>
+                    <p className="card-title">DOANH THU</p>
                     <h2 className="card-number">$45K</h2>
                     <div className="card-status">
                         <span className="status-down" style={{
                             color: "#65C15C"
                         }}>↑ 30%</span>
-                        <span className="status-desc">Since last month</span>
+                        <span className="status-desc">Từ tháng trước</span>
                     </div>
                 </div>
                 <div className="icon-section">

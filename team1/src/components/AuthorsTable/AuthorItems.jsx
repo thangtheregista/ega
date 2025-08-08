@@ -24,8 +24,8 @@ export default function AuthorItems({currentItems, handleDelete}) {
                     </td>
                     <td>{author.date}</td>
                     <td>
-                        <Link to={`/ega/dashboard/staff/edit/${author.id}`}><button className="edit-btn">Edit</button></Link>
-                        <button className="delete-btn" onClick={() => handleDelete(author.id)}>Delete</button>
+                        <Link to={`/ega/dashboard/staff/edit/${author.id}`}><button className="edit-btn">Sửa</button></Link>
+                        <button className="delete-btn" onClick={() => handleDelete(author.id)}>Xóa</button>
                     </td>
                 </tr>
             ))}

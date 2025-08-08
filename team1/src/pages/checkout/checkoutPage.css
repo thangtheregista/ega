@@ -2,7 +2,7 @@
 .checkout-container {
     display: flex;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 5rem auto;
     gap: 40px;
     min-height: 100vh;
 }
