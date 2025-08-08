@@ -3,6 +3,9 @@ import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import axios from "axios";
 import {useCart} from "../../hooks/CartContext.jsx";
+
+import Swal from 'sweetalert2'
+
 export default function ProductDetailSection() {
     const {id} = useParams()
     const [product, setProduct] = useState([])
@@ -49,6 +52,13 @@ export default function ProductDetailSection() {
             checked: true
         }
         addToCart(newItem)
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Thêm vào giỏ hàng thành công",
+            showConfirmButton: false,
+            timer: 1500
+        });
     }
 
 
