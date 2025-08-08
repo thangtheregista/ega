@@ -91,7 +91,7 @@ export default function CustomersTable() {
                         <th>TỔNG SẢN PHẨM ĐÃ MUA</th>
                         <th>ĐỊA CHỈ</th>
                         <th>SỐ ĐIỆN THOẠI</th>
-                        <th></th>
+                        <th>HÀNH ĐỘNG</th>
                     </tr>
                     </thead>
                     <tbody>
