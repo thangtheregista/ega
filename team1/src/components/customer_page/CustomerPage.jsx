@@ -1,13 +1,27 @@
 import React from "react";
 import "./customerPage.css";
 import axios from "axios";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {useState} from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
+import useDocumentTitle from "../useDocumentTitle/useDocumentTitle.jsx";
 
 function CustomerPage() {
+    useDocumentTitle("Khách hàng - EGA Furniture");
+    const navigate = useNavigate();
+    React.useEffect(() => {
+        const checkCustomerLoggedIn = () => {
+            const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+            const userRole = localStorage.getItem("userRole");
+            if (!isLoggedIn || userRole !== "customer") {
+                alert("Bạn chưa đăng nhập!");
+                navigate("/ega/login");
+            }
+        }
+        checkCustomerLoggedIn();
+    }, []);
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
     const [showAccountInfo, setShowAccountInfo] = React.useState(true);
     const [showChangePassword, setShowChangePassword] = React.useState(false);
