@@ -1,0 +1,22 @@
+.customer-orders-page {
+    margin: 6rem 7rem 8rem 7rem;
+}
+.customer-orders-page-breadcrumb a {
+    text-decoration: none;
+    color: inherit;
+}
+.customer-orders-page-breadcrumb a:hover {
+    text-decoration: underline;
+    color: #EC720E;
+}
+.customer-orders-page-content {
+    margin-top: 1.5rem;
+}
+.customer-orders-page-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.customer-orders-page-list {
+    margin-top: 1rem;
+}

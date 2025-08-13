@@ -1,0 +1,27 @@
+.flash-sale-countdown-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0;
+}
+.fs-countdown-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+.fs-hours, .fs-minutes, .fs-seconds {
+    width: 44px;
+    height: 44px;
+    border-radius: 6px;
+    background-color: #D3232A;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

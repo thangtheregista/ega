@@ -1,0 +1,107 @@
+.login-element {
+    margin: 5rem 0 2rem 0;
+    width: 100%;
+}
+.login-element__wrapper {
+    max-width: 1640px;
+    margin: 0 auto;
+    padding: 10px;
+}
+.breadcrumb {
+    font-size: 16px;
+}
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.login .login__title {
+    font-size: 25px;
+    font-weight: 400;
+    padding: 0;
+    margin: 8px;
+}
+.login .login__register {
+    margin: 0;
+    font-size: 18px;
+}
+.login .login__register .login__register-link {
+    color: #ED720E;
+    text-decoration: underline;
+    font-weight: 400;
+}
+.login .login__form {
+    display: flex;
+    flex-direction: column;
+    max-width: 520px;
+    width: 100%;
+    margin-top: 20px;
+}
+.login .login__form .login__label {
+    font-size: 14px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+.login .login__form .login__label span {
+    color: red;
+}
+.login .login__form .login__input {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 18px;
+    margin-bottom: 10px;
+    outline: none;
+}
+.login .login__form .login__forgot {
+    height: 100%;
+}
+.login .login__form .login__forgot .login__forgot-text {
+    font-size: 13px;
+    margin: 0 0 8px 0;
+}
+.login .login__form .login__button {
+    background-color: #ED720E;
+    border-radius: 4px;
+    color: white;
+    font-size: 18px;
+    padding: 10px 15px;
+    border: none;
+}
+.login .login__form .login__button:hover {
+    border-color: transparent;
+    box-shadow: rgba(0, 0, 0, 0.64) 0px 3px 8px;
+}
+.login .login__social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 15px
+}
+.login .login__social .login__social-text {
+    color: gray;
+    font-weight: 500;
+    font-size: 16px;
+}
+.login .login__social .login__social-buttons {
+    display: flex;
+    gap: 8px;
+}
+.login__social-button--facebook {
+    background-color: #3B5998;
+    color: white;
+}
+.login__social-button--google {
+    background-color: #E14B33;
+    color: white;
+}
+.login__social-button--facebook:hover {
+    border-color: transparent;
+    box-shadow: rgba(0, 0, 0, 0.64) 0px 3px 8px;
+}
+.login__social-button--google:hover {
+    border-color: transparent;
+    box-shadow: rgba(0, 0, 0, 0.64) 0px 3px 8px;
+}

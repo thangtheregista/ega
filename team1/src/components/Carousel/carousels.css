@@ -1,0 +1,9 @@
+body {
+    overflow-x: auto;
+}
+.carousel-indicators .active {
+    background-color: #EC720E;
+}
+.carousels {
+    margin-top: 81px;
+}

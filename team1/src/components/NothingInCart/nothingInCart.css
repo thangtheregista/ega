@@ -1,0 +1,6 @@
+.nothing-in-cart {
+    margin-top: 81px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

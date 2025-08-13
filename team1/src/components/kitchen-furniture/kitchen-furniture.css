@@ -1,0 +1,142 @@
+.kitchen-furniture-container {
+    width: 100%;
+    max-width: 1640px;
+    margin: 4rem auto 0 auto;
+    padding: 10px;
+}
+.kitchen-furniture-item {
+    width: 100%;
+    height: 450px;
+    padding: 1rem;
+}
+.kitchen-furniture-item img {
+    width: 100%;
+    height: 225px;
+}
+.kitchen-furniture-item h5:hover {
+    cursor: pointer;
+    color: #ec720e;
+}
+.kitchen-furniture-list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(300px, 1fr));
+    justify-content: center;
+    margin: 2rem 0;
+}
+.kitchen-furniture-img {
+    position: relative;
+    margin-bottom: 1rem;
+}
+.kitchen-furniture-img img:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.kf-header {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.kf-header h2:hover {
+    color: #ec720e;
+    cursor: pointer;
+}
+.kf-header a {
+    color: black;
+}
+.kf-header a:hover {
+    color: #ec720e;
+}
+.kf-sale-num {
+    background-color: red;
+    color: white;
+    border-radius: 15px;
+    width: 50px;
+    height: 25px;
+    text-align: center;
+}
+.kf-original-price {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+@media (max-width: 1215px) {
+    /*.kitchen-furniture-container {*/
+    /*    margin: 3rem 2rem;*/
+    /*}*/
+    /*.kitchen-furniture-item {*/
+    /*    max-width: 320px;*/
+    /*    height: 420px;*/
+    /*    padding: 0.8rem;*/
+    /*}*/
+    /*.kitchen-furniture-item img {*/
+    /*    width: 320px;*/
+    /*    height: 220px;*/
+    /*}*/
+    .kitchen-furniture-list {
+        grid-template-columns: repeat(3, minmax(300px, 1fr));
+    }
+}
+
+@media (max-width: 915px) {
+    /*.kitchen-furniture-container {*/
+    /*    margin: 2rem 0.5rem;*/
+    /*}*/
+    /*.kitchen-furniture-list {*/
+    /*    flex-direction: column;*/
+    /*    align-items: center;*/
+    /*}*/
+    /*.kitchen-furniture-item {*/
+    /*    max-width: 95vw;*/
+    /*    width: 100%;*/
+    /*    height: auto;*/
+    /*    margin-bottom: 1.5rem;*/
+    /*    padding: 0.5rem;*/
+    /*}*/
+    /*.kitchen-furniture-item img {*/
+    /*    width: 100%;*/
+    /*    height: 180px;*/
+    /*}*/
+    /*.kf-header h2 {*/
+    /*    font-size: 1.2rem;*/
+    /*}*/
+    .kitchen-furniture-list {
+        grid-template-columns: repeat(2, minmax(300px, 1fr));
+    }
+}
+
+@media (max-width: 615px) {
+    /*.kitchen-furniture-container {*/
+    /*    margin: 1rem 0.2rem;*/
+    /*}*/
+    /*.kitchen-furniture-item {*/
+    /*    max-width: 98vw;*/
+    /*    padding: 0.2rem;*/
+    /*}*/
+    /*.kitchen-furniture-item img {*/
+    /*    height: 120px;*/
+    /*}*/
+    /*.kf-header h2 {*/
+    /*    font-size: 1rem;*/
+    /*}*/
+    .kitchen-furniture-list {
+        grid-template-columns: repeat(1, minmax(300px, 1fr));
+    }
+}
+.kf-smallPics {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+.kf-smallPics img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #c8c8c8;
+}
+.kf-smallPics img:hover {
+    cursor: pointer;
+    border: 1px solid black;
+    transform: scale(1.05);
+}

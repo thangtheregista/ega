@@ -1,0 +1,28 @@
+.pagination {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+.pagination li a {
+    text-decoration: none;
+    padding: 0 5px;
+    height: 100%;
+    display: block;
+}
+.page-item {
+    list-style: none;
+    border: 1px solid #4a90e2;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #4a90e2;
+}
+.disabled {
+    color: #ccc;
+    cursor: not-allowed;
+    text-decoration: none;
+
+    border: 1px solid #ccc;
+}
+.disabled a {
+    color: #ccc;
+}

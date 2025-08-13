@@ -1,0 +1,23 @@
+.shop_layout {
+    width: 100%;
+    margin: 0;
+    display: grid;
+    min-height: 100vh;
+    background-color: #FFFFFF;
+    box-sizing: border-box;
+    grid-template-columns: minmax(0px,140px) repeat(8, 1fr) minmax(0px, 140px);
+    grid-template-rows: auto auto auto;
+}
+nav {
+    grid-column: 1/-1;
+    grid-row: 1/2;
+}
+main {
+    grid-column: 1/-1;
+    grid-row: 2/3;
+}
+footer {
+    grid-column: 1/-1;
+    grid-row: 3/4;
+    background-color: #292929;
+}

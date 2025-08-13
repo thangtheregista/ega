@@ -1,0 +1,80 @@
+.product-form {
+
+    background: #fff;
+    margin: auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.product-form__title {
+    font-size: 24px;
+    margin-bottom: 24px;
+    color: #333;
+}
+
+.product-form__body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.product-form__row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.product-form__group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 220px;
+}
+
+.product-form__group--full {
+    flex: 1 0 100%;
+}
+
+.product-form__label {
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #444;
+}
+
+.product-form__input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #fff;
+}
+
+.product-form__input--textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.product-form__actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.product-form__button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.product-form__button--primary {
+    background-color: #7b61ff;
+    color: white;
+}
+
+.product-form__button--secondary {
+    background-color: #eaeaea;
+    color: #333;
+}
